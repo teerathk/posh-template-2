@@ -3301,11 +3301,56 @@
 
 import HeaderComp from './Header.vue'
 import FooterComp from "./Footer.vue";
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Pagination, Slide, Navigation } from 'vue3-carousel';
 
+import axios from "axios";
 export default {
   name: "Body",
   components: {
-      HeaderComp, FooterComp,
+      HeaderComp, FooterComp, Carousel, Slide, Pagination, Navigation,
   },
+  data() {
+    return {
+      list: []
+    };
+  },
+  async mounted() {
+    
+    this.startLoader();
+    let result = axios.get(axios.defaults.baseURL + "categories", this.params);
+    console.warn("Check Data");
+    const obj = (await result).data;
+    console.warn(obj);
+    if(obj.success==true){
+      this.list = obj.data;
+    } else {
+      alert("Issue loading categories");
+    }
+    //console.warn((await result).data);
+    //this.list = (await result).data;
+    this.EndLoader();
+  },
+  methods: {
+    startLoader() {
+      console.log("karachi");
+      var target_ContId = document.getElementById("loader-container");
+      target_ContId.style.display = "block";
+    },
+    EndLoader() {
+      console.log("pak");
+      var target_ContId = document.getElementById("loader-container");
+      target_ContId.style.display = "none";
+    },
+    getImgUrl(pet) {
+      return createElement('img', {
+        attrs: {
+          src: require('@assets/img/menu-template/'+pet) // this is now a module request
+        }
+      })
+    },
+
+  }
+
 };
 </script>

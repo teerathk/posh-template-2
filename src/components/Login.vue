@@ -17,9 +17,10 @@
 
 							<div class="login-box mb-5">
 								<h1>Sign-In</h1>
-								<form>
-									<input type="email" placeholder="Email Address*">
-									<span class="eye-icon-pass"><input type="password" placeholder="Password*"><i class="fas fa-eye"></i></span>
+
+								<form @submit.prevent="loginData" method="POST">
+									<input type="email" placeholder="Email Address*" v-model="login.email" />
+									<span class="eye-icon-pass"><input type="password" placeholder="Password*" v-model="login.password" /><i class="fas fa-eye"></i></span>
 									<span class="invalidLogin alert alert-danger"></span>
 									<label class="group">
 										<input type="checkbox">
@@ -27,9 +28,8 @@
 									</label>
 
 									<a href="#">Forgot Password?</a>
-									<button class="primary btn-block">
-										Login
-									</button>
+									<button class="primary btn-block" type="submit">Login</button>
+
 								</form>
 							</div>
 							<div class="info-login"><h2>Don't have account yet?</h2> <ul><li><a href="#" class="">User Signup</a></li></ul></div>

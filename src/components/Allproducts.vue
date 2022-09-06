@@ -1,88 +1,122 @@
 <template>
   <div>
     <header-comp></header-comp>
-    <div class="container-fluid">
-      <div class="row mt-5">
-        <div class="col-sm-2 hide-xs-bx">
-          <form @submit.prevent="getFilterData" method="post">
-            <div class="sidebar-options mt-3">
-              <div class="brand-options">
-                <h5>Brand</h5>
-                <ul class="products-cat-opt">
-                  <li>
-                    <label class="form-check-label"
-                      ><input
-                        type="checkbox"
-                        v-model="brand"
-                        class="form-check-input"
-                        value="hp" />HP <span class="checkmark"></span
-                    ></label>
-                  </li>
-                  <li>
-                    <label class="form-check-label"
-                      ><input
-                        type="checkbox"
-                        v-model="brand"
-                        class="form-check-input"
-                        value="dell" />Dell <span class="checkmark"></span
-                    ></label>
-                  </li>
-                  <li>
-                    <label class="form-check-label"
-                      ><input
-                        v-model="brand"
-                        type="checkbox"
-                        class="form-check-input"
-                        value="asus" />ASUS <span class="checkmark"></span
-                    ></label>
-                  </li>
-                  <li>
-                    <label class="form-check-label"
-                      ><input
-                        type="checkbox"
-                        v-model="brand"
-                        class="form-check-input"
-                        value="lenovo" />Lenovo <span class="checkmark"></span
-                    ></label>
-                  </li>
-                  <li>
-                    <label class="form-check-label"
-                      ><input
-                        type="checkbox"
-                        v-model="Apple"
-                        class="form-check-input"
-                        value="Apple" />Apple <span class="checkmark"></span
-                    ></label>
-                  </li>
-                  <li>
-                    <label class="form-check-label"
-                      ><input
-                        type="checkbox"
-                        v-model="brand"
-                        class="form-check-input"
-                        value="acer" />Acer <span class="checkmark"></span
-                    ></label>
-                  </li>
-                  <li>
-                    <label class="form-check-label"
-                      ><input
-                        type="checkbox"
-                        v-model="brand"
-                        class="form-check-input"
-                        value="MSi" />MSI <span class="checkmark"></span
-                    ></label>
-                  </li>
-                  <li>
-                    <label class="form-check-label"
-                      ><input
-                        type="checkbox"
-                        v-model="brand"
-                        class="form-check-input"
-                        value="Razor" />Razor <span class="checkmark"></span
-                    ></label>
-                  </li>
-                </ul>
-              </div>
+         <!-- banner Section start -->
+      <section class="banner-container top-inner-container">
+         <div class="container">
+         <div class="row g-0">
+            <div class="col-9">
+                     <div class="category-search">
+                        <form action="">
+                              <div class="select-category-box">
+                                 <select>
+                                    <option>All categories</option>
+                                    <option>Fashion</option>
+                                    <option>Computer</option>
+                                    <option>Furniture</option>
+                                    <option>Smartphone</option>
+                                    <option>Healthy & Beauty</option>
+                                    <option>Sport Clothing</option>
+                                    <option>Watch & Jewelry</option>
+                                    <option>Kitchen</option>
+                                    <option>Accessories</option>
+                                    <option>More Category</option>
+                                 </select>
+                              </div>
+                              <div class="search-box">
+                                    <input type="search" name="" placeholder="Search entire store here...">
+                                 </div>
+                                 <div class="search-tab">
+                                    <button type="submit">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                 </div>
+                        </form>
+                     </div>
+                  </div>
+                  <div class="col-3">
+                     <div class="right-banner-section">
+                        <div class="shopping-cart">
+                           <div class="wish-i">
+                              <a href="#">
+                              <img src="/src/assets/images/wish-i.jpg" alt="">
+                              </a>
+                           </div>
+                           <div class="wish-i">
+                              <a href="#">
+                              <img src="/src/assets/images/refresh-i.jpg" alt="">
+                              </a>
+                           </div>
+                           <div class="wish-i">
+                              <span class="cart">
+                              2
+                              </span>
+                              <img src="/src/assets/images/cart-i.jpg" alt="">
+                           </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        </div>
+                     </div>
+                  </div>
+         </div>
+      </section>
+      <!-- banner Section End -->
+      <div class="sec-nav">
+            <div class="container">
+                  <div class="row">
+                    <div class="col-sm-6">
+                        <div class="show-all-cat">
+                            <span><img src="/src/assets/img/menu-template/category.png">Show All Categories <i class="fa fa-chevron-down"></i></span>
+                            <ul>
+                                <li>Cat A</li>
+                                <li>Cat B</li>
+                                <li>Cat C</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="order-track">
+                            <ul>
+                                <li><a href="#">Track Your Order</a></li>
+                                <li><a href="#">Help Center</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+         </div>
+         <div class="breadcrumbs">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <ul class="breadcrumbs-list"> 
+                        <li><a href="">All Categories</a></li>
+                        <li><a href="">Laptop Computers</a></li>
+                        <li><a href="">Traditional Laptop Computers</a></li>
+                        <li>Gaming Laptops</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-md-2">
+                      <form @submit.prevent="getFilterData" method="post">
+               <div class="sidebar-options mt-3">
+                  <div class="brand-options">
+                     <h5>Brand</h5>
+                     <ul class="products-cat-opt">
+                        <li><label class="form-check-label"><input type="checkbox" class="form-check-input" value="hp">HP <span class="checkmark"></span></label></li>
+                        <li><label class="form-check-label"><input type="checkbox" class="form-check-input" value="dell">Dell <span class="checkmark"></span></label></li>
+                        <li><label class="form-check-label"><input type="checkbox" class="form-check-input" value="asus">ASUS <span class="checkmark"></span></label></li>
+                        <li><label class="form-check-label"><input type="checkbox" class="form-check-input" value="lenovo">Lenovo <span class="checkmark"></span></label></li>
+                        <li><label class="form-check-label"><input type="checkbox" class="form-check-input" value="apple">Apple <span class="checkmark"></span></label></li>
+                        <li><label class="form-check-label"><input type="checkbox" class="form-check-input" value="acer">Acer <span class="checkmark"></span></label></li>
+                        <li><label class="form-check-label"><input type="checkbox" class="form-check-input" value="msi">MSI <span class="checkmark"></span></label></li>
+                        <li><label class="form-check-label"><input type="checkbox" class="form-check-input" value="razor">Razor <span class="checkmark"></span></label></li>
+                     </ul>
+                  </div>
               <div class="brand-options">
                 <h5>Available Colours</h5>
                 <ul class="products-cat-opt">
@@ -239,54 +273,39 @@
                 </ul>
               </div>
             </div>
-            <button type="submit" name="filter" class="col-sm-12 primary h-34">
-              Apply Filter
-            </button>
-          </form>
-        </div>
-        <div class="col-lg-10">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="cat-title-pg">
-                <h4>Gaming Laptops</h4>
-                <div class="cat-option-pg">
-                  <form @submit.prevent="getFilterData" method="post">
-                  <div class="price-limit-opt">
-                    
-                    <span>Price: </span>
-                    <div class="form-group min-max-bx">
-                      
-                        <input
-                          type="text"
-                          v-model="min_price"
-                          placeholder="Min"
-                          class="h-34 form-control min-price"
-                        />
-                        <span> - </span>
-                        <input
-                          type="text"
-                          v-model="max_price"
-                          placeholder="Max"
-                          class="h-34 form-control max-price"
-                        />
-                        <button class="primary h-34" type="submit" name="filter">Go</button>
-                      
+               <button type="submit" name="filter" class="col-sm-12 primary h-34">
+                  Apply Filter
+                </button>
+                      </form>
                     </div>
-                    
+                    <div class="col-md-10 ">
+                  <div class="row">
+                     <div class="col-sm-12">
+                        <div class="cat-title-pg">
+                           <h4>Gaming Laptops</h4>
+                           <div class="cat-option-pg">
+                             <form @submit.prevent="getFilterData" method="post">
+                              <div class="price-limit-opt"><span>Price: </span>
+                                 <div class="form-group min-max-bx">
+                                    <input type="text" v-model="min_price" placeholder="Min" class="form-control min-price">
+                                    <span class="seperator"> - </span>
+                                    <input type="text" v-model="max_price" placeholder="Max" class="form-control max-price">
+                                    <button class="primary h-34" type="submit" name="filter">Go</button>
+                                 </div>
+                              </div>
+                             </form>
+                              <div class="sortby-opt">
+                                 <label class="top-position">Sort By</label>
+                                 <select class="select-custom-point">
+                                    <option>Featured</option>
+                                    <option>Brand</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
                   </div>
-                  </form>
-                  <div class="sortby-opt">
-                    <label class="top-position">Sort By</label>
-                    <select class="select-custom-point">
-                      <option>Featured</option>
-                      <option>Brand</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row my-4">
+                            <div class="row my-4">
             <div class="col-sm-4 item" v-for="item in list" :key="item.id">
               <div class="product-item">
                 <div class="pro-img-bx">
@@ -322,39 +341,90 @@
           </div>
 
           <div class="row my-5">
-            <div class="col-sm-12 d-flex align-items-end">
-              <div aria-label="Page navigation paginate-bx">
-                <ul class="pagination bottm-pagination">
-                  <li class="page-item inactive">
-                    <button id="back"
-                      class="page-link"
-                      aria-label="Previous"
-                      @click="pagination('b')"
-                    >
-                      <span aria-hidden="true"
-                        ><i class="fas fa-chevron-left"></i
-                      ></span>
-                    </button>
-                  </li>
-
-                  <li class="page-item ">
-                    <button id="next"
-                      class="page-link"
-                      aria-label="Next"
-                      @click="pagination('n')"
-                    >
-                      <span aria-hidden="true"
-                        ><i class="fas fa-chevron-right"></i
-                      ></span>
-                    </button>
-                  </li>
-                </ul>
+              <div class="col-sm-12 d-flex justify-content-center">
+                  <div aria-label="Page navigation paginate-bx">
+                      <ul class="pagination bottm-pagination">
+                          <li class="page-item inactive">
+                              <button id="back"
+                                class="page-link"
+                                aria-label="Previous"
+                                @click="pagination('b')"
+                              >
+                                  <span aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
+                              </button>
+                          </li>
+                          <li class="page-item">
+                              <button id="next"
+                                class="page-link"
+                                aria-label="Next"
+                                @click="pagination('n')"
+                              >
+                                  <span aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
+                              </button>
+                          </li>
+                      </ul>
+                      
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
-      </div>
-    </div>
+               </div>
+                </div>
+            </div>
+      <!-- lower-middle-section end-->
+      
+      <br>
+      <br>
+      <section class="before-footer-section">
+         <div class="container">
+            <div class="row">
+               <div class="col">
+                  <div class="small-container">
+                     <span><img src="/src/assets/images/icon-01.png"></span>
+                     <span>
+                     <h4>free delivery</h4>
+                     <p> From $200 </p>
+                     </span>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="small-container">
+                     <span><img src="/src/assets/images/icon-02.png"></span>
+                     <span>
+                     <h4>free delivery</h4>
+                     <p> From $200 </p>
+                     </span>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="small-container">
+                     <span><img src="/src/assets/images/icon-03.png"></span>
+                     <span>
+                     <h4>free delivery</h4>
+                     <p> From $200 </p>
+                     </span>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="small-container">
+                     <span><img src="/src/assets/images/icon-04.png"></span>
+                     <span>
+                     <h4>free delivery</h4>
+                     <p> From $200 </p>
+                     </span>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="small-container">
+                     <span><img src="/src/assets/images/icon-07.png"></span>
+                     <span>
+                     <h4>free delivery</h4>
+                     <p> From $200 </p>
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
     <footer-comp></footer-comp>
   </div>
 </template>

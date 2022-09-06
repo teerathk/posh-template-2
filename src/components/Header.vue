@@ -15,15 +15,15 @@
                   </div>
                </div>
                <div class="col-lg-6">
-                  <!-- <div class="right-top-info pull-right">
+                  <div class="right-top-info pull-right" v-if="!isHidden">
                      <ul>
                         <li><router-link to="login">Sign In</router-link></li>
                         <li><a href="#">My Account</a></li>
                      </ul>
                      
-                  </div> -->
-                  <div class="head-right-info">
-                  <div class="userLogined"><div class="usr-img"><img src="/src/assets/img/profile.6f7406c7.png" class="proImg"></div><div class="usr-title">Syed Haider</div><i class="fa fa-chevron-down"></i><ul class="userProfileMenu"><li><a href="#">Dashboard</a></li><li><a href="#">My Orders</a></li><li><a href="#">Track My Order</a></li><li><a href="#">My Profile</a></li><li><a href="#">Logout</a></li></ul></div>
+                  </div>
+                  <div class="head-right-info" v-if="isHidden">
+                  <div class="userLogined"><div class="usr-img"><img src="/src/assets/img/profile.6f7406c7.png" class="proImg"></div><div class="usr-title">{{ userTitle }}</div><i class="fa fa-chevron-down"></i><ul class="userProfileMenu"><li><a href="#">Dashboard</a></li><li><a href="#">My Orders</a></li><li><a href="#">Track My Order</a></li><li><a href="#">My Profile</a></li><li><a href="#" @click="logout">Logout</a></li></ul></div>
                   </div>
                </div>
             </div>
@@ -80,8 +80,44 @@
   </div>
 </template>
 <script>
+
 export default {
   name: "header",
+  
+  data() {
+    return {
+      userTitle:"John",
+      itemsincart:0,
+      isHidden: false
+    };
+  },
+  async mounted(){
+    if(localStorage.getItem("login")){
+      console.log("Login Data")
+      const logindata = JSON.parse(localStorage.getItem("login"));
+      var totalQty=0;
+      logindata.cartitems.forEach(function(items) {
+        console.log("Qty: "+items.quantity)
+        totalQty+=items.quantity
+      })
+      this.itemsincart=totalQty;
+      this.userTitle=logindata.first_name+" "+logindata.last_name;
+      console.log(localStorage.getItem("login"))
+      this.isHidden=true;
+    } else {
+      localStorage.clear();
+      //this.$router.push({name:"Login"})
+    }
+  },
+  methods:{
+    logout() {
+      localStorage.clear();
+      alert("Logout Success");
+      this.itemsincart=0
+      this.isHidden=false;
+      this.$router.push({name:"Home"});
+    }
+  }
 };
 </script>
 

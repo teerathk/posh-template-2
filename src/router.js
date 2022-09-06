@@ -5,12 +5,12 @@ import Body from './components/Body.vue'
 import Allproducts from './components/Allproducts.vue'
 import Product from './components/Product.vue'
 import Cart from './components/Cart.vue'
-// import Payment from './components/Payment.vue'
+import Payment from './components/Payment.vue'
 import Success from './components/Success.vue'
 import Signup from './components/Signup.vue'
 import Login from './components/Login.vue'
-// import Checkout from './components/Checkout.vue'
-// import Shipping from './components/Shipping.vue'
+import Checkout from './components/Checkout.vue'
+import Shipping from './components/Shipping.vue'
 
 
 const routes = [
@@ -50,16 +50,16 @@ const routes = [
         path: '/signup',
         component: Signup
     },
-    // {
-    //     name: 'Shipping',
-    //     path: '/shipping',
-    //     component: Shipping
-    // },
-    // {
-    //     name: 'Checkout',
-    //     path: '/checkout',
-    //     component: Checkout
-    // },
+    {
+        name: 'Shipping',
+        path: '/shipping',
+        component: Shipping
+    },
+    {
+        name: 'Checkout',
+        path: '/checkout',
+        component: Checkout
+    },
     {
         name: 'Cart',
         path: '/cart',
@@ -70,11 +70,11 @@ const routes = [
         path: '/success',
         component: Success
     },
-    // {
-    //     name: 'Payment',
-    //     path: '/payment',
-    //     component: Payment
-    // },
+    {
+        name: 'Payment',
+        path: '/payment',
+        component: Payment
+    },
 ]
 
 
