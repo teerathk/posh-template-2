@@ -342,7 +342,19 @@
 
           <div class="row my-5">
               <div class="col-sm-12 d-flex justify-content-center">
-                  <div aria-label="Page navigation paginate-bx">
+                <!-- START PAGINATION HERE -->
+                <nav aria-label="Page navigation" class=" pagiBox-bx">
+                  <ul class="pagination">
+                    <li class="page-item "><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+                <!-- END:: PAGINATION HERE -->
+                <!--  
+                <div aria-label="Page navigation paginate-bx">
                       <ul class="pagination bottm-pagination">
                           <li class="page-item inactive">
                               <button id="back"
@@ -362,9 +374,8 @@
                                   <span aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
                               </button>
                           </li>
-                      </ul>
-                      
-                  </div>
+                      </ul>                      
+                  </div> -->
               </div>
           </div>
                </div>
