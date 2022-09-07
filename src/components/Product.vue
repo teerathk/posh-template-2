@@ -343,8 +343,8 @@
 
 <script>
 
-import HeaderComp from './Header.vue'
-import FooterComp from "./Footer.vue";
+import HeaderComp from './includes/Header.vue'
+import FooterComp from "./includes/Footer.vue";
 import 'vue3-carousel/dist/carousel.css';
 import axios from "axios";
 import { Carousel, Pagination, Slide, Navigation } from 'vue3-carousel';

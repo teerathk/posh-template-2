@@ -12,7 +12,7 @@
             <div class="row">
                <div class="col-lg-6">
                   <div class="left-top-info">
-                     <p>Optional - welcome msg will come here!  <a href="#">Join Free</a> or <a href="#">Sign in</a></p>
+                     <p>Optional - welcome msg will come here!  <router-link to="signup">Join Free</router-link> or <router-link to="login">Sign In</router-link></p>
                   </div>
                </div>
                <div class="col-lg-6">
