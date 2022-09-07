@@ -593,12 +593,7 @@ ul.pagination.bottm-pagination li a {
     border-radius: 4px;
 	line-height: 16px;
 }
-.page-item.active .page-link {
-    z-index: 3;
-    color: #fff;
-    background-color: #ff5c00;
-    border-color: #ff5c00;
-}
+
 a:hover {
     text-decoration: none;
 }
