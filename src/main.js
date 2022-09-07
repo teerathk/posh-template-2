@@ -8,6 +8,6 @@ import axios from 'axios';
 const url = 'https://posh-marketplace.plego.pro';
 
 axios.defaults.baseURL=url+"/api/";
-
+axios.defaults.url = url;
 //app.config.globalProperties.$assets = assets+"/src/assets";
 createApp(App).use(router, axios).mount('#app')

@@ -21,7 +21,15 @@
                     <!-- <i class="menu-icon">
                     <img :src="getImgUrlCat(item.img)" /> -->
                   </span>
-                  {{ item.title }}
+                  <router-link
+                      :to="{
+                        path: 'allproducts',
+                        query: { id: 10 },
+                        props: true,
+                      }"
+                      >{{ item.title }}</router-link
+                    >
+                  
                   <!-- <i class="fas fa-angle-right"></i> -->
                   <ul class="side-submenu">
                     <li
@@ -43,86 +51,6 @@
 
 
 
-
-
-
-                  <li class="has-drop-down active">
-                    <span class="category-icon">
-                      <img src="/src/assets/images/icon-fashion.jpg" alt="" />
-                    </span>
-                    <a href="#">Fashion</a>
-                  </li>
-                  <li class="has-drop-down">
-                    <span class="category-icon">
-                      <img src="/src/assets/images/icon-computer.jpg" alt="" />
-                    </span>
-                    <router-link
-                      :to="{
-                        path: 'allproducts',
-                        query: { id: 10 },
-                        props: true,
-                      }"
-                      >Computer</router-link
-                    >
-                    <!-- <a href="#">Computer</a> -->
-                  </li>
-                  <li class="has-drop-down">
-                    <span class="category-icon">
-                      <img src="/src/assets/images/icon-furniture.jpg" alt="" />
-                    </span>
-                    <a href="#">Furniture</a>
-                  </li>
-                  <li class="has-drop-down">
-                    <span class="category-icon">
-                      <img
-                        src="/src/assets/images/icon-smartphone.jpg"
-                        alt=""
-                      />
-                    </span>
-                    <a href="#">Smartphone</a>
-                  </li>
-                  <li class="has-drop-down">
-                    <span class="category-icon">
-                      <img
-                        src="/src/assets/images/icon-healthbeauty.jpg"
-                        alt=""
-                      />
-                    </span>
-                    <a href="#">Healthy & Beauty</a>
-                  </li>
-                  <li class="has-drop-down">
-                    <span class="category-icon">
-                      <img
-                        src="/src/assets/images/icon-sportclothing.jpg"
-                        alt=""
-                      />
-                    </span>
-                    <a href="#">Sport Clothing</a>
-                  </li>
-                  <li class="has-drop-down">
-                    <span class="category-icon">
-                      <img src="/src/assets/images/icon-jewelry.jpg" alt="" />
-                    </span>
-                    <a href="#">Watch & Jewelry</a>
-                  </li>
-                  <li class="has-drop-down">
-                    <span class="category-icon">
-                      <img src="/src/assets/images/icon-kitchen.jpg" alt="" />
-                    </span>
-                    <a href="#">Kitchen</a>
-                  </li>
-                  <li class="has-drop-down">
-                    <span class="category-icon">
-                      <img src="/src/assets/images/icon-cap.jpg" alt="" />
-                    </span>
-                    <a href="#">Accessories</a>
-                  </li>
-                  <li class="has-drop-down">
-                    <span class="category-icon">
-                      <img src="/src/assets/images/icon-more.jpg" alt="" />
-                    </span>
-                    <a href="#">More Category</a>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -171,54 +99,24 @@
                     data-bs-ride="carousel"
                   >
                     <div class="carousel-indicators">
-                      <button
+                      <button v-for="(images, index) in this.sliders" :key="index"
                         type="button"
                         data-bs-target="#banner"
-                        data-bs-slide-to="0"
-                        class="active"
+                        :data-bs-slide-to="index"
+                        v-bind:class="cravings(index)"
                         aria-current="true"
                         aria-label="Slide 1"
-                      ></button>
-                      <button
-                        type="button"
-                        data-bs-target="#banner"
-                        data-bs-slide-to="1"
-                        aria-label="Slide 2"
-                      ></button>
-                      <button
-                        type="button"
-                        data-bs-target="#banner"
-                        data-bs-slide-to="2"
-                        aria-label="Slide 3"
                       ></button>
                     </div>
                     <!-- The slideshow/carousel -->
                     <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <a href="#">
-                          <img
-                            src="/src/assets/images/banner-01.jpg"
-                            alt=""
-                            class="d-block"
-                          />
-                        </a>
-                      </div>
-                      <div class="carousel-item">
-                        <a href="#">
-                          <img
-                            src="/src/assets/images/banner-02.jpg"
-                            alt=""
-                            class="d-block"
-                          />
-                        </a>
-                      </div>
-                      <div class="carousel-item">
-                        <a href="#">
-                          <img
-                            src="/src/assets/images/banner-03.jpg"
-                            alt=""
-                            class="d-block"
-                          />
+                      <div class="carousel-item" v-bind:class="cravings(index)" v-for="(images, index) in this.sliders" :key="index">
+                        <a :href="images.link ? images.link : '#'" target="_blank">
+                        <img
+                           :src="getImgUrll(images.image)"
+                           alt=""
+                           class="d-block"
+                        />
                         </a>
                       </div>
                     </div>
@@ -246,20 +144,20 @@
                   <div class="clearfix"></div>
                   <div class="rightBannerBx">
                     <div class="banner-cont">
-                      <a href="#">
-                        <img
-                          src="/src/assets/images/right-banner-1.jpg"
-                          alt=""
-                        />
-                      </a>
+                     <a
+                        :href="this.promotion.link1 ? this.promotion.link1 : '#'"
+                        target="_blank"
+                     >
+                        <img :src="getImgUrll(this.promotion.image1)" alt="" />
+                     </a>
                     </div>
                     <div class="banner-cont">
-                      <a href="#">
-                        <img
-                          src="/src/assets/images/right-banner-2.jpg"
-                          alt=""
-                        />
-                      </a>
+                     <a
+                        :href="this.promotion.link2 ? this.promotion.link2 : '#'"
+                        target="_blank"
+                     >
+                        <img :src="getImgUrll(this.promotion.image2)" alt="" />
+                     </a>
                     </div>
                   </div>
                 </div>
@@ -273,68 +171,57 @@
     <!-- featured-categores top -->
     <section class="featured-categores">
       <div class="container">
-        <h2>FEATURED CATEGORIES</h2>
+        <h2>FEATURED PRODUCTS</h2>
         <div class="row">
-          <div class="col">
-            <div class="category-box">
-              <a href="">
-                <div class="category-pic">
-                  <img src="/src/assets/images/p-01.jpg" alt="" />
+
+
+
+         <div
+              class="col-sm-3"
+              v-for="(product, index) in featuredProducts"
+              :key="index"
+            >
+              <div class="product-item">
+                <div class="pro-img-bx">
+                  <router-link
+                    :to="{
+                      path: '/product',
+                      query: { id: product.id },
+                      props: true,
+                    }"
+                  >
+                    <img
+                      :src="
+                        getImgUrl(product.vendor_id, product.featured_image)
+                      "
+                      alt=""
+                    />
+                  </router-link>
                 </div>
-                <div class="category-title">
-                  <h4>Iwatch</h4>
+                <div class="pro-title-bx">
+                  <h3 class="prod-title">
+                    <router-link
+                      :to="{
+                        path: '/product',
+                        query: { id: product.id },
+                        props: true,
+                      }"
+                    >
+                      {{ product.name }}
+                    </router-link>
+                  </h3>
+                  <div class="prod-p-icon">
+                    <span class="pro-price">${{ product.seller_price }}</span
+                    ><span class="pro-icons"
+                      ><img
+                        @click="addtocart2(product)"
+                        src="../assets/img/buy.png"
+                        class="img-fluid" /><img src="../assets/img/heart.png"
+                    /></span>
+                  </div>
                 </div>
-              </a>
+              </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="category-box">
-              <a href="">
-                <div class="category-pic">
-                  <img src="/src/assets/images/p-02.jpg" alt="" />
-                </div>
-                <div class="category-title">
-                  <h4>Bags</h4>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="category-box">
-              <a href="">
-                <div class="category-pic">
-                  <img src="/src/assets/images/p-03.jpg" alt="" />
-                </div>
-                <div class="category-title">
-                  <h4>Swimwear</h4>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="category-box">
-              <a href="">
-                <div class="category-pic">
-                  <img src="/src/assets/images/p-04.jpg" alt="" />
-                </div>
-                <div class="category-title">
-                  <h4>shoes</h4>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col">
-            <div class="category-box">
-              <a href="">
-                <div class="category-pic">
-                  <img src="/src/assets/images/p-05.jpg" alt="" />
-                </div>
-                <div class="category-title">
-                  <h4>fashion</h4>
-                </div>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -445,9 +332,19 @@
     <section class="middle-deals-section">
       <div class="container">
         <div class="row">
+
           <div class="col-xl-6">
             <div class="left-middle-deals">
-              <img src="/src/assets/images/left-middle-deals.jpg" alt="" />
+               <a
+                :href="this.promotion.link3 ? this.promotion.link3 : '#'"
+                target="_blank"
+              >
+               <img
+                  :src="getImgUrll(this.promotion.image3)"
+                  height="240"
+                  alt=""
+                />
+               </a>
               <div>
                 <h6>colorful kick</h6>
                 <h4>punchy sandals</h4>
@@ -457,7 +354,17 @@
           </div>
           <div class="col-xl-6">
             <div class="right-middle-deals">
-              <img src="/src/assets/images/right-middle-deals.jpg" alt="" />
+               <a
+                :href="this.promotion.link4 ? this.promotion.link4 : '#'"
+                target="_blank"
+              >
+               <img
+                  :src="getImgUrll(this.promotion.image4)"
+                  height="240"
+                  alt=""
+                />
+               </a>
+
               <div>
                 <h4>going somewhere?</h4>
                 <a href="#" class="link">See More</a>
@@ -1388,6 +1295,9 @@ export default {
     getImgUrlCat(pet) {
       return this.img_url_cat + "/" + pet;
     },
+    cravings(index){
+      return index==0 ? 'active' : '';
+    }
   },
 };
 </script>
