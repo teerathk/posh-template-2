@@ -4,7 +4,7 @@
             <div class="row">
                <div class="col">
                   <div class="footer-col">
-                     <h3>OUR SHOPS</h3>
+                     <h3>Main Menu</h3>
                      <ul>
                         <li><a href="#">Product Support</a></li>
                         <li><a href="#">PC Setup & Support</a></li>
@@ -16,7 +16,7 @@
                </div>
                <div class="col">
                   <div class="footer-col">
-                     <h3>YOUR LINKS</h3>
+                     <h3>Company</h3>
                      <ul>
                         <li><a href="#">Shipping guide</a></li>
                         <li><a href="#">Store location</a></li>
@@ -28,7 +28,7 @@
                </div>
                <div class="col">
                   <div class="footer-col">
-                     <h3>SUPPORT</h3>
+                     <h3>Discover</h3>
                      <ul>
                         <li><a href="#">Product Support</a></li>
                         <li><a href="#">PC Setup & Support</a></li>
@@ -40,61 +40,19 @@
                </div>
                <div class="col">
                   <div class="footer-col">
-                     <h3>MY ACCOUNT</h3>
-                     <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">F.A.Q</a></li>
-                        <li><a href="#">Help Center</a></li>
-                     </ul>
+                     <h3>Download App</h3>
+                     <div class="appStoreBox">
+                     <div class="appimag"><a href="#"><img class="appstoreiocn" src="/src/assets/images/googleplaystore.png" alt=""></a></div>
+                     <div class="appimag"><a href="#"><img class="appstoreiocn" src="/src/assets/images/appstore-icon.png" alt=""></a></div>
+                     </div>                     
                   </div>
                </div>
-               <div class="col">
-                  <div class="footer-col">
-                     <h3>Contact Us</h3>
-                     <div class="address">
-                        <span class="icon">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        </span>    
-                        Address : 
-                        <span class="location">1234 Street name 133/2 NewYork City, NY, United States</span>
-                     </div>
-                     <div class="email">
-                        <span class="icon">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        </span>
-                        Email: <span><a href="mailto:contact@marketplace.com" target="_blank">contact@marketplace.com</a></span>
-                     </div>
-                     <div class="phone">
-                        <span class="icon">
-                        <i class="fa fa-mobile" aria-hidden="true"></i>
-                        </span>
-                        <section>Address : <span>Phone 1 : 0123456789</span></section>
-                        <section>Address : <span>Phone 2 : 0123456789</span></section>
-                     </div>
-                  </div>
-               </div>
+              
             </div>
             <hr>
-            <div class="footer-middle-links">
-               <div class="footer-links">
-                  <ul>
-                     <li><a href="#">Home</a></li>
-                     <li><a href="#">Categories</a></li>
-                     <li><a href="#">MOBILES</a></li>
-                     <li><a href="#">ELECTRONICS</a></li>
-                     <li><a href="#">ACCESSORIES</a></li>
-                     <li><a href="#">LAPTOP</a></li>
-                     <li><a href="#">ABOUT US</a></li>
-                     <li><a href="#">HELP</a></li>
-                  </ul>
-               </div>
-               <div class="footer-middle-content">
-                  <p>Donec auctor justo at risus tempor, et lobortis mauris commodo. Vestibulum eu faucibus quam. Fusce scelerisque erat condimentum nisi pulvinar, nec vehicula lorem rhoncus.</p>
-               </div>
-            </div>
+            
          </div>
-         <hr>
+         
          <div class="container">
             <div class="footer-newsletter-section">
                <div class="row">

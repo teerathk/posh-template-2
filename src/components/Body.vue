@@ -101,7 +101,7 @@
                                        <option>More Category</option>
                                     </select>
                                  </div>
-                                 <div class="col-sm-9">
+                                 <div class="col-sm-9-bc">
                                     <div class="search-box">
                                        <input type="search" name="" placeholder="Search entire store here...">
                                     </div>
@@ -165,33 +165,17 @@
                               </div>
                            </div>
                            <div class="clearfix"></div>
-                           <div class="banner-cont">
-                              <a href="#">
-                              <img src="/src/assets/images/right-banner-1.jpg" alt="">
-                              <div>
-                                 <h5>hair and makeup</h5>
-                                 <span>See More</span>
+                           <div class="rightBannerBx">
+                              <div class="banner-cont">
+                                 <a href="#">
+                                 <img src="/src/assets/images/right-banner-1.jpg" alt="">
+                                 </a>
                               </div>
-                              </a>
-                           </div>
-                           <div class="banner-cont">
-                              <a href="#">
-                              <img src="/src/assets/images/right-banner-2.jpg" alt="">
-                              <div>
-                                 <h5 class="align-center">smartphones & tablets</h5>
-                                 <span>See More</span>
+                              <div class="banner-cont">
+                                 <a href="#">
+                                 <img src="/src/assets/images/right-banner-2.jpg" alt="">
+                                 </a>
                               </div>
-                              </a>
-                           </div>
-                           <div class="banner-cont">
-                              <a href="#">
-                              <img src="/src/assets/images/right-banner-3.jpg" alt="">
-                              <div class="align-center top-margin">
-                                 <h4>aosp</h4>
-                                 <h5>project update</h5>
-                                 <span>See More</span>
-                              </div>
-                              </a>
                            </div>
                         </div>
                      </div>
@@ -275,244 +259,19 @@
          <div class="container">
             <div class="row">
                <div class="col-xl-9">
-                  <div class="today-deals-left">
-                     <h2>Today deals</h2>
-                     <div class="today-deals-top">
-                        <div class="owl-carousel owl-theme" id="today-deals">
-                           <div class="item">
-                              <div class="today-deals-box">
-                                 <div class="row">
-                                    <div class="col-sm-6">
-                                       <div class="product-box">
-                                          <img src="/src/assets/images/product01.png" alt="">
-                                       </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                       <div class="product-box-description">
-                                          <h3>Apple iPhone 13 128GB</h3>
-                                          <div class="rating-review">
-                                             <div>
-                                                <span class="score">
-                                                   <div class="score-wrap">
-                                                      <span class="stars-active" style="width:92%">
-                                                      <i class="fa fa-star" aria-hidden="true"></i>
-                                                      <i class="fa fa-star" aria-hidden="true"></i>
-                                                      <i class="fa fa-star" aria-hidden="true"></i>
-                                                      <i class="fa fa-star" aria-hidden="true"></i>
-                                                      <i class="fa fa-star" aria-hidden="true"></i>
-                                                      </span>
-                                                      <span class="stars-inactive">
-                                                      <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                      <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                      <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                      <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                      <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                      </span>
-                                                   </div>
-                                                </span>
-                                             </div>
-                                             <div>
-                                                <a href="">1 Review(S)</a> |  <a href="">Add Your Review</a>
-                                             </div>
-                                          </div>
-                                          <div class="today-deals-description">
-                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam arcu, bibendum nec accumsan id, vulputate id turpis. Donec varius orci at turpis feugiat varius.</p>
-                                          </div>
-                                          <div class="price-container">
-                                             <div>$80.00</div>
-                                             <div>$120.00</div>
-                                          </div>
-                                                 <div class="clock_container">
-                                                  <div class="clockdiv">
-                                                     <div>
-                                                     <span class="days" id="days"></span>
-                                                     <div class="smalltext">Days</div>
-                                                     </div>
-                                                     <div>
-                                                     <span class="hours" id="hours"></span>
-                                                     <div class="smalltext">Hours</div>
-                                                     </div>
-                                                     <div>
-                                                     <span class="minutes" id="minutes"></span>
-                                                     <div class="smalltext">Minutes</div>
-                                                     </div>
-                                                     <div>
-                                                     <span class="seconds" id="seconds"></span>
-                                                     <div class="smalltext">Seconds</div>
-                                                     </div>
-                                                 </div>
-                                            </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="item">
-                              <div class="today-deals-box">
-                                 <div class="row">
-                                    <div class="col-sm-6">
-                                       <div class="product-box">
-                                          <img src="/src/assets/images/product01.png" alt="">
-                                       </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                       <div class="product-box-description">
-                                          <h3>Apple iPhone 13 128GB</h3>
-                                          <div class="rating-review">
-                                             <div>
-                                                <span class="score">
-                                                   <div class="score-wrap">
-                                                      <span class="stars-active" style="width:92%">
-                                                      <i class="fa fa-star" aria-hidden="true"></i>
-                                                      <i class="fa fa-star" aria-hidden="true"></i>
-                                                      <i class="fa fa-star" aria-hidden="true"></i>
-                                                      <i class="fa fa-star" aria-hidden="true"></i>
-                                                      <i class="fa fa-star" aria-hidden="true"></i>
-                                                      </span>
-                                                      <span class="stars-inactive">
-                                                      <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                      <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                      <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                      <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                      <i class="fa fa-star-o" aria-hidden="true"></i>
-                                                      </span>
-                                                   </div>
-                                                </span>
-                                             </div>
-                                             <div>
-                                                <a href="">1 Review(S)</a> |  <a href="">Add Your Review</a>
-                                             </div>
-                                          </div>
-                                          <div class="today-deals-description">
-                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam arcu, bibendum nec accumsan id, vulputate id turpis. Donec varius orci at turpis feugiat varius.</p>
-                                          </div>
-                                          <div class="price-container">
-                                             <div>$80.00</div>
-                                             <div>$120.00</div>
-                                          </div>
-                                           
-                                        
-
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
+                  <div class="best-sellets">
+                     <h3>Today deals</h3>
+                     <div class="todayDeals-Bx">
+                        <div class="leftTodayBx">
+                        <div class="tdbx"><img class="img-fluid" src="/src/assets/images/deals-bx-1.jpg"></div>
+                        <div class="tdbx"><img class="img-fluid" src="/src/assets/images/deals-bx-3.jpg"></div>
+                        </div>
+                        <div class="rightTodayBx">
+                        <div class="tdbx"><img class="img-fluid" src="/src/assets/images/deals-bx-2.jpg"></div>
+                        <div class="tdbx"><img class="img-fluid" src="/src/assets/images/deals-bx-4.jpg"></div>
                         </div>
                      </div>
-                     <div class="bottom-today-deals">
-                        <div class="owl-carousel owl-theme" id="today-deals-bottom">
-                           <div class="item">
-                              <div class="today-deals-slider">
-                                 <a href="#">
-                                    <span class="discount">-20%</span>
-                                    <div><img src="/src/assets/images/d-01.jpg" alt=""></div>
-                                    <h5>SoundTrueOnEar9</h5>
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="item">
-                              <div class="today-deals-slider">
-                                 <a href="#">
-                                    <span class="discount">-40%</span>
-                                    <div><img src="/src/assets/images/d-02.jpg" alt=""></div>
-                                    <h5>Jean-Patou-1000</h5>
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="item">
-                              <div class="today-deals-slider">
-                                 <a href="#">
-                                    <span class="discount">-50%</span>
-                                    <div><img src="/src/assets/images/d-03.jpg" alt=""></div>
-                                    <h5>HmTshirt</h5>
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="item">
-                              <div class="today-deals-slider">
-                                 <a href="#">
-                                    <span class="discount">-20%</span>
-                                    <div><img src="/src/assets/images/d-04.jpg" alt=""></div>
-                                    <h5>Tefal FV1320</h5>
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="item">
-                              <div class="today-deals-slider">
-                                 <a href="#">
-                                    <span class="discount">-40%</span>
-                                    <div><img src="/src/assets/images/d-05.jpg" alt=""></div>
-                                    <h5>Jean-Patou-1000</h5>
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="item">
-                              <div class="today-deals-slider">
-                                 <a href="#">
-                                    <span class="discount">-40%</span>
-                                    <div><img src="/src/assets/images/d-06.jpg" alt=""></div>
-                                    <h5>Jean-Patou-1000</h5>
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="item">
-                              <div class="today-deals-slider">
-                                 <a href="#">
-                                    <span class="discount">-40%</span>
-                                    <div><img src="/src/assets/images/d-01.jpg" alt=""></div>
-                                    <h5>SoundTrueOnEar9</h5>
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="item">
-                              <div class="today-deals-slider">
-                                 <a href="#">
-                                    <span class="discount">-10%</span>
-                                    <div><img src="/src/assets/images/d-02.jpg" alt=""></div>
-                                    <h5>Jean-Patou-1000</h5>
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="item">
-                              <div class="today-deals-slider">
-                                 <a href="#">
-                                    <span class="discount">-20%</span>
-                                    <div><img src="/src/assets/images/d-03.jpg" alt=""></div>
-                                    <h5>HmTshirt</h5>
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="item">
-                              <div class="today-deals-slider">
-                                 <a href="#">
-                                    <span class="discount">-10%</span>
-                                    <div><img src="/src/assets/images/d-04.jpg" alt=""></div>
-                                    <h5>Tefal FV1320</h5>
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="item">
-                              <div class="today-deals-slider">
-                                 <a href="#">
-                                    <span class="discount">-20%</span>
-                                    <div><img src="/src/assets/images/d-05.jpg" alt=""></div>
-                                    <h5>Jean-Patou-1000</h5>
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="item">
-                              <div class="today-deals-slider">
-                                 <a href="#">
-                                    <span class="discount">-30%</span>
-                                    <div><img src="/src/assets/images/d-06.jpg" alt=""></div>
-                                    <h5>Jean-Patou-1000</h5>
-                                 </a>
-                              </div>
-                           </div>
-                        </div>
                      </div>
-                  </div>
                </div>
                <div class="col-xl-3">
                   <div class="best-sellets">
@@ -600,2645 +359,380 @@
          </div>
       </section>
       <!-- middle Deals end-->
-      <!-- categories section start-->
+      <!-- categories section start Fashion-->
       <section class="category-section">
          <div class="container">
             <div class="row g-0">
-               <div class="col-xl-2">
-                  <div class="left-category-ad">
-                     <h3>Fashion</h3>
-                     <img src="/src/assets/images/fashion-category.jpg" alt="">
-                     <span>
-                           <h5>destination dresses</h5>
-                           <a href="#">See More</a>
-                     </span>
-                  </div>
-               </div>
-               <div class="col-xl-10">
-                  <div class="category-products-blocks">
-                     <div class="owl-carousel owl-theme" id="category-fashion">
-                        <div class="item" data-dot="<button>featured</button>">
-                           <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion06.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion02.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion07.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion03.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion08.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion04.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion09.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion05.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion10.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion02.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion08.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="item" data-dot="<button>Best salers</button>">
-                           <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion07.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion03.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion08.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion02.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion06.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion02.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion10.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion05.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion06.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion07.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="item" data-dot="<button>Specials</button>">
-                           <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion09.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion09.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion05.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion03.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion07.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion03.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion09.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion06.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="item" data-dot="<button>New Arrivals</button>">
-                           <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion03.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion02.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion09.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion04.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion02.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion06.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion10.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion06.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="item" data-dot="<button>Most Reviews</button>">
-                           <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion06.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion02.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion07.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion03.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion08.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion04.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion09.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion05.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion10.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion06.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="item" data-dot="<button>featured</button>">
-                           <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion06.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion02.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion07.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion03.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion08.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion04.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion09.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion05.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion10.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion01.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion06.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- categories section end-->
-
-
-      <!-- categories section start-->
-      <section class="category-section">
-         <div class="container">
-            <div class="row g-0">
+               <div class="col-xl-12">
                
-               <div class="col-xl-10">
-                  <div class="category-products-blocks cat-block-other">
-                     <div class="owl-carousel owl-theme" id="category-electronics">
-                        <div class="item" data-dot="<button>featured</button>">
-                           <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-06.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-07.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-08.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-04.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-05.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-10.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
+                  <div class="category-products-blocks">
+                     <div class="cp-bloxks">
+                        <h3 class="titleWbg"><span>Fashion</span></h3>
+                        <p class="subtitle-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam arcu, bibendum nec </p></div>
+                     <!-- START:: INSIDE PRODUCTS -->
+                     <div class="ProductBox-temp2">
+                     <div class="row g-0">
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="new">New</span>
+                                 <div><img src="/src/assets/images/electronic-01.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-06.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 </span>
+                              </a>
                            </div>
                         </div>
-                        <div class="item" data-dot="<button>Best salers</button>">
-                           <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-10.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-08.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-07.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-06.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-05.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-04.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-02.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-07.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 <span class="disc">$120.00</span></span>
+                              </a>
                            </div>
                         </div>
-                        <div class="item" data-dot="<button>Specials</button>">
-                             <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-06.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-07.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-08.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-04.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-05.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-10.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="discount">New</span>
+                                 <div><img src="/src/assets/images/electronic-03.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="new">New</span>
+                                 <div><img src="/src/assets/images/electronic-08.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 </span>
+                              </a>
                            </div>
                         </div>
-                        <div class="item" data-dot="<button>New Arrivals</button>">
-                         <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-10.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-08.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-07.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-06.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-05.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-04.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-04.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-09.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 <span class="disc">$120.00</span></span>
+                              </a>
                            </div>
                         </div>
-                        <div class="item" data-dot="<button>Most Reviews</button>">
-                              <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-06.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-07.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-08.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-04.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-05.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-10.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="new">New</span>
+                                 <div><img src="/src/assets/images/electronic-05.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="discount">New</span>
+                                 <div><img src="/src/assets/images/electronic-10.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 </span>
+                              </a>
                            </div>
                         </div>
-                        <div class="item" data-dot="<button>featured</button>">
-                            <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-10.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-08.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-07.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-06.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00 <span class="disc">$120.00</span></span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-05.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-04.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/electronic-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/electronic-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="new">New</span>
+                                 <div><img src="/src/assets/images/electronic-02.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
                            </div>
-
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-03.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 </span>
+                              </a>
+                           </div>
                         </div>
                      </div>
-
-                  </div>
-
-               </div>
-                <div class="col-xl-2">
-                  <div class="left-category-ad right-category">
-                     <h3>ELECTRONICS</h3>
-                     <img src="/src/assets/images/electronics-category.jpg" alt="">
-                     <div class="qr-code">
-                          <p>Scan the QR Code to quickly access.</p>
-                        <div>
-                          <a href="#"><img src="/src/assets/images/qr-code.png" alt=""></a>
-                        </div>
                      </div>
-                     <span>
-                           <h5>destination dresses</h5>
-                           <a href="#">See More</a>
-                     </span>
+                     <!-- END:: INSIDE PRODUCTS   -->
                   </div>
                </div>
             </div>
          </div>
       </section>
-      <!-- categories section end-->
-
-      <!-- categories section start-->
+      <!-- categories section end Fashion -->
+      <!-- categories section start ELECTRONICS -->
       <section class="category-section">
          <div class="container">
             <div class="row g-0">
-               <div class="col-xl-2">
-                  <div class="left-category-ad">
-                     <h3>SPORTS</h3>
-                     <img src="/src/assets/images/sports-category.jpg" alt="">
-                     <span>
-                           <h5>destination dresses</h5>
-                           <a href="#">See More</a>
-                     </span>
+               <div class="col-xl-12">
+               
+                  <div class="category-products-blocks evenRightBg">
+                     <div class="cp-bloxks">
+                        <h3 class="titleWbg"><span>ELECTRONICS</span></h3>
+                        <p class="subtitle-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam arcu, bibendum nec </p></div>
+                     <!-- START:: INSIDE PRODUCTS -->
+                     <div class="ProductBox-temp2">
+                     <div class="row g-0">
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="new">New</span>
+                                 <div><img src="/src/assets/images/electronic-01.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-06.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 </span>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-02.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-07.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 <span class="disc">$120.00</span></span>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="discount">New</span>
+                                 <div><img src="/src/assets/images/electronic-03.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="new">New</span>
+                                 <div><img src="/src/assets/images/electronic-08.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 </span>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-04.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-09.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 <span class="disc">$120.00</span></span>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="new">New</span>
+                                 <div><img src="/src/assets/images/electronic-05.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="discount">New</span>
+                                 <div><img src="/src/assets/images/electronic-10.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 </span>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="new">New</span>
+                                 <div><img src="/src/assets/images/electronic-02.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-03.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 </span>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     </div>
+                     <!-- END:: INSIDE PRODUCTS   -->
                   </div>
                </div>
-               <div class="col-xl-10">
+            </div>
+         </div>
+      </section>
+      <!-- categories section end ELECTRONICS -->
+      <!-- categories section start SPORTS  -->
+      <section class="category-section">
+         <div class="container">
+            <div class="row g-0">
+               <div class="col-xl-12">
+               
                   <div class="category-products-blocks">
-                     <div class="owl-carousel owl-theme" id="category-sports">
-                        <div class="item" data-dot="<button>featured</button>">
-                           <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-06.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-07.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-08.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-04.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-05.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-10.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion02.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion08.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
+                     <div class="cp-bloxks">
+                        <h3 class="titleWbg"><span>SPORTS</span></h3>
+                        <p class="subtitle-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam arcu, bibendum nec </p></div>
+                     <!-- START:: INSIDE PRODUCTS -->
+                     <div class="ProductBox-temp2">
+                     <div class="row g-0">
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="new">New</span>
+                                 <div><img src="/src/assets/images/electronic-01.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-06.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 </span>
+                              </a>
                            </div>
                         </div>
-                        <div class="item" data-dot="<button>Best salers</button>">
-                              <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-10.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-08.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-07.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-06.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-05.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-04.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-02.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-07.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 <span class="disc">$120.00</span></span>
+                              </a>
                            </div>
                         </div>
-                        <div class="item" data-dot="<button>Specials</button>">
-                              <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-06.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-07.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-08.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-04.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-05.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-10.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion02.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion08.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="discount">New</span>
+                                 <div><img src="/src/assets/images/electronic-03.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="new">New</span>
+                                 <div><img src="/src/assets/images/electronic-08.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 </span>
+                              </a>
                            </div>
                         </div>
-                        <div class="item" data-dot="<button>New Arrivals</button>">
-                                 <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-04.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-05.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-06.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-07.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-08.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-10.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-04.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-09.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 <span class="disc">$120.00</span></span>
+                              </a>
                            </div>
                         </div>
-                        <div class="item" data-dot="<button>Most Reviews</button>">
-                               <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-06.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-07.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-08.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-04.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-05.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-10.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/fashion02.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/fashion08.png" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="new">New</span>
+                                 <div><img src="/src/assets/images/electronic-05.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="discount">New</span>
+                                 <div><img src="/src/assets/images/electronic-10.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 </span>
+                              </a>
                            </div>
                         </div>
-                        <div class="item" data-dot="<button>featured</button>">
-                                <div class="row g-0">
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-03.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-04.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-05.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-06.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-07.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-08.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-09.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="discount">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-10.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="col">
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <span class="new">New</span>
-                                       <div>
-                                          <img src="/src/assets/images/sports-01.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$70.00</span>
-                                    </a>
-                                 </div>
-                                 <div class="category-product-block">
-                                    <a href="#">
-                                       <div>
-                                          <img src="/src/assets/images/sports-02.jpg" alt="">
-                                       </div>
-                                       <h5>Dell Inspiron 20 3059</h5>
-                                       <span class="price">$30.00 </span>
-                                    </a>
-                                 </div>
-                              </div>
+                        <div class="col">
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <span class="new">New</span>
+                                 <div><img src="/src/assets/images/electronic-02.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$70.00</span>
+                              </a>
+                           </div>
+                           <div class="category-product-block">
+                              <a href="#">
+                                 <div><img src="/src/assets/images/electronic-03.jpg" alt=""></div>
+                                 <h5>Dell Inspiron 20 3059</h5>
+                                 <span class="price">$30.00 </span>
+                              </a>
                            </div>
                         </div>
                      </div>
+                     </div>
+                     <!-- END:: INSIDE PRODUCTS   -->
                   </div>
                </div>
             </div>
          </div>
       </section>
-      <!-- categories section end-->
+      <!-- categories section end SPORTS -->
 
-      <!-- lower-middle-section start-->
-      <section class="lower-middle-section">
-          <div class="container">
-             <div class="lower-middle-section2">
-               <div class="row">
-               <div class="col-md-5">
-                  <div class="left-lower-middle">
-                       <h6>our best</h6>
-                       <h4>macbook pro & iphone 13</h4>
-                       <a href="#">See More</a>
-                  </div>
-               </div>
-
-               <div class="col-md-4">
-                  <div class="middle-lower-middle">
-                        <img src="/src/assets/images/pic33.jpg" alt="">
-                  </div>
-               </div>
-               <div class="col-md-3">
-                  <div class="right-lower-middle">
-                     <p>Scan the QR Code  to quickly access.</p>
-                      <a href="#">
-                        <img src="/src/assets/images/qr-code.png" alt="">
-                      </a>
-                  </div>
-               </div>
-               </div>
-          </div>
-          </div>
-      </section>
-
-
-      <!-- lower-middle-section end-->
-
-      <!-- weekly-section start-->
-      <section class="weekly-section">
-             <div class="container">
-              
-               <div class="row">
-   <div class="col-xl-6">
-             <div class="weekly-box">
-         <h4>weekly products</h4>
-         <div class="row">
-            <div class="col-sm-6">
-               <div class="left-box">
-                  <img src="/src/assets/images/pic95.jpg" alt="">
-                  <div>
-                     <h6>destination dresses</h6>
-                     <a href="#">See More</a>
-                  </div>
-               </div>
-            </div>
-            <div class="col-sm-6">
-               <div class="best-sellets">
-                  <ul>
-                     <li>
-                        <a href="">
-                        <span class="product-container">
-                        <img src="/src/assets/images/li.jpg" alt="">
-                        </span>
-                        <span class="product-detail">
-                           <h5>Sample Heading</h5>
-                           <p>Perfume</p>
-                           <p class="price">$40.00 <span class="disc">$120.00</span></p>
-                        </span>
-                     </a>
-                     </li>
-                     <li>
-                        <a href="">
-                        <span class="product-container">
-                        <img src="/src/assets/images/l2.jpg" alt="">
-                        </span>
-                        <span class="product-detail">
-                           <h5>SoundTrueOnEar8</h5>
-                           <p>Perfume</p>
-                           <p class="price">$20.00 <span class="disc">$120.00</span></p>
-                        </span>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="">
-                        <span class="product-container">
-                        <img src="/src/assets/images/l3.jpg" alt="">
-                        </span>
-                        <span class="product-detail">
-                           <h5>Sample Heading</h5>
-                           <p>Perfume</p>
-                           <p class="price">$70.00 <span class="disc">$120.00</span></p>
-                        </span>
-                       </a>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </div>
-    </div>  
- <div class="col-xl-6">
-            <div class="weekly-box featured-box">
-         <h4>featured productss</h4>
-         <div class="row">
-            <div class="col-sm-6">
-               <div class="left-box">
-                  <img src="/src/assets/images/pic96.jpg" alt="">
-                  <div>
-                     <h6>sale & service  of apple</h6>
-                     <a href="#">See More</a>
-                  </div>
-               </div>
-            </div>
-            <div class="col-sm-6">
-               <div class="best-sellets">
-                  <ul>
-                     <li>
-                        <a href="">
-                        <span class="product-container">
-                        <img src="/src/assets/images/l4.jpg" alt="">
-                        </span>
-                        <span class="product-detail">
-                           <h5>Sample Heading</h5>
-                           <p>Perfume</p>
-                           <p class="price">$40.00 <span class="disc">$120.00</span></p>
-                        </span>
-                     </a>
-                     </li>
-                     <li>
-                        <a href="">
-                        <span class="product-container">
-                        <img src="/src/assets/images/l5.jpg" alt="">
-                        </span>
-                        <span class="product-detail">
-                           <h5>SoundTrueOnEar8</h5>
-                           <p>Perfume</p>
-                           <p class="price">$20.00 <span class="disc">$120.00</span></p>
-                        </span>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="">
-                        <span class="product-container">
-                        <img src="/src/assets/images/l6.jpg" alt="">
-                        </span>
-                        <span class="product-detail">
-                           <h5>Sample Heading</h5>
-                           <p>Perfume</p>
-                           <p class="price">$70.00 <span class="disc">$120.00</span></p>
-                        </span>
-                       </a>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-             </div>
-      </section>
-
-      <!-- weekly-section start-->
-
-
-       <!-- partner logos start-->
-
-    <section class="partner-logos">
-           <div class="container">
-             <div class="partner-logos1">
-                  <div class="owl-carousel owl-theme" id="partner-logos">
-                     <div class="item">
-                          <img src="/src/assets/images/p01.jpg">
-                     </div>
-                       <div class="item">
-                          <img src="/src/assets/images/p02.jpg">
-                     </div>
-                     <div class="item">
-                          <img src="/src/assets/images/p03.jpg">
-                     </div>
-                     <div class="item">
-                          <img src="/src/assets/images/p04.jpg">
-                     </div>
-                     <div class="item">
-                          <img src="/src/assets/images/p05.jpg">
-                     </div>
-                     <div class="item">
-                          <img src="/src/assets/images/p06.jpg">
-                     </div>
-                      <div class="item">
-                          <img src="/src/assets/images/p01.jpg">
-                     </div>
-                       <div class="item">
-                          <img src="/src/assets/images/p02.jpg">
-                     </div>
-                     <div class="item">
-                          <img src="/src/assets/images/p03.jpg">
-                     </div>
-                     <div class="item">
-                          <img src="/src/assets/images/p04.jpg">
-                     </div>
-                     <div class="item">
-                          <img src="/src/assets/images/p05.jpg">
-                     </div>
-                     <div class="item">
-                          <img src="/src/assets/images/p06.jpg">
-                     </div>
-              </div>
-           </div>
-         </div>
-   </section>
-
-       <!-- partner logos end-->
-
-<br>
-<br>
+      
 
       <section class="before-footer-section">
          <div class="container">

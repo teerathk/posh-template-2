@@ -460,7 +460,6 @@ p {
 
 .banner {
   width: 100%;
-  padding-top: 5px;
 }
 
 .banner img {
@@ -475,7 +474,7 @@ p {
 
 .right-banner-section .banner-cont img {
   width: 100%;
-  height: 170px;
+  height: 261px;
 }
 
 .right-banner-section .banner-cont a {
@@ -541,7 +540,7 @@ p {
 }
 
 .category-search {
-  padding: 10px 0px 5px 40px;
+  padding: 10px 0px 0px 40px;
 }
 
 .select-category-box select {
@@ -1229,17 +1228,31 @@ p {
   right: -30px;
   top: 40%;
 }
-
+.todayDeals-Bx {
+  display: flex;
+  column-gap: 20px;
+}
+.tdbx:first-child {
+  padding-bottom: 20px;
+}
+.leftTodayBx {
+  width: 45%;
+}
+.tdbx:first-child img {
+  height: 269px;
+}
 .today-deals .best-sellets {
   background: #fff;
   border: 1px solid #e1e1e1;
-  min-height: 500px;
+  height: 500px;
 }
-
+.rightTodayBx {
+  width: 60%;
+}
 .today-deals .best-sellets h3 {
   background: #f2f2f2;
   padding: 10px 5px 10px 20px;
-  margin: 0 0 10px 0;
+  margin: 0;
   color: #222222;
   font-size: 16px;
   font-family: 'Raleway', sans-serif;
@@ -1549,27 +1562,69 @@ p {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
 }
-
+.category-products-blocks.evenRightBg h3.titleWbg {
+  background: url(/src/assets/images/category-bg-title2.png) no-repeat;
+  left: inherit;
+  right: -1px;
+}
+.category-products-blocks.evenRightBg p.subtitle-content {
+  padding: 12px 12px 12px 27px;
+}
+.appimag {
+  margin-bottom: 20px;
+}
+.cp-bloxks {
+  background: #f2f2f2;
+  position: relative;
+}
 .category-section .category-products-blocks {
   position: relative;
 }
-
-.category-section .category-products-blocks:before {
-  position: absolute;
-  top: -32px;
-  right: 0;
-  left: -10px;
-  background: #f2f2f2;
-  height: 48px;
-  content: "";
-  z-index: 1;
+.social-container i.fa {
+  line-height: 28px;
 }
-
+img.appstoreiocn {
+  width: 120px;
+}
+.cp-bloxks:before {
+  content: "";
+  background: #f2f2f2;
+  width: 100%;
+  left: 0;
+  right: 0;
+  height: 48px;
+}
 .category-product-block div {
   max-width: 110px;
   margin: 0 auto 10px;
 }
-
+p.subtitle-content {
+  margin-bottom: 0;
+  padding: 12px 12px 12px 227px;
+}
+h3.titleWbg {
+  background: url(/src/assets/images/category-bg-title1.png);
+  background-repeat: no-repeat;
+  color: #fff;
+  width: 204px;
+  height: 55px;
+  position: absolute;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  top: -1px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+h3.titleWbg span {
+  padding-bottom: 7px;
+}
+.ProductBox-temp2 {
+  padding-top: 21px;
+}
 .category-product-block h5 {
   color: #222222;
   font-size: 14px;
@@ -2457,7 +2512,7 @@ textarea:focus:-ms-input-placeholder {
     position: absolute;
     top: -32px;
     right: 0;
-    left: -10px;
+    left: -32px;
     background: #f2f2f2;
     height: 183px;
     content: "";
