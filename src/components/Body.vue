@@ -22,7 +22,7 @@
                     <img :src="getImgUrlCat(item.img)" /> -->
                   </span>
                   {{ item.title }}
-                  <i class="fas fa-angle-right"></i>
+                  <!-- <i class="fas fa-angle-right"></i> -->
                   <ul class="side-submenu">
                     <li
                       v-for="subitem in item.active_children"

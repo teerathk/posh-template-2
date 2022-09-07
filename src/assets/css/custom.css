@@ -355,7 +355,20 @@ p {
   text-transform: uppercase;
   position: relative;
 }
-
+ul.side-submenu {
+  display: none;
+}
+.left-bar .left-menu li.has-drop-down:hover ul.side-submenu {
+  display: block;
+}
+ul.side-submenu {
+  position: absolute;
+  left: 100%;
+  min-width: 187px;
+  background: #fff;
+  box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+  top: 0;
+}
 .banner-container .left-bar header:before {
   width: 19px;
   height: 14px;
