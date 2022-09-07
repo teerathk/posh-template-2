@@ -216,8 +216,8 @@
 <script>
 
 
-import HeaderComp from './Header.vue'
-import FooterComp from "./Footer.vue";
+import HeaderComp from './includes/Header.vue'
+import FooterComp from "./includes/Footer.vue";
 import axios from "axios"
 export default {
   name: "Payment",
