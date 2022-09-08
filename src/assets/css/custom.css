@@ -1407,6 +1407,9 @@ ul.side-submenu {
   line-height: normal;
   text-decoration: none;
 }
+.cus-col {
+  width: 16.66%;
+}
 
 .discount {
   text-align: center;

@@ -384,14 +384,13 @@
               <div class="cp-bloxks">
                 <h3 class="titleWbg"><span>Fashion</span></h3>
                 <p class="subtitle-content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Curabitur diam arcu, bibendum nec
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam arcu, bibendum nec
                 </p>
               </div>
               <!-- START:: INSIDE PRODUCTS -->
               <div class="ProductBox-temp2">
                 <div class="row g-0">
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="new">New</span>
@@ -405,6 +404,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                  </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -418,7 +419,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -431,6 +432,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -446,7 +449,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="discount">New</span>
@@ -460,6 +463,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="new">New</span>
@@ -474,7 +479,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -487,6 +492,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -502,7 +509,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="new">New</span>
@@ -516,6 +523,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="discount">New</span>
@@ -530,7 +539,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="new">New</span>
@@ -544,6 +553,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -582,7 +593,7 @@
               <!-- START:: INSIDE PRODUCTS -->
               <div class="ProductBox-temp2">
                 <div class="row g-0">
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="new">New</span>
@@ -596,6 +607,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                  </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -609,7 +622,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -622,6 +635,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -637,7 +652,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="discount">New</span>
@@ -651,6 +666,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="new">New</span>
@@ -665,7 +682,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -678,6 +695,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -693,7 +712,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="new">New</span>
@@ -707,6 +726,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="discount">New</span>
@@ -721,7 +742,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="new">New</span>
@@ -735,6 +756,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -773,7 +796,7 @@
               <!-- START:: INSIDE PRODUCTS -->
               <div class="ProductBox-temp2">
                 <div class="row g-0">
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="new">New</span>
@@ -787,6 +810,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                  </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -800,7 +825,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -813,6 +838,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -828,7 +855,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="discount">New</span>
@@ -842,6 +869,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="new">New</span>
@@ -856,7 +885,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -869,6 +898,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
@@ -884,7 +915,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="new">New</span>
@@ -898,6 +929,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="discount">New</span>
@@ -912,7 +945,7 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col">
+                  <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <span class="new">New</span>
@@ -926,6 +959,8 @@
                         <span class="price">$70.00</span>
                       </a>
                     </div>
+                    </div>
+                    <div class="cus-col">
                     <div class="category-product-block">
                       <a href="#">
                         <div>
