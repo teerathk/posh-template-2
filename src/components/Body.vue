@@ -2,7 +2,7 @@
 <template>
   <div>
     <header-comp></header-comp>
-
+<div id="loader-container" style="/* display: none; */"><div class="back-load"></div><div class="loader"></div></div>
     <section class="banner-container">
       <div class="container">
         <div class="row g-0">

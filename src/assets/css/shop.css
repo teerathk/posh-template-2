@@ -766,6 +766,15 @@ label.top-position {
     margin-bottom: 40px;
     padding: 8px 18px;
 }
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 .form-group input, .form-group select {
     border: 1px solid #5F5F5F;
     height: 56px;
