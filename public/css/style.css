@@ -584,11 +584,18 @@ label.top-position {
 .product-item {
     margin-bottom: 20px;
 }
+.pagiBox-bx ul.pagination li a {
+    color: #ff5c00;
+}
 ul.pagination.bottm-pagination li a {
     border:2px solid #DFE3E8;
     margin-right: 7px;
     border-radius: 4px;
 	line-height: 16px;
+}
+
+a:hover {
+    text-decoration: none;
 }
 ul.pagination.bottm-pagination li.page-item a {
     color: hsl(0, 0%, 47%);

@@ -80,45 +80,127 @@
       </section>
   </div>
 </template>
+
 <script>
-
-export default {
-  name: "header",
-  
-  data() {
-    return {
-      userTitle:"John",
-      itemsincart:0,
-      isHidden: false
-    };
-  },
-  async mounted(){
-    if(localStorage.getItem("login")){
-      console.log("Login Data")
-      const logindata = JSON.parse(localStorage.getItem("login"));
-      var totalQty=0;
-      logindata.cartitems.forEach(function(items) {
-        console.log("Qty: "+items.quantity)
-        totalQty+=items.quantity
-      })
-      this.itemsincart=totalQty;
-      this.userTitle=logindata.first_name+" "+logindata.last_name;
-      console.log(localStorage.getItem("login"))
-      this.isHidden=true;
-    } else {
-      localStorage.clear();
-      //this.$router.push({name:"Login"})
-    }
-  },
-  methods:{
-    logout() {
-      localStorage.clear();
-      alert("Logout Success");
-      this.itemsincart=0
-      this.isHidden=false;
-      this.$router.push({name:"Home"});
-    }
-  }
-};
-</script>
-
+   import axios from "axios";
+   export default {
+     name: "header",
+   
+     data() {
+       return {
+         userTitle: "John",
+         itemsincart: 0,
+         amountincart: "0.00",
+         isHidden: false,
+         query: null,
+         list: [],
+         showTitle: true,
+         img_url: axios.defaults.url + "/img/product-images",
+       };
+     },
+     async callOutMethod() {
+       if (localStorage.getItem("login")) {
+         console.log("Login Data");
+         const logindata = JSON.parse(localStorage.getItem("login"));
+         var amount = 0;
+         if (logindata.cartitems) {
+           this.itemsincart = logindata.cartitems.length;
+           for (var i = 0; i < logindata.cartitems.length; i++) {
+             amount +=
+               parseInt(logindata.cartitems[i].item_price) *
+               parseInt(logindata.cartitems[i].quantity);
+           }
+           this.amountincart = amount;
+         }
+         this.userTitle = logindata.first_name + " " + logindata.last_name;
+         console.log(localStorage.getItem("login"));
+         this.isHidden = true;
+       } else {
+         localStorage.removeItem("login");
+         // localStorage.clear();
+         //this.$router.push({name:"Login"})
+       }
+       this.getHeadFoot();
+     },
+     async mounted() {
+       if (localStorage.getItem("login")) {
+         console.log("Login Data");
+         const logindata = JSON.parse(localStorage.getItem("login"));
+         var amount = 0;
+         if (logindata.cartitems) {
+           this.itemsincart = logindata.cartitems.length;
+           for (var i = 0; i < logindata.cartitems.length; i++) {
+             amount +=
+               parseInt(logindata.cartitems[i].item_price) *
+               parseInt(logindata.cartitems[i].quantity);
+           }
+           this.amountincart = amount;
+         }
+         this.userTitle = logindata.first_name + " " + logindata.last_name;
+         console.log(localStorage.getItem("login"));
+         this.isHidden = true;
+       } else if (localStorage.getItem("guest")) {
+         const guestdata = JSON.parse(localStorage.getItem("guest"));
+         this.itemsincart = guestdata.length;
+         var tempTotalPrice=0;
+         guestdata.forEach(function (items) {
+           console.log("Qty: " + items.quantity);
+           tempTotalPrice += items.quantity * items.item_price;
+         });
+         this.amountincart = tempTotalPrice;
+         $(".cartitems").children("span").show();
+         $(".cartitems").children("span").html(this.itemsincart);
+         if (this.count_cartitems == 0) {
+           $(".cartitems").children("span").hide();
+         } else {
+           $(".cartitems").children("span").show();
+         }
+       } else {
+         localStorage.removeItem("login");
+         // localStorage.clear();
+         //this.$router.push({name:"Login"})
+       }
+       if (this.itemsincart == 0) {
+         $(".cartitems").children("span").hide();
+       } else {
+         $(".cartitems").children("span").show();
+       }
+       this.getHeadFoot();
+     },
+   
+     methods: {
+       logout() {
+         localStorage.clear();
+         alert("Logout Success");
+         this.itemsincart = 0;
+         this.amountincart = "0.00";
+         this.isHidden = false;
+         this.$router.push({ name: "Home" });
+       },
+       getFilterData() {
+         //alert(this.query);
+         //this.$router.go({name:"Allproducts"});
+         this.$router.push({ name: "Allproducts", query: { search: this.query } });
+         //this.$router.go({name:'Allproducts', query: { search: this.query } })
+         // this.$router.push({name:"Allproducts"});
+       },
+       async getHeadFoot() {
+         let result = axios.get(axios.defaults.baseURL + "headerfooter/977");
+         console.log("header footer");
+         this.list = (await result).data;
+         if (this.list.logo) this.showTitle = false;
+       },
+       getImgUrll(pet) {
+         return this.img_url + "/977/" + pet;
+       },
+       showcatlist(){
+         $("#navbarTogglerSidebar").addClass("active")
+       },
+           hidesidemenu(){
+         $("#navbarTogglerSidebar").removeClass("active")
+       },
+     },
+   };
+   </script>
+   
+   
