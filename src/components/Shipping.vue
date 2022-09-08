@@ -321,53 +321,8 @@
                 </div>
               </form>
 
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="check-shipping-m">
-                    <ul class="products-cat-opt">
-                      <li>
-                        <label class="form-check-label"
-                          ><input
-                            type="checkbox"
-                            class="form-check-input"
-                            value="" />Shipping address same as billing
-                          <span class="checkmark"></span
-                        ></label>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-12">
-                  <h5 class="mt-4 mb-4">Shipping Method</h5>
-                  <ul class="products-cat-opt shipping-meth">
-                    <li>
-                      <label class="form-check-label"
-                        ><input
-                          type="radio"
-                          class="form-check-input"
-                          name="radio" />1 Day <strong>$30</strong>
-                        <span class="checkmark_radio"></span
-                      ></label>
-                    </li>
-                    <li>
-                      <label class="form-check-label"
-                        ><input
-                          type="radio"
-                          class="form-check-input"
-                          name="radio" />2-3 Days <strong>$20</strong>
-                        <span class="checkmark_radio"></span
-                      ></label>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-12">
-                  <router-link class="primary nxtbtn" to="payment"
-                    >NEXT</router-link
-                  >
-                </div>
-              </div>
+              
+              
             </div>
           </div>
           <div class="col-sm-4">
@@ -432,12 +387,12 @@
                 </div>
               </div>
 
-              <div class="cartSum-list">
+              <!-- <div class="cartSum-list">
                 <router-link class="primary" to="payment"
                   >PROCEED TO CHECKOUT
                   <i class="fa fa-cart-plus" aria-hidden="true"></i
                 ></router-link>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

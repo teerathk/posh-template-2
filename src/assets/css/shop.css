@@ -761,12 +761,18 @@ label.top-position {
     padding: 0px 10px;
     font-size: 14px;
 }
+.primary.nxtbtn {
+    float: right;
+    margin-bottom: 40px;
+    padding: 8px 18px;
+}
 .form-group input, .form-group select {
     border: 1px solid #5F5F5F;
     height: 56px;
     font-size: 18px;
     font-weight: 500;
     padding-left: 23px;
+    width: 100%;
 }
 .form-group {
     margin-bottom: 1rem;
@@ -1130,7 +1136,6 @@ button.primary {
     background: #ff5c00;
     border: 1px solid #ff5c00;
     border-radius: 4px;
-    width: 100%;
     padding: 6px 8px;
     cursor: pointer;
     color: white;
@@ -1142,7 +1147,7 @@ button.primary {
     margin: 0;
 }
 .form-group input, .form-group select {
-    border: 1px solid #5F5F5F;
+    border: 1px solid #5F5F5F!important;
     height: 56px;
     font-size: 18px;
     font-weight: 500;
