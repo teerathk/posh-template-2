@@ -13,15 +13,13 @@
               </header>
               <div class="left-menu">
                 <ul>
-
-
                   <li class="has-drop-down" v-for="item in list" :key="item.id">
-                  <span class="category-icon">
-                    <i class="fa" :class="item.icon" style="color:#000;"></i>
-                    <!-- <i class="menu-icon">
+                    <span class="category-icon">
+                      <i class="fa" :class="item.icon" style="color: #000"></i>
+                      <!-- <i class="menu-icon">
                     <img :src="getImgUrlCat(item.img)" /> -->
-                  </span>
-                  <router-link
+                    </span>
+                    <router-link
                       :to="{
                         path: 'allproducts',
                         query: { id: 10 },
@@ -29,28 +27,25 @@
                       }"
                       >{{ item.title }}</router-link
                     >
-                  
-                  <!-- <i class="fas fa-angle-right"></i> -->
-                  <ul class="side-submenu">
-                    <li
-                      v-for="subitem in item.active_children"
-                      :key="subitem.id"
-                    >
-                      <router-link
-                        :to="{
-                          path: 'allproducts',
-                          query: { p_id: item.id, id: subitem.id },
-                          props: true,
-                        }"
+
+                    <!-- <i class="fas fa-angle-right"></i> -->
+                    <ul class="side-submenu">
+                      <li
+                        v-for="subitem in item.active_children"
+                        :key="subitem.id"
                       >
-                        {{ subitem.title }}</router-link
-                      >
-                    </li>
-                  </ul>
-                </li>
-
-
-
+                        <router-link
+                          :to="{
+                            path: 'allproducts',
+                            query: { p_id: item.id, id: subitem.id },
+                            props: true,
+                          }"
+                        >
+                          {{ subitem.title }}</router-link
+                        >
+                      </li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -99,7 +94,9 @@
                     data-bs-ride="carousel"
                   >
                     <div class="carousel-indicators">
-                      <button v-for="(images, index) in this.sliders" :key="index"
+                      <button
+                        v-for="(images, index) in this.sliders"
+                        :key="index"
                         type="button"
                         data-bs-target="#banner"
                         :data-bs-slide-to="index"
@@ -110,13 +107,21 @@
                     </div>
                     <!-- The slideshow/carousel -->
                     <div class="carousel-inner">
-                      <div class="carousel-item" v-bind:class="cravings(index)" v-for="(images, index) in this.sliders" :key="index">
-                        <a :href="images.link ? images.link : '#'" target="_blank">
-                        <img
-                           :src="getImgUrll(images.image)"
-                           alt=""
-                           class="d-block"
-                        />
+                      <div
+                        class="carousel-item"
+                        v-bind:class="cravings(index)"
+                        v-for="(images, index) in this.sliders"
+                        :key="index"
+                      >
+                        <a
+                          :href="images.link ? images.link : '#'"
+                          target="_blank"
+                        >
+                          <img
+                            :src="getImgUrll(images.image)"
+                            alt=""
+                            class="d-block"
+                          />
                         </a>
                       </div>
                     </div>
@@ -137,27 +142,34 @@
                       </a>
                     </div>
                     <div class="wish-i">
-                      <span class="cart"> 2 </span>
-                      <img src="/src/assets/images/cart-i.jpg" alt="" />
+                      <router-link to="cart" class="cartitems"
+              >
+              <span class="cart" v-if="itemsincart>0" v-html="itemsincart"></span>
+              <img src="/src/assets/images/cart-i.jpg" alt="" />
+            </router-link>
                     </div>
                   </div>
                   <div class="clearfix"></div>
                   <div class="rightBannerBx">
                     <div class="banner-cont">
-                     <a
-                        :href="this.promotion.link1 ? this.promotion.link1 : '#'"
+                      <a
+                        :href="
+                          this.promotion.link1 ? this.promotion.link1 : '#'
+                        "
                         target="_blank"
-                     >
+                      >
                         <img :src="getImgUrll(this.promotion.image1)" alt="" />
-                     </a>
+                      </a>
                     </div>
                     <div class="banner-cont">
-                     <a
-                        :href="this.promotion.link2 ? this.promotion.link2 : '#'"
+                      <a
+                        :href="
+                          this.promotion.link2 ? this.promotion.link2 : '#'
+                        "
                         target="_blank"
-                     >
+                      >
                         <img :src="getImgUrll(this.promotion.image2)" alt="" />
-                     </a>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -173,16 +185,28 @@
       <div class="container">
         <h2>FEATURED PRODUCTS</h2>
         <div class="row">
-
-
-
-         <div
-              class="col-sm-3"
-              v-for="(product, index) in featuredProducts"
-              :key="index"
-            >
-              <div class="product-item">
-                <div class="pro-img-bx">
+          <div
+            class="col-sm-3"
+            v-for="(product, index) in featuredProducts"
+            :key="index"
+          >
+            <div class="product-item">
+              <div class="pro-img-bx">
+                <router-link
+                  :to="{
+                    path: '/product',
+                    query: { id: product.id },
+                    props: true,
+                  }"
+                >
+                  <img
+                    :src="getImgUrl(product.vendor_id, product.featured_image)"
+                    alt=""
+                  />
+                </router-link>
+              </div>
+              <div class="pro-title-bx">
+                <h3 class="prod-title">
                   <router-link
                     :to="{
                       path: '/product',
@@ -190,38 +214,21 @@
                       props: true,
                     }"
                   >
-                    <img
-                      :src="
-                        getImgUrl(product.vendor_id, product.featured_image)
-                      "
-                      alt=""
-                    />
+                    {{ product.name }}
                   </router-link>
-                </div>
-                <div class="pro-title-bx">
-                  <h3 class="prod-title">
-                    <router-link
-                      :to="{
-                        path: '/product',
-                        query: { id: product.id },
-                        props: true,
-                      }"
-                    >
-                      {{ product.name }}
-                    </router-link>
-                  </h3>
-                  <div class="prod-p-icon">
-                    <span class="pro-price">${{ product.seller_price }}</span
-                    ><span class="pro-icons"
-                      ><img
-                        @click="addtocart2(product)"
-                        src="../assets/img/buy.png"
-                        class="img-fluid" /><img src="../assets/img/heart.png"
-                    /></span>
-                  </div>
+                </h3>
+                <div class="prod-p-icon">
+                  <span class="pro-price">${{ product.seller_price }}</span
+                  ><span class="pro-icons"
+                    ><img
+                      @click="addtocart2(product)"
+                      src="../assets/img/buy.png"
+                      class="img-fluid" /><img src="../assets/img/heart.png"
+                  /></span>
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </section>
@@ -332,19 +339,18 @@
     <section class="middle-deals-section">
       <div class="container">
         <div class="row">
-
           <div class="col-xl-6">
             <div class="left-middle-deals">
-               <a
+              <a
                 :href="this.promotion.link3 ? this.promotion.link3 : '#'"
                 target="_blank"
               >
-               <img
+                <img
                   :src="getImgUrll(this.promotion.image3)"
                   height="240"
                   alt=""
                 />
-               </a>
+              </a>
               <div>
                 <h6>colorful kick</h6>
                 <h4>punchy sandals</h4>
@@ -354,16 +360,16 @@
           </div>
           <div class="col-xl-6">
             <div class="right-middle-deals">
-               <a
+              <a
                 :href="this.promotion.link4 ? this.promotion.link4 : '#'"
                 target="_blank"
               >
-               <img
+                <img
                   :src="getImgUrll(this.promotion.image4)"
                   height="240"
                   alt=""
                 />
-               </a>
+              </a>
 
               <div>
                 <h4>going somewhere?</h4>
@@ -382,190 +388,47 @@
           <div class="col-xl-12">
             <div class="category-products-blocks">
               <div class="cp-bloxks">
-                <h3 class="titleWbg"><span>Fashion</span></h3>
+                <h3 class="titleWbg"><span>Computer</span></h3>
                 <p class="subtitle-content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam arcu, bibendum nec
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Curabitur diam arcu, bibendum nec
                 </p>
               </div>
               <!-- START:: INSIDE PRODUCTS -->
               <div class="ProductBox-temp2">
                 <div class="row g-0">
-                  <div class="cus-col">
+                  <div
+                    class="cus-col"
+                    v-for="(product, index) in this.getHomepageProducts?.cat_one"
+                    :key="index"
+                  >
                     <div class="category-product-block">
-                      <a href="#">
+                      <router-link
+                        @click="forceclick(product.id)"
+                        :to="{
+                          path: '/product',
+                          query: { id: product.id },
+                          props: true,
+                        }"
+                      >
                         <span class="new">New</span>
                         <div>
                           <img
-                            src="/src/assets/images/electronic-01.jpg"
-                            alt=""
-                          />
+                      :src="getImgUrl(
+                                product.vendor_id,
+                                product.featured_image
+                              )"
+                      @error="
+                        $event.target.src =
+                          'https://posh-marketplace.plego.pro/img/product-images/997/no_image.png'
+                      "
+                    />
                         </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                  </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-06.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$30.00 </span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-02.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-07.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price"
-                          >$30.00 <span class="disc">$120.00</span></span
-                        >
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="discount">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-03.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="new">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-08.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$30.00 </span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-04.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-09.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price"
-                          >$30.00 <span class="disc">$120.00</span></span
-                        >
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="new">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-05.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="discount">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-10.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$30.00 </span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="new">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-02.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-03.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$30.00 </span>
-                      </a>
+                        
+                        <h5 v-if="product.name.length<8"> {{ product.name }}</h5>
+  <h5 v-else>{{ product.name.substring(0,15)+"..." }}</h5>
+                        <span class="price">${{ product.seller_price }}</span>
+                      </router-link>
                     </div>
                   </div>
                 </div>
@@ -593,184 +456,43 @@
               <!-- START:: INSIDE PRODUCTS -->
               <div class="ProductBox-temp2">
                 <div class="row g-0">
-                  <div class="cus-col">
+                  
+                  
+                  <div
+                    class="cus-col"
+                    v-for="(product, index) in this.getHomepageProducts?.cat_two"
+                    :key="index"
+                  >
                     <div class="category-product-block">
-                      <a href="#">
+                      <router-link
+                        @click="forceclick(product.id)"
+                        :to="{
+                          path: '/product',
+                          query: { id: product.id },
+                          props: true,
+                        }"
+                      >
                         <span class="new">New</span>
                         <div>
                           <img
-                            src="/src/assets/images/electronic-01.jpg"
-                            alt=""
-                          />
+                      :src="getImgUrl(
+                                product.vendor_id,
+                                product.featured_image
+                              )"
+                      @error="
+                        $event.target.src =
+                          'https://posh-marketplace.plego.pro/img/product-images/997/no_image.png'
+                      "
+                    />
                         </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
+                        
+                        <h5 v-if="product.name.length<8"> {{ product.name }}</h5>
+  <h5 v-else>{{ product.name.substring(0,15)+"..." }}</h5>
+                        <span class="price">${{ product.seller_price }}</span>
+                      </router-link>
                     </div>
                   </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-06.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$30.00 </span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-02.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-07.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price"
-                          >$30.00 <span class="disc">$120.00</span></span
-                        >
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="discount">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-03.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="new">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-08.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$30.00 </span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-04.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-09.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price"
-                          >$30.00 <span class="disc">$120.00</span></span
-                        >
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="new">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-05.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="discount">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-10.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$30.00 </span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="new">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-02.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-03.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$30.00 </span>
-                      </a>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
               <!-- END:: INSIDE PRODUCTS   -->
@@ -787,7 +509,7 @@
           <div class="col-xl-12">
             <div class="category-products-blocks">
               <div class="cp-bloxks">
-                <h3 class="titleWbg"><span>SPORTS</span></h3>
+                <h3 class="titleWbg"><span>SOFTWARE SERVICES</span></h3>
                 <p class="subtitle-content">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Curabitur diam arcu, bibendum nec
@@ -796,182 +518,38 @@
               <!-- START:: INSIDE PRODUCTS -->
               <div class="ProductBox-temp2">
                 <div class="row g-0">
-                  <div class="cus-col">
+                  <div
+                    class="cus-col"
+                    v-for="(product, index) in this.getHomepageProducts?.cat_thr"
+                    :key="index"
+                  >
                     <div class="category-product-block">
-                      <a href="#">
+                      <router-link
+                        @click="forceclick(product.id)"
+                        :to="{
+                          path: '/product',
+                          query: { id: product.id },
+                          props: true,
+                        }"
+                      >
                         <span class="new">New</span>
                         <div>
                           <img
-                            src="/src/assets/images/electronic-01.jpg"
-                            alt=""
-                          />
+                      :src="getImgUrl(
+                                product.vendor_id,
+                                product.featured_image
+                              )"
+                      @error="
+                        $event.target.src =
+                          'https://posh-marketplace.plego.pro/img/product-images/997/no_image.png'
+                      "
+                    />
                         </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                  </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-06.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$30.00 </span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-02.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-07.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price"
-                          >$30.00 <span class="disc">$120.00</span></span
-                        >
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="discount">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-03.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="new">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-08.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$30.00 </span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-04.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-09.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price"
-                          >$30.00 <span class="disc">$120.00</span></span
-                        >
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="new">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-05.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="discount">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-10.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$30.00 </span>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <span class="new">New</span>
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-02.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$70.00</span>
-                      </a>
-                    </div>
-                    </div>
-                    <div class="cus-col">
-                    <div class="category-product-block">
-                      <a href="#">
-                        <div>
-                          <img
-                            src="/src/assets/images/electronic-03.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <h5>Dell Inspiron 20 3059</h5>
-                        <span class="price">$30.00 </span>
-                      </a>
+                        
+                        <h5 v-if="product.name.length<8"> {{ product.name }}</h5>
+  <h5 v-else>{{ product.name.substring(0,15)+"..." }}</h5>
+                        <span class="price">${{ product.seller_price }}</span>
+                      </router-link>
                     </div>
                   </div>
                 </div>
@@ -1124,6 +702,7 @@ export default {
       img_url_cat: axios.defaults.url + "/img/menu-template",
 
       user_id: 0,
+      getHomepageProducts: [],
     };
   },
   async mounted() {
@@ -1134,7 +713,7 @@ export default {
     this.getBestSellerCategories();
     this.getFeaturedProducts();
     this.getJustForYouProducts();
-
+    this.getTopCategoryProducts();
     if (localStorage.getItem("login")) {
       console.log("Login Data");
       const logindata = JSON.parse(localStorage.getItem("login"));
@@ -1274,6 +853,19 @@ export default {
       this.promotion = (await result).data.Promotions;
       console.log(this.list_homepage);
     },
+    async getTopCategoryProducts() {
+      let result = axios.get(
+        axios.defaults.baseURL + "seller/getHomepageProducts"
+      );
+      console.warn("Check Data");
+      this.getHomepageProducts = (await result).data;
+      console.warn(this.getHomepageProducts);
+      // if (obj.success == true) {
+      //   this.getHomepageProducts = obj.data;
+      // } else {
+      //   alert("Issue loading categories");
+      // }
+    },
     async getCategories() {
       let result = axios.get(
         axios.defaults.baseURL + "categorieslimited",
@@ -1324,15 +916,16 @@ export default {
     getImgUrl(vendor, pet) {
       return this.img_url + "/" + vendor + "/" + pet;
     },
+
     getImgUrll(pet) {
       return this.img_url + "/" + this.catimages.seller_id + "/" + pet;
     },
     getImgUrlCat(pet) {
       return this.img_url_cat + "/" + pet;
     },
-    cravings(index){
-      return index==0 ? 'active' : '';
-    }
+    cravings(index) {
+      return index == 0 ? "active" : "";
+    },
   },
 };
 </script>

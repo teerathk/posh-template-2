@@ -48,10 +48,11 @@
                                 </a>
                             </div>
                             <div class="wish-i">
-                                <span class="cart">
-                                    2
-                                </span>
-                                <img src="/src/assets/images/cart-i.jpg" alt="">
+								<router-link to="cart" class="cartitems"
+              >
+              <span class="cart"  v-html="itemsincart"></span>
+              <img src="/src/assets/images/cart-i.jpg" alt="" />
+            </router-link>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -172,202 +173,261 @@
     </div>
 </template>
 <script>
-
-import HeaderComp from './includes/Header.vue'
-import FooterComp from "./includes/Footer.vue";
-import axios from "axios";
-export default {
-  name: "Cart",
-  components: {
-      HeaderComp, FooterComp
-  },
-  data() {
-    return {
-		user_id : null,
-		cartitemslist:[],
-		count_cartitems:0,
-		total_price:0,
-		count:0
-    };
-  },
-
-  async mounted() {
-    this.loadSession();
-	this.getCartData();	
-  },
-  methods: {
-	  loadSession(){
-		if(localStorage.getItem("login")){
-			console.log("Login Data")
+	import HeaderComp from "./includes/Header.vue";
+	import FooterComp from "./includes/Footer.vue";
+	import axios from "axios";
+	export default {
+	  name: "Cart",
+	  components: {
+		HeaderComp,
+		FooterComp,
+	  },
+	  data() {
+		return {
+		  HeaderKey: 0,
+		  user_id: null,
+		  cartitemslist: [],
+		  count_cartitems: 0,
+		  total_price: 0,
+		  count: 0,
+		  img_url: axios.defaults.url + "/img/product-images/",
+		};
+	  },
+	
+	  async mounted() {
+		this.loadSession();
+		this.getCartData();
+	  },
+	  methods: {
+		loadSession() {
+		  if (localStorage.getItem("login")) {
+			console.log("Login Data");
 			const logindata = JSON.parse(localStorage.getItem("login"));
 			console.log(logindata.id);
-			this.user_id = logindata.id;			
-		}
-	  },
-	async getCartData() {
-		this.startLoader();
-		this.total_price = 0;
-		this.count = 0
-		let result = axios.post(
-		axios.defaults.baseURL + "usercartdata",
-		{
-				user_id: this.user_id
+			this.user_id = logindata.id;
+		  }
 		},
-		{ 
-			useCredentails: true 
-		}
-		);
-		console.log("Cart Check Data2");
-		console.log((await result).data);
-		
-		this.cartitemslist = (await result).data;	
-		
-		var totalQty=0;
-		var tempTotalPrice=0;
-		this.count_cartitems = this.cartitemslist.length;
-		this.cartitemslist.forEach(function(items) {
-			console.log("Qty: "+items.quantity)
-			totalQty+=items.quantity
-			tempTotalPrice+=(items.quantity*items.item_price)
-			
-		})
-		this.total_price = tempTotalPrice
-		//this.itemsincart=totalQty;
-		$(".cartitems").children("span").html(totalQty);
-
-		if(localStorage.getItem("login")){
-			console.log("Login Data")
-			const logindata = JSON.parse(localStorage.getItem("login"));
-			this.user_id = logindata.id;			
-			logindata.cartitems=this.cartitemslist;
-			localStorage.setItem("login", JSON.stringify(logindata));
-		}
-		
-
-		//this.count_cartitems = this.cartitemslist.length
-		this.EndLoader();
-	},
-	async removeAll(){
-		this.startLoader();
-		this.cartitemslist = null
-		$(".cartitems").children("span").html(0)
-		let result = axios.post(
-		axios.defaults.baseURL + "removecartdata",
-		{
-				user_id: this.user_id
-		},
-		{ 
-			useCredentails: true 
-		}
-		);
-		
-		console.log("Cart Check Data2");
-		console.log((await result).data);
-
-this.getCartData();	
-		// if(localStorage.getItem("login")){
-		// console.log("Login Data")
-		// const logindata = JSON.parse(localStorage.getItem("login"));
-		// logindata.cartitems=[]
-		// localStorage.setItem("login", JSON.stringify(logindata));
-		// }
-
-
-		this.EndLoader();
-
-	},
-	startLoader() {
-		console.log("karachi");
-		var target_ContId = document.getElementById("loader-container");
-		target_ContId.style.display = "block";
-	},
-	EndLoader() {
-		console.log("pak");
-		var target_ContId = document.getElementById("loader-container");
-		target_ContId.style.display = "none";
-	},
-	myMethod(val, qty){
-		//alert(val)
-		this.count++;
-
-		// if(this.count==1){
-		// 	this.total_price=0
-		// }
-		// if(this.count<=this.cartitemslist.length){
-		// 	this.total_price= this.total_price+(val*qty);
-		// }
-		return;
-	},
-	increment(cart_id){
-		var val = $("#cart_"+cart_id).val();
-		//if(val>=1){
-			val++;
-			$("#cart_"+cart_id).val(val);
-		//}
-		//var val = $this.previousElementSibling.value;
-		//alert(cart_id+" - "+val);
-	},
-	decrement(cart_id){
-		var val = $("#cart_"+cart_id).val();
-		if(val>=1){
-			val--;
-		}
-		$("#cart_"+cart_id).val(val);
-	},
-	removecartitem(cart_id){
-		var val = $("#cart_"+cart_id).val();
-		console.log(cart_id);
-		this.startLoader();
-		//this.cartitemslist = null
-		//$(".cartitems").children("span").html(0)
-		
-		let result = axios.post(
-		axios.defaults.baseURL + "removecartdata",
-		{
-
+		async getCartData() {
+		  this.startLoader();
+	
+		  if (!localStorage.getItem("login")) {
+			if (localStorage.getItem("guest")) {
+			  const guestdata = JSON.parse(localStorage.getItem("guest"));
+			  this.cartitemslist = guestdata;
+			  var tempTotalPrice = 0;
+			  this.count_cartitems = this.cartitemslist.length;
+			  this.cartitemslist.forEach(function (items) {
+				console.log("Qty: " + items.quantity);
+				tempTotalPrice += items.quantity * items.item_price;
+			  });
+			  this.total_price = tempTotalPrice;
+			  $(".cart").show()
+			  $(".cart").html(this.count_cartitems);
+			  if (this.count_cartitems == 0) {
+				this.HeaderKey++;
+				$(".cart").hide();
+			  } else {
+				$(".cart").show()
+			}
+			  //alert("No Logged");
+			} else {
+			  //alert("No Guest");
+			}
+		  } else {
+			this.total_price = 0;
+			this.count = 0;
+			let result = axios.post(
+			  axios.defaults.baseURL + "usercartdata",
+			  {
 				user_id: this.user_id,
-				cart_item_id: cart_id
-
-		},
-		{ 
-			useCredentails: true 
-		}
-		);
-		
-		this.getCartData();	
-		// console.log("Cart Check Data2");
-		// console.log((await result).data);
-
-		// if(localStorage.getItem("login")){
-		// console.log("Login Data")
-		// const logindata = JSON.parse(localStorage.getItem("login"));
-		// logindata.cartitems=[]
-		// localStorage.setItem("login", JSON.stringify(logindata));
-		// }
-
-
-		this.EndLoader();
-
-
-	},
-	updatecart(){
-		//updatecart
-		this.startLoader();
-		$(".ci-push-bx").each(function(){
-			console.log($(this).children("input").val())
-			console.log($(this).children("input").attr("id"))
-
-			axios.post(axios.defaults.baseURL+"updatecart",{
-				quantity: $(this).children("input").val(),
-				cart_id: $(this).children("input").attr("id")
+			  },
+			  {
+				useCredentails: true,
+			  }
+			);
+			console.log("Cart Check Data2");
+			console.log((await result).data);
+	
+			this.cartitemslist = (await result).data;
+			var tempTotalPrice = 0;
+			this.count_cartitems = this.cartitemslist.length;
+			if (this.count_cartitems == 0) {
+			  //this.HeaderKey++;
+			}
+			this.cartitemslist.forEach(function (items) {
+			  console.log("Qty: " + items.quantity);
+			  tempTotalPrice += items.quantity * items.item_price;
 			});
-		});
-		this.getCartData();
-		this.EndLoader();
-	}
-
-  }
-
-
-};
-</script>
+			this.total_price = tempTotalPrice;
+			//this.itemsincart=totalQty;
+			$(".cart").html(this.count_cartitems);
+			if (this.count_cartitems == 0) {
+				$(".cart").hide();
+			} else {
+				$(".cart").show()
+			}
+	
+			if (localStorage.getItem("login")) {
+			  console.log("Login Data");
+			  const logindata = JSON.parse(localStorage.getItem("login"));
+			  this.user_id = logindata.id;
+			  logindata.cartitems = this.cartitemslist;
+			  localStorage.setItem("login", JSON.stringify(logindata));
+			}
+		  }
+		  //this.count_cartitems = this.cartitemslist.length
+		  this.EndLoader();
+		},
+		async removeAll() {
+		  this.startLoader();
+		  this.cartitemslist = null;
+		  $(".cart").html(0);
+	
+		  $(".cart").hide();
+	
+		  let result = axios.post(
+			axios.defaults.baseURL + "removecartdata",
+			{
+			  user_id: this.user_id,
+			},
+			{
+			  useCredentails: true,
+			}
+		  );
+	
+		  console.log("Cart Check Data2");
+		  console.log((await result).data);
+		  if (!localStorage.getItem("login") && localStorage.getItem("guest")) {
+			localStorage.clear();
+		  }
+	
+		  this.getCartData();
+		  // if(localStorage.getItem("login")){
+		  // console.log("Login Data")
+		  // const logindata = JSON.parse(localStorage.getItem("login"));
+		  // logindata.cartitems=[]
+		  // localStorage.setItem("login", JSON.stringify(logindata));
+		  // }
+	
+		  this.EndLoader();
+		  alert("Products Removed");
+		},
+		startLoader() {
+		  console.log("karachi");
+		  var target_ContId = document.getElementById("loader-container");
+		  target_ContId.style.display = "block";
+		},
+		EndLoader() {
+		  console.log("pak");
+		  var target_ContId = document.getElementById("loader-container");
+		  target_ContId.style.display = "none";
+		},
+		myMethod(val, qty) {
+		  //alert(val)
+		  this.count++;
+	
+		  // if(this.count==1){
+		  // 	this.total_price=0
+		  // }
+		  // if(this.count<=this.cartitemslist.length){
+		  // 	this.total_price= this.total_price+(val*qty);
+		  // }
+		  return;
+		},
+		increment(cart_id) {
+		  var val = $("#cart_" + cart_id).val();
+		  //if(val>=1){
+		  val++;
+		  $("#cart_" + cart_id).val(val);
+		  //}
+		  //var val = $this.previousElementSibling.value;
+		  //alert(cart_id+" - "+val);
+		},
+		decrement(cart_id) {
+		  var val = $("#cart_" + cart_id).val();
+		  if (val > 1) {
+			val--;
+		  }
+		  $("#cart_" + cart_id).val(val);
+		},
+		getImgUrl(vendor, pet) {
+		  console.log(this.img_url + "/" + vendor + "/" + pet);
+		  return this.img_url + "/" + vendor + "/" + pet;
+		},
+		removecartitem(cart_id, product_id) {
+		  var val = $("#cart_" + cart_id).val();
+		  console.log(cart_id);
+		  this.startLoader();
+		  //this.cartitemslist = null
+		  
+	
+		  let result = axios.post(
+			axios.defaults.baseURL + "removecartdata",
+			{
+			  user_id: this.user_id,
+			  cart_item_id: cart_id,
+			},
+			{
+			  useCredentails: true,
+			}
+		  );
+		  if (!localStorage.getItem("login")) {
+			const guestdata = JSON.parse(localStorage.getItem("guest"));
+			if (guestdata.length > 0) {
+			  guestdata.forEach((element, index) => {
+				if (element.product_id == product_id) {
+				  guestdata.splice(index);
+				}
+			  });
+			  localStorage.setItem("guest", JSON.stringify(guestdata));
+			}
+		  }
+		  this.getCartData();
+		  // console.log("Cart Check Data2");
+		  // console.log((await result).data);
+	
+		  // if(localStorage.getItem("login")){
+		  // console.log("Login Data")
+		  // const logindata = JSON.parse(localStorage.getItem("login"));
+		  // logindata.cartitems=[]
+		  // localStorage.setItem("login", JSON.stringify(logindata));
+		  // }
+		  alert("Products Removed");
+	
+		  this.EndLoader();
+		},
+		updatecart() {
+		  //updatecart
+		  this.startLoader();
+		  $(".ci-push-bx").each(function () {
+			// console.log($(this).children("input").val())
+			// console.log($(this).children("input").attr("id"))
+			var product_id = $(this).children(".prod_id").val();
+	
+			axios.post(axios.defaults.baseURL + "updatecart", {
+			  quantity: $(this).children("input").val(),
+			  cart_id: $(this).children("input").attr("id"),
+			});
+	
+			if (!localStorage.getItem("login")) {
+			  const guestdata = JSON.parse(localStorage.getItem("guest"));
+			  if (guestdata.length > 0) {
+				guestdata.forEach((element, index) => {
+				  if (element.product_id == product_id) {
+					// guestdata.splice(index)
+					element.quantity = $(this).children("input").val();
+					guestdata[index] = element;
+				  }
+				});
+				localStorage.setItem("guest", JSON.stringify(guestdata));
+			  }
+			}
+		  });
+	
+		  this.getCartData();
+		  // this.EndLoader();
+		  // alert("Products Quantity Updated");
+		},
+	  },
+	};
+	</script>
