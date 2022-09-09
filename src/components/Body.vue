@@ -243,30 +243,66 @@
               <div class="todayDeals-Bx">
                 <div class="leftTodayBx">
                   <div class="tdbx">
-                    <img
+                    <a
+                  :href="
+                    this.catimages.link_new ? this.catimages.link_new : '#'
+                  "
+                  target="_blank"
+                >
+                  <img
+                    :src="getImgUrll(this.catimages.images_new)"
+                    alt=""
+                    class="img-fluid"
+                    height="323"
+                /></a>
+                    <!-- <img
                       class="img-fluid"
                       src="/src/assets/images/deals-bx-1.jpg"
-                    />
+                    /> -->
                   </div>
                   <div class="tdbx">
-                    <img
-                      class="img-fluid"
-                      src="/src/assets/images/deals-bx-3.jpg"
-                    />
-                  </div>
+                    <a
+                  :href="
+                    this.catimages.link_hot ? this.catimages.link_hot : '#'
+                  "
+                  target="_blank"
+                >
+                  <img
+                    :src="getImgUrll(this.catimages.images_hot)"
+                    alt=""
+                    class="img-fluid"
+                    height="210"
+                  />
+                </a>                  </div>
                 </div>
                 <div class="rightTodayBx">
                   <div class="tdbx">
-                    <img
-                      class="img-fluid"
-                      src="/src/assets/images/deals-bx-2.jpg"
-                    />
+                    <a
+                  :href="
+                    this.catimages.link_cat ? this.catimages.link_cat : '#'
+                  "
+                  target="_blank"
+                >
+                  <img
+                    :src="getImgUrll(this.catimages.images_cat)"
+                    width="100%"
+                    alt=""
+                    height="152"
+                /></a>
+
                   </div>
                   <div class="tdbx">
-                    <img
-                      class="img-fluid"
-                      src="/src/assets/images/deals-bx-4.jpg"
-                    />
+                    <a
+                  :href="
+                    this.catimages.link_elec ? this.catimages.link_elec : '#'
+                  "
+                  target="_blank"
+                >
+                  <img
+                    :src="getImgUrll(this.catimages.images_elec)"
+                    alt=""
+                    height="385"
+                /></a>
                   </div>
                 </div>
               </div>
