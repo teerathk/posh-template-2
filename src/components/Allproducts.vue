@@ -168,14 +168,14 @@
                           type="text"
                           v-model="min_price"
                           placeholder="Min"
-                          class="form-control min-price"
+                          class="h-34 form-control min-priceprice"
                         />
                         <span class="seperator"> - </span>
                         <input
                           type="text"
                           v-model="max_price"
                           placeholder="Max"
-                          class="form-control max-price"
+                          class="h-34 form-control max-price"
                         />
                         <button
                           class="primary h-34"

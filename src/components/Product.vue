@@ -152,10 +152,13 @@
 
               <div class="addtocart-select-pm">
                 <form method="post" @submit.prevent="addtocart">
+                <div class="row">
+                  <div class="col-sm-7">               
                   <div class="qty-push-bx">
                     <input type="hidden" v-model="product_id" />
                     <input type="hidden" v-model="user_id" />
-                    <input
+								<button class="incrementNum btnplus-item">+</button>
+								<input
                       type="number"
                       min="1"
                       max="100"
@@ -164,17 +167,19 @@
                       id="txtAcrescimo"
                       class="qty-number"
                     />
-                  </div>
-
-                  <button type="submit" class="primary" on>Add to Cart</button>
-                </form>
+								<button class="incrementNum btnminus-item">-</button>
+							  </div>
               </div>
+                <div class="col-sm-5">
+                  <button type="submit" class="primary" on>Add to Cart</button>
+                  </div>
+              </div>
+                </form>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
+          </div>
+          </div>
+          </div></div>
     <div class="container bgcolor-gl mb-5">
       <div class="produ-listing-bx cart-c">
         <div class="row">
