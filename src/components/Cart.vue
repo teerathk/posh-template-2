@@ -111,30 +111,75 @@
 									<div class="cartI-4">
 									</div>
 								</div>
-								<div class="cartItems-box" v-for="item in cartitemslist" :key="item.id">
-									
-									
-									<div class="cartI-1">
-										<div class="cart-item-img" style="width:100px;"><img src="/src/assets/img/cart-item-1.png" alt=""
-												class="img-fluid"></div>
-										<p >{{item.name}} {{item.description}}</p>
-									</div>
-									<div class="cartI-2">
-										<div class="ci-push-bx">
-											<input v-bind:value="''+item.quantity+''" v-bind:id="'cart_'+item.id+''" class="qty-number">
-											<div class="cart-add-item">
-												<button class="btnplus-item" v-on:click="increment(item.id)" >+</button>
-												<button class="btnminus-item" v-on:click="decrement(item.id)">-</button>
-											</div>
-										</div>
-									</div>
-									<div class="cartI-3">
-										<h5 class="ci-price">${{item.net_price }}</h5>
-									</div>
-									<div class="cartI-4">
-										<div class="carti-remove"><button v-on:click="removecartitem(item.id)"><img src="/src/assets/img/remove-icon.png" alt="" class="img-fluid"></button></div>
-									</div>
-								</div>
+								<div
+                class="cartItems-box"
+                v-for="item in cartitemslist"
+                :key="item.id"
+              >
+                <div class="cartI-1">
+                  <div class="cart-item-img">
+                    <img
+                      class="img-fluid"
+                      :src="getImgUrl(item.vendor_id, item.featured_image)"
+                      @error="
+                        $event.target.src =
+                          'https://posh-marketplace.plego.pro/img/product-images/997/no_image.png'
+                      "
+                    />
+                    <!-- <img src="../assets/img/cart-item-1.png" alt=""
+												class="img-fluid">-->
+                  </div>
+                  <div class="cartProduct-bx">
+                    <p class="titleNamep">{{ item.name }}</p>
+                    <p class="descNamep">{{ item.description }}</p>
+                  </div>
+                </div>
+                <div class="cartI-2">
+                  <div class="ci-push-bx">
+                    <input
+                      v-bind:value="'' + item.quantity + ''"
+                      v-bind:id="'cart_' + item.id + ''"
+                      class="qty-number cart_id"
+                    />
+                    <input
+                      type="hidden"
+                      v-bind:value="'' + item.product_id + ''"
+                      v-bind:id="'' + item.product_id + '_'"
+                      class="qty-number prod_id"
+                    />
+                    <div class="cart-add-item">
+                      <button
+                        class="btnplus-item"
+                        v-on:click="increment(item.id)"
+                      >
+                        +
+                      </button>
+                      <button
+                        class="btnminus-item"
+                        v-on:click="decrement(item.id)"
+                      >
+                        -
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="cartI-3">
+                  <h5 class="ci-price">${{ item.item_price }}</h5>
+                </div>
+                <div class="cartI-4">
+                  <div class="carti-remove">
+                    <button
+                      v-on:click="removecartitem(item.id, item.product_id)"
+                    >
+                      <img
+                        src="../assets/img/remove-icon.png"
+                        alt=""
+                        class="img-fluid"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
 								<div class="cart-item-updates">
 									<button class="primary" v-on:click="updatecart"><img src="/src/assets/img/edit-icon.png" alt="">Update cart</button>
 									<button class="secndary" v-on:click="removeAll" ><img src="/src/assets/img/remove-icon.png" alt="">REMOVE ALL</button>
