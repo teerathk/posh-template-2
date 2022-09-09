@@ -12,6 +12,10 @@ import Login from './components/Login.vue'
 import Checkout from './components/Checkout.vue'
 import Shipping from './components/Shipping.vue'
 
+import UserDashboard from './components/user/UserDashboard.vue'
+import Allorders from './components/user/Allorders.vue'
+import Pendingorders from './components/user/Pendingorders.vue'
+import Trackorder from './components/user/Trackorder.vue'
 
 const routes = [
     {
@@ -74,6 +78,26 @@ const routes = [
         name: 'Payment',
         path: '/payment',
         component: Payment
+    },
+    {
+        name: 'dashboard',
+        path: '/dashboard',
+        component: UserDashboard
+    },
+    {
+        name: 'allorders',
+        path: '/allorders',
+        component: Allorders
+    },
+    {
+        name: 'pending',
+        path: '/pending',
+        component: Pendingorders
+    },
+    {
+        name: 'tracking',
+        path: '/tracking',
+        component: Trackorder
     },
 ]
 
