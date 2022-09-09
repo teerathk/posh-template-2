@@ -885,6 +885,11 @@ ul.products-cat-opt.shipping-meth {
     font-size: 26px;
     font-weight: bold;
 }
+.cart-add-item button.btnplus-item {
+    position: absolute;
+    height: 22px;
+    top: 0;
+}
 .short-pm-detail ul {
     padding-left: 23px;
 }
