@@ -7,11 +7,14 @@
       <div class="container">
         <div class="row g-0">
           <div class="col-xl-3">
-            <div class="left-bar">
+            <div class="left-bar" style="height: 100%; width: 100%;">
               <header>
                 <h3>All Categories</h3>
               </header>
               <div class="left-menu">
+                <div class="close-resp">
+                        <i class="fa fa-close"></i>
+                     </div>
                 <ul>
                   <li class="has-drop-down" v-for="item in list" :key="item.id">
                     <span class="category-icon">
@@ -51,6 +54,9 @@
             </div>
           </div>
           <div class="col-xl-9">
+            <div class="resp-menuIcon">
+                  <i></i>
+               </div>
             <div class="row g-0">
               <div class="col-xl-9">
                 <div class="category-search">
