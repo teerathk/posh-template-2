@@ -2377,9 +2377,9 @@ textarea:focus:-ms-input-placeholder {
     margin: 0 auto 30px;
     width: 100%;
    }
-   .featured-categores .row {
+   /* .featured-categores .row {
     display: block;
-   }
+   } */
    .today-deals {
     max-width: 100%;
     width: 100%;
@@ -2551,16 +2551,6 @@ textarea:focus:-ms-input-placeholder {
   #category-electronics, 
   #category-sports {
     padding-top: 170px;
-  }
-  .category-section .category-products-blocks:before {
-    position: absolute;
-    top: -32px;
-    right: 0;
-    left: -32px;
-    background: #f2f2f2;
-    height: 183px;
-    content: "";
-    z-index: 1;
   }
   .owl-theme .owl-dots .owl-dot {
     display: block;
