@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router"
 
 
 import Body from './components/Body.vue'
+import Profile from './components/user/Profile.vue'
 import Allproducts from './components/Allproducts.vue'
 import Product from './components/Product.vue'
 import Cart from './components/Cart.vue'
@@ -43,6 +44,11 @@ const routes = [
         path: '/product/:id?',
         component: Product,
         props: true
+    },
+    {
+        name: 'Profile',
+        path: '/profile',
+        component: Profile
     },
     {
         name: 'Login',

@@ -150,7 +150,7 @@
                     <div class="wish-i">
                       <router-link to="cart" class="cartitems"
               >
-              <span class="cart" v-if="itemsincart>0" v-html="itemsincart"></span>
+              <span class="cart" v-html="itemsincart"></span>
               <img src="/src/assets/images/cart-i.jpg" alt="" />
             </router-link>
                     </div>
@@ -296,7 +296,7 @@
                     height="152"
                 /></a>
 
-                
+
                   </div>
                   <div class="tdbx">
                     <a

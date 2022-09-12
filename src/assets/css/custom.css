@@ -1286,6 +1286,7 @@ ul.side-submenu {
   background: #fff;
   border: 1px solid #e1e1e1;
   height: 500px;
+  overflow: hidden;
 }
 .rightTodayBx {
   width: 60%;
@@ -1566,11 +1567,27 @@ ul.side-submenu {
 .category-section .category-product-block img:hover,
 .today-deals-slider img:hover{
   transition: transform .2s;
-  transform: scale(1.30);
+  transform: scale(1.20);
 }
 .featured-categores
 .category-box:hover {
 	overflow: hidden;
+}
+.cat-option-pg form {
+  margin-bottom: 0;
+}
+nav.pagiBox-bx a.page-link{color: #ff5c00;}
+nav.pagiBox-bx .page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #ff5c00;
+  border-color: #ff5c00;
+}
+input.h-34.form-control.max-price,input.h-34.form-control.min-priceprice {
+  height: 38px!important;
+}
+.form-group.min-max-bx {
+  margin-bottom: 0;
 }
 .category-title {
     position: relative;

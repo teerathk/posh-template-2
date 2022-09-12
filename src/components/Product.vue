@@ -55,7 +55,7 @@
                 <div class="wish-i">
                   <router-link to="cart" class="cartitems"
               >
-              <span class="cart" v-if="itemsincart>0" v-html="itemsincart"></span>
+              <span class="cart" ></span>
               <img src="/src/assets/images/cart-i.jpg" alt="" />
             </router-link>
                 </div>
@@ -114,8 +114,88 @@
         <div class="row mt-5">
           <div class="col-sm-5">
             <div class="singal-product">
+              <div class="gallery-pm-main">
+                  <!-- START GALLERY HERE -->
+
+
+                  
+                  <div class="mySlides right-main">
+                    <img
+                      :src="
+                        getImgUrl(
+                          product_info.vendor_id,
+                          product_info.featured_image
+                        )
+                      "
+                      style="width: 100%"
+                    />
+                  </div>
+
+                  <div
+                    class="mySlides right-main"
+                    v-for="(item, index) in gallery"
+                    :key="index"
+                  >
+                    <img
+                      :src="getImgUrl(product_info.vendor_id, item)"
+                      style="width: 100%"
+                    />
+                  </div>
+
+
+
+
+
+                  <div class="row gallery-pm-thumb">
+                    <div
+                    class="left-thumbs"
+                      
+                    >
+                    <ul>
+                      <li><img
+                        class="demo cursor active"
+                        :src="
+                          getImgUrl(
+                            product_info.vendor_id,
+                            product_info.featured_image
+                          )
+                        "
+                        width="70"
+                        height="70"
+                        style="width: 100%"
+                        @click="currentSlide(1)"
+                        alt="The Woods"
+                      /></li>
+                  <li v-for="(item, index) in gallery"
+                      :key="index">
+                      <img
+                        class="demo cursor"
+                        :src="getImgUrl(product_info.vendor_id, item)"
+                        width="70"
+                        height="70"
+                        style="width: 100%"
+                        @click="currentSlide(index + 2)"
+                      /></li></ul>
+                    </div>
+                  </div>
+                  <!-- END:: GALLERY HERE -->
+                </div>
+<!-- 
+
+
               <div class="left-thumbs">
                 <ul>
+                  <li>
+                    <img
+                    :src="
+                        getImgUrl(
+                          product_info.vendor_id,
+                          product_info.featured_image
+                        )
+                      "                      style="width: 100%"
+                    />
+                    </li>
+
                   <li v-for="(item, index) in gallery"
                     :key="index">
                     <img
@@ -126,6 +206,9 @@
 
                 </ul>
               </div>
+
+
+
               <div class="right-main">
                <img
                       :src="
@@ -136,8 +219,7 @@
                       "
                       style="width: 100%"
                     />
-                <!-- <img src="/src/assets/images/akn-1250-1.png" /> -->
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="col-sm-7">
@@ -152,10 +234,13 @@
 
               <div class="addtocart-select-pm">
                 <form method="post" @submit.prevent="addtocart">
+                <div class="row">
+                  <div class="col-sm-7">               
                   <div class="qty-push-bx">
                     <input type="hidden" v-model="product_id" />
                     <input type="hidden" v-model="user_id" />
-                    <input
+								<button class="incrementNum btnplus-item">+</button>
+								<input
                       type="number"
                       min="1"
                       max="100"
@@ -164,17 +249,19 @@
                       id="txtAcrescimo"
                       class="qty-number"
                     />
-                  </div>
-
-                  <button type="submit" class="primary" on>Add to Cart</button>
-                </form>
+								<button class="incrementNum btnminus-item">-</button>
+							  </div>
               </div>
+                <div class="col-sm-5">
+                  <button type="submit" class="primary" on>Add to Cart</button>
+                  </div>
+              </div>
+                </form>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
+          </div>
+          </div>
+          </div></div>
     <div class="container bgcolor-gl mb-5">
       <div class="produ-listing-bx cart-c">
         <div class="row">
@@ -403,13 +490,19 @@ export default {
       console.log("Login Data");
       const logindata = JSON.parse(localStorage.getItem("login"));
       this.cartform.user_id = logindata.id;
+      $(".cart").html(logindata.cartitems.length);
+      if (logindata.cartitems.length == 0) {
+        $(".cart").hide();
+      } else {
+        $(".cart").show();
+      }
     } else if (localStorage.getItem("guest")) {
       const guestdata = JSON.parse(localStorage.getItem("guest"));
-      $(".cartitems").children("span").html(guestdata.length);
+      $(".cart").html(guestdata.length);
       if (guestdata.length == 0) {
-        $(".cartitems").children("span").hide();
+        $(".cart").hide();
       } else {
-        $(".cartitems").children("span").show();
+        $(".cart").show();
       }
     }
     this.cartform.product_id = this.$route.query.id;
@@ -530,11 +623,11 @@ export default {
         //alert(guestdata);
         //this.itemsincart = guestdata.length
 
-        $(".cartitems").children("span").html(guestdata.length);
+        $(".cart").html(guestdata.length);
         if (guestdata.length == 0) {
-          $(".cartitems").children("span").hide();
+          $(".cart").hide();
         } else {
-          $(".cartitems").children("span").show();
+          $(".cart").show();
         }
 
         alert("Updated Cart");
@@ -558,12 +651,12 @@ export default {
               //   totalQty+=items.quantity
               // })
               //this.itemsincart=totalQty;
-              $(".cartitems").children("span").html(totalQty);
+              $(".cart").html(totalQty);
 
               if (totalQty == 0) {
-                $(".cartitems").children("span").hide();
+                $(".cart").hide();
               } else {
-                $(".cartitems").children("span").show();
+                $(".cart").show();
               }
 
               if (localStorage.getItem("login")) {
@@ -644,11 +737,11 @@ export default {
 
         const guestdata = JSON.parse(localStorage.getItem("guest"));
         this.itemsincart = guestdata.length;
-        $(".cartitems").children("span").html(this.itemsincart);
+        $(".cart").html(this.itemsincart);
         if (this.itemsincart == 0) {
-          $(".cartitems").children("span").hide();
+          $(".cart").hide();
         } else {
-          $(".cartitems").children("span").show();
+          $(".cart").show();
         }
 
         this.HeaderKey++;
@@ -668,11 +761,11 @@ export default {
               alert("Product Added to the Cart");
 
               this.itemsincart = obj.message.cartitems.length;
-              $(".cartitems").children("span").html(this.itemsincart);
+              $(".cart").html(this.itemsincart);
               if (this.itemsincart == 0) {
-                $(".cartitems").children("span").hide();
+                $(".cart").hide();
               } else {
-                $(".cartitems").children("span").show();
+                $(".cart").show();
               }
               if (localStorage.getItem("login")) {
                 console.log("Login Data");
@@ -712,31 +805,31 @@ export default {
       return this.img_url + "/" + vendor + "/" + pet;
     },
     showSlides(n) {
-      // var i;
-      // var slides = document.getElementsByClassName("mySlides");
-      // var dots = document.getElementsByClassName("demo");
-      // // var captionText = document.getElementById("caption");
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      // var captionText = document.getElementById("caption");
 
-      // if (n > slides.length) {
-      //   this.slideIndex = 1;
-      // }
-      // if (n < 1) {
-      //   this.slideIndex = slides.length;
-      // }
-      // for (i = 0; i < slides.length; i++) {
-      //   slides[i].style.display = "none";
-      // }
-      // for (i = 0; i < dots.length; i++) {
-      //   dots[i].className = dots[i].className.replace(" active", "");
-      // }
-      // console.log("slides");
-      // console.log(slides);
-      // console.log(this.slideIndex);
-      // if (n > slides.length) {
-      //   this.slideIndex = 1;
-      // }
-      // slides[this.slideIndex - 1].style.display = "block";
-      // dots[this.slideIndex - 1].className += " active";
+      if (n > slides.length) {
+        this.slideIndex = 1;
+      }
+      if (n < 1) {
+        this.slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      console.log("slides");
+      console.log(slides);
+      console.log(this.slideIndex);
+      if (n > slides.length) {
+        this.slideIndex = 1;
+      }
+      slides[this.slideIndex - 1].style.display = "block";
+      dots[this.slideIndex - 1].className += " active";
       // captionText.innerHTML = dots[this.slideIndex-1].alt;
     },
     // END:: Product page Slideshow
