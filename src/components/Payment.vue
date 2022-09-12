@@ -206,44 +206,23 @@
                         faster payments.
                       </p>
                     </div>
-                    <div class="paypal-box">
-                      <ul class="products-cat-opt">
-                        <li>
-                          <label class="form-check-label"
-                            ><input
-                              type="radio"
-                              name="paymentgateway"
-                              class="form-check-input" />PayPal<span
-                              class="checkmark_radio"
-                            ></span
-                          ></label>
-                        </li>
-                      </ul>
-                      <img
-                        src="../assets/img/paypal-icon.png"
-                        class="img-paypal"
-                      />
-                    </div>
+
                     <div class="col-12">
+
+    <div id="smart-button-container">
+      <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
                       <button
+                      id="pyaro"
                         class="primary nxtbtn"
                         v-on:click="placeorder"
                         v-if="count_cartitems"
+                        style="display: none;"
                       >
                         PLACE ORDER
                       </button>
-                      <div class="modal paypaloverlay">
-                        <button
-                          type="button"
-                          class="close closebtnPym"
-                          v-on:click="isHidden = !isHidden"
-                        >
-                          <span class="closeXbtn" aria-hidden="true"
-                            >&times;</span
-                          >
-                        </button>
-                        <iframe id="modalPaypalBx" src="" title=""></iframe>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -327,15 +306,30 @@ export default {
     FooterComp,
   },
   async mounted() {
+
+
     this.loadSession();
     this.getCartData();
 
-    let recaptchaScript = document.createElement("script");
-    recaptchaScript.setAttribute(
-      "src",
-      "https://www.paypal.com/sdk/js?client-id=AbFTmNl7-uK6DwkZWgjd1UbT-hEISlYGNKlbe_DeiioKq7GCTwL786VNO_9B-fSljY4s85MLdPu_gyq8"
-    );
-    document.head.appendChild(recaptchaScript);
+
+
+
+
+
+    // let recaptchaScript = document.createElement("script");
+    // recaptchaScript.setAttribute(
+    //   "src",
+    //   "https://www.paypal.com/sdk/js?client-id=AbFTmNl7-uK6DwkZWgjd1UbT-hEISlYGNKlbe_DeiioKq7GCTwL786VNO_9B-fSljY4s85MLdPu_gyq8"
+    // );
+    // document.head.appendChild(recaptchaScript);
+
+    const script = document.createElement("script");
+    script.src =
+    "https://www.paypal.com/sdk/js?client-id=AeGIexliJjrLgo1pvuD34jNON2clgKR1bcx4bAx1DSi-ryq-9gRE5Lr5Yh2v0XWUFFap9yTsYk6G9Zo-&currency=USD"
+      ;
+    script.addEventListener("load", this.initPayPalButton);
+    document.body.appendChild(script);
+
   },
 
   data() {
@@ -359,6 +353,82 @@ export default {
     };
   },
   methods: {
+
+    initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'pill',
+          color: 'blue',
+          layout: 'vertical',
+          label: 'paypal',
+          
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"amount":{"currency_code":"USD","value":26.05,"breakdown":{"item_total":{"currency_code":"USD","value":1},"shipping":{"currency_code":"USD","value":25},"tax_total":{"currency_code":"USD","value":0.05}}}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // this.placeorder();
+            document.getElementById("pyaro").click();
+            // Or go to another URL:  actions.redirect('thank_you.html');
+            
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    },
+
+
+    async InitiatePaypal(){
+      this.loaded = true;
+      window.paypal
+        .Buttons({
+            style: {
+              shape: "pill",
+              color: "gold",
+              layout: "vertical",
+              label: "pay",
+            },
+          createOrder: (data, actions) => {
+            return actions.order.create({
+              purchase_units: [
+                {
+                  description: this.product.description,
+                  amount: {
+                    currency_code: "USD",
+                    value: this.product.price,
+                  },
+                },
+              ],
+            });
+          },
+          onApprove: async (data, actions) => {
+            const order = await actions.order.capture();
+            this.paidFor = true;
+            console.log(order);
+          },
+          onError: (err) => {
+            console.log(err);
+          },
+        })
+        .render(this.$refs.paypal);
+    },
     async placeorder() {
       // alert($(".csi-total-amount").children("strong").html());
       var totalamount = $(".csi-total-amount").children("strong").html();
@@ -396,31 +466,35 @@ export default {
               $(".cart").html(0);
               $(".cart").hide();
 
+              this.$router.push("success");
               console.log(response);
-              let result = axios
-                .get(axios.defaults.baseURL + "processPaypal", {
-                  params: {
-                    user_id: this.user_id,
-                    price: totalamount,
-                    orderid: order_id,
-                  },
-                })
-                .then(
-                  (response) => {
-                    var resultset = response.data;
-                    console.log(resultset);
-                    if (resultset.status == 1) {
-                      window.open(resultset.message, "_self");
-                      // $("iframe").prop("src", resultset.message);
-                      // $(".modal").show();
+              // let result = axios
+              //   .get(axios.defaults.baseURL + "processPaypal", {
+              //     params: {
+              //       user_id: this.user_id,
+              //       price: totalamount,
+              //       orderid: order_id,
+              //     },
+              //   })
+              //   .then(
+              //     (response) => {
+              //       var resultset = response.data;
+              //       console.log(resultset);
+              //       if (resultset.status == 1) {
+              //         // window.open(resultset.message, "_self");
+              //         this.$router.push("success");
 
-                      // $(".span.closeXbtn").show();
-                    }
-                  },
-                  (error) => {
-                    console.log(error);
-                  }
-                );
+
+              //         // $("iframe").prop("src", resultset.message);
+              //         // $(".modal").show();
+
+              //         // $(".span.closeXbtn").show();
+              //       }
+              //     },
+              //     (error) => {
+              //       console.log(error);
+              //     }
+              //   );
             } else {
               alert("Order Not Successful");
             }

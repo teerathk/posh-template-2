@@ -41,19 +41,19 @@
                         <div class="shopping-cart">
                             <div class="wish-i">
                                 <a href="#">
-                                    <img src="images/wish-i.jpg" alt="">
+                                    <img src="/src/assets/images/wish-i.jpg" alt="">
                                 </a>
                             </div>
                             <div class="wish-i">
                                 <a href="#">
-                                    <img src="images/refresh-i.jpg" alt="">
+                                    <img src="/src/assets/images/refresh-i.jpg" alt="">
                                 </a>
                             </div>
                             <div class="wish-i">
                                 <span class="cart">
                                     2
                                 </span>
-                                <img src="images/cart-i.jpg" alt="">
+                                <img src="/src/assets/images/cart-i.jpg" alt="">
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="show-all-cat">
-                        <span><img src="img/menu-template/category.png">Show All Categories <i class="fa fa-chevron-down"></i></span>
+                        <span><img src="/src/assets/img/menu-template/category.png">Show All Categories <i class="fa fa-chevron-down"></i></span>
                         <ul>
                             <li>Cat A</li>
                             <li>Cat B</li>
@@ -200,7 +200,7 @@
                     <div class="cartSummary-bx shipping-right">
                         <div class="cartsum-title">Your Order</div>
                         <div class="youorder-opt-bx">
-                            <img src="img/cart-item-1.png" alt="">
+                            <img src="/src/assets/img/cart-item-1.png" alt="">
                             <div class="youorder-item">
                                 <h5>ASUS VivoBook 15 S513</h5>
                                 <div class="yr-disc">
@@ -211,7 +211,7 @@
                             </div>
                         </div>
                         <div class="youorder-opt-bx">
-                            <img src="img/cart-item-2.png" alt="">
+                            <img src="/src/assets/img/cart-item-2.png" alt="">
                             <div class="youorder-item">
                                 <h5>ASUS UltraPad Pro</h5>
                                 <div class="yr-disc">
@@ -246,12 +246,12 @@
                     <div class="product-item">                
                         <div class="pro-img-bx">
                             <a href="#">
-                                <img src="img/810G-B68TYL1-10.png" alt="">
+                                <img src="/src/assets/img/810G-B68TYL1-10.png" alt="">
                             </a>
                         </div>
                         <div class="pro-title-bx">
                             <h3 class="prod-title">DELL E13 Flip EVO Professional Laptop</h3>
-                            <div class="prod-p-icon"><span class="pro-price">$1,200.50</span><span class="pro-icons"><img src="images/buy.png" class="img-fluid"><img src="images/heart.png"></span></div>
+                            <div class="prod-p-icon"><span class="pro-price">$1,200.50</span><span class="pro-icons"><img src="/src/assets/images/buy.png" class="img-fluid"><img src="/src/assets/images/heart.png"></span></div>
                         </div>
                     </div>
                 </div>
@@ -259,12 +259,12 @@
                     <div class="product-item">                
                         <div class="pro-img-bx">
                             <a href="#">
-                                <img src="img/810G-B68TYL1-3.png" alt="">
+                                <img src="/src/assets/img/810G-B68TYL1-3.png" alt="">
                             </a>
                         </div>
                         <div class="pro-title-bx">
                             <h3 class="prod-title">Acer Predator Helios 300 PH315-54-760S Gaming Laptop</h3>
-                            <div class="prod-p-icon"><span class="pro-price">$1,000.50</span><span class="pro-icons"><img src="images/buy.png" class="img-fluid"><img src="images/heart.png"></span></div>
+                            <div class="prod-p-icon"><span class="pro-price">$1,000.50</span><span class="pro-icons"><img src="/src/assets/images/buy.png" class="img-fluid"><img src="/src/assets/images/heart.png"></span></div>
                         </div>
                     </div>
                 </div>
@@ -272,12 +272,12 @@
                     <div class="product-item">                
                         <div class="pro-img-bx">
                             <a href="#">
-                                <img src="img/810G-B68TYL1-2.png" alt="">
+                                <img src="/src/assets/img/810G-B68TYL1-2.png" alt="">
                             </a>
                         </div>
                         <div class="pro-title-bx">
                             <h3 class="prod-title">Acer Nitro 5 Gaming Laptop</h3>
-                            <div class="prod-p-icon"><span class="pro-price">$700.25</span><span class="pro-icons"><img src="images/buy.png" class="img-fluid"><img src="images/heart.png"></span></div>
+                            <div class="prod-p-icon"><span class="pro-price">$700.25</span><span class="pro-icons"><img src="/src/assets/images/buy.png" class="img-fluid"><img src="/src/assets/images/heart.png"></span></div>
                         </div>
                     </div>
                 </div>
@@ -285,12 +285,12 @@
                     <div class="product-item">                
                         <div class="pro-img-bx">
                             <a href="#">
-                                <img src="img/810G-B68TYL1-5.png" alt="">
+                                <img src="/src/assets/img/810G-B68TYL1-5.png" alt="">
                             </a>
                         </div>
                         <div class="pro-title-bx">
                             <h3 class="prod-title">DELL Strix G15 (2021) Gaming Laptop</h3>
-                            <div class="prod-p-icon"><span class="pro-price">$899.99</span><span class="pro-icons"><img src="images/buy.png" class="img-fluid"><img src="images/heart.png"></span></div>
+                            <div class="prod-p-icon"><span class="pro-price">$899.99</span><span class="pro-icons"><img src="/src/assets/images/buy.png" class="img-fluid"><img src="/src/assets/images/heart.png"></span></div>
                         </div>
                     </div>
                 </div>
