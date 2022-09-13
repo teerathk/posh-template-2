@@ -308,7 +308,6 @@
                   <img
                     :src="getImgUrll(this.catimages.images_elec)"
                     alt=""
-                    height="385"
                 /></a>
                   </div>
                 </div>
@@ -394,11 +393,7 @@
                   alt=""
                 />
               </a>
-              <div>
-                <h6>colorful kick</h6>
-                <h4>punchy sandals</h4>
-                <a href="#" class="link">See More</a>
-              </div>
+              
             </div>
           </div>
           <div class="col-xl-6">
@@ -414,10 +409,7 @@
                 />
               </a>
 
-              <div>
-                <h4>going somewhere?</h4>
-                <a href="#" class="link">See More</a>
-              </div>
+              
             </div>
           </div>
         </div>

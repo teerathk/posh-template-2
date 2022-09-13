@@ -185,21 +185,14 @@
 
               <div class="left-thumbs">
                 <ul>
-                  <li>
-                    <img
-                    :src="
-                        getImgUrl(
-                          product_info.vendor_id,
-                          product_info.featured_image
-                        )
-                      "                      style="width: 100%"
-                    />
-                    </li>
-
-                  <li v-for="(item, index) in gallery"
+                  <li 
+                  class="mySlides"
+                  v-for="(item, index) in gallery"
                     :key="index">
                     <img
+                    class="demo cursor"
                       :src="getImgUrl(product_info.vendor_id, item)"
+                      @click="currentSlide(1)"
                       style="width: 100%"
                     />
                     </li>
