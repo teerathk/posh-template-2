@@ -7,12 +7,12 @@
       <div class="container">
         <div class="row g-0">
           <div class="col-xl-3">
-            <div class="left-bar" style="height: 100%; width: 100%;">
+            <div class="left-bar" id="navbarTogglerSidebar" style="height: 100%; width: 100%;">
               <header>
                 <h3>All Categories</h3>
               </header>
               <div class="left-menu">
-                <div class="close-resp">
+                <div class="close-resp" >
                         <i class="fa fa-close"></i>
                      </div>
                 <ul>
@@ -54,7 +54,7 @@
             </div>
           </div>
           <div class="col-xl-9">
-            <div class="resp-menuIcon">
+            <div class="resp-menuIcon" @click="showcatlist">
                   <i></i>
                </div>
             <div class="row g-0">

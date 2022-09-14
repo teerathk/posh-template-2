@@ -2641,8 +2641,9 @@ textarea:focus:-ms-input-placeholder {
   .search-tab button {
     width: 40px;
   }
- .banner img {
-  height: auto;
+  .tdbx:first-child img{height: auto;}
+  div#banner img {
+  height: auto!important;
  }
  .left-top-info {
     text-align: center;

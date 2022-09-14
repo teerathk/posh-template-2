@@ -964,6 +964,21 @@ button.btnminus-item {
 .cartI-3 {
     flex: 0 0 12%;
 }
+select.form-control-select {
+    background: rgba(41, 29, 137, 0.8);
+    height: 44px;
+    color: #fff;
+    width: 148px;
+    padding-left: 5px;
+    font-size: 13px;
+}
+div#custCarousel img {width: 100%;}
+ul.toolBx-sub.forPriceRang li {
+    height: 70px;
+}
+/* START IMAGE SLIDER ON POPUP */
+
+/* END  :: image slider on popup */
 .cartI-4 {
     flex: 0 0 12%;
 }
@@ -1101,7 +1116,9 @@ input#demoInput {
 .csi-title-t {
     font-size: 26px;
 }
-
+span.ratingValue {
+    font-size: 11px;
+}
 .singal-product { 
      width: 100%; 
      display: flex; 
