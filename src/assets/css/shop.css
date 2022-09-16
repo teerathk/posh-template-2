@@ -10,6 +10,9 @@ textarea:focus,
 input:focus {
     outline: none;
 }
+.mySlides.right-main {
+    display: none;
+}
 input[type="text"] {
     width: 100%;
     padding: 6px 8px;
@@ -1014,6 +1017,7 @@ ul.toolBx-sub.forPriceRang li {
 .cart-item-updates {
     display: flex;
     margin-top: 20px;
+    margin-bottom: 120px;
 }
 .cartSummary-bx {
     background: #F0F0F0;
@@ -1123,9 +1127,8 @@ span.ratingValue {
      width: 100%; 
      display: flex; 
   }
-.singal-product 
-.left-thumbs {
-    width: 90px;
+.singal-product .left-thumbs {
+    width: 120px;
 }
 .singal-product 
 .right-main {
@@ -1228,6 +1231,7 @@ button.primary {
 .cartI-2 button.btnminus-item {
     left: 0px;
     top: 0px;
+    padding-top: 20px;
 }
 .cat-title-pg h4 {
     color: #000;
@@ -1305,7 +1309,16 @@ button.primary {
 }
 
 @media (max-width: 767px) {
-
+    .cartItems .cartItems-box:first-child {
+        display: none;
+    }
+    .cart-itesm-bx h4 {
+        font-size: 1.5rem!important;
+    }
+    .banner-container .left-bar.active {
+        display: block!important;
+        left: 0;
+    }
 .cat-title-pg h4 {
     position: absolute;
     font-size: 20px;
@@ -1478,11 +1491,6 @@ button.primary {
    h1.title-pm-detail {
     font-size: 22px;
     color: #1B1B1B;
-   }
-   button.btnminus-item {
-    position: relative;
-    left: 94px;
-    top: -31px;
    }
 }
 

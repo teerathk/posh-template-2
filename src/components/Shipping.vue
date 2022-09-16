@@ -5,7 +5,7 @@
     <section class="banner-container top-inner-container">
       <div class="container">
         <div class="row g-0">
-          <div class="col-9">
+          <div class="col-xl-9">
             <div class="category-search">
               <form action="">
                 <div class="select-category-box">
@@ -72,7 +72,7 @@
     <div class="sec-nav">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-6">
             <div class="show-all-cat">
               <span
                 ><img src="/src/assets/img/menu-template/category.png" />Show
@@ -85,7 +85,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-6">
             <div class="order-track">
               <ul>
                 <li><a href="#">Track Your Order</a></li>
