@@ -251,15 +251,21 @@
           <div class="row my-5">
             <div class="col-sm-12 d-flex justify-content-center">
               <!-- START PAGINATION HERE -->
-              <nav aria-label="Page navigation" class="pagiBox-bx">
+              <span v-if="total==0">No Product Found</span>
+
+
+
+              <nav v-if="total>0" aria-label="Page navigation" class="pagiBox-bx">
                 <ul class="pagination">
                   <li class="page-item">
                     <a class="page-link" v-if="from > 1" @click="getFilterData(current_page - 1)"
                       >Previous</a
                     >
                   </li>
-                  <li class="page-item">
-                    {{ from }}-{{ to }} of {{ total }} Items
+                  <li class="page-item" v-for="(num, index) in total" :key="index">
+                    <a class="page-link" @click="getFilterData((index+1))"
+                      >{{ (index+1) }}</a
+                    >
                   </li>
 
                   <li class="page-item">
@@ -269,30 +275,6 @@
                   </li>
                 </ul>
               </nav>
-              <!-- END:: PAGINATION HERE -->
-              <!--  
-                <div aria-label="Page navigation paginate-bx">
-                      <ul class="pagination bottm-pagination">
-                          <li class="page-item inactive">
-                              <button id="back"
-                                class="page-link"
-                                aria-label="Previous"
-                                @click="pagination('b')"
-                              >
-                                  <span aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
-                              </button>
-                          </li>
-                          <li class="page-item">
-                              <button id="next"
-                                class="page-link"
-                                aria-label="Next"
-                                @click="pagination('n')"
-                              >
-                                  <span aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
-                              </button>
-                          </li>
-                      </ul>                      
-                  </div> -->
             </div>
           </div>
         </div>
@@ -415,7 +397,7 @@ export default {
 
       img_url: axios.defaults.url + "/img/product-images",
       //img_url: "https://posh-marketplace.plego.pro/img/product-images",
-      seller_id : 1061
+      seller_id:import.meta.env.VITE_SELLER_ID,
     };
   },
 

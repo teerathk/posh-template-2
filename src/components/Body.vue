@@ -675,7 +675,7 @@ export default {
   data() {
     return {
       //
-      seller_id:1061,
+      
       settings: {
         itemsToShow: 2,
         snapAlign: "center",
@@ -739,6 +739,7 @@ export default {
       img_url_cat: axios.defaults.url + "/img/menu-template",
 
       user_id: 0,
+      seller_id:import.meta.env.VITE_SELLER_ID,
       getHomepageProducts: [],
     };
   },
