@@ -446,7 +446,7 @@ ul.side-submenu {
 
 .left-bar .left-menu li a {
   font-family: 'Myriad Pro Semibold';
-  font-size: 13px;
+  font-size: 16px;
   color: #000;
   display: block;
   text-decoration: none;
@@ -501,9 +501,9 @@ ul.side-submenu {
 .banner {
   width: 100%;
 }
-.banner img {
+div#banner img {
   width: 100%;
-  height: 515px;
+  height: 500px;
 }
 .pro-img-bx img {
   height: 200px;
@@ -515,7 +515,7 @@ ul.side-submenu {
 
 .right-banner-section .banner-cont img {
   width: 100%;
-  height: 261px;
+  height: 254px;
 }
 
 .right-banner-section .banner-cont a {
@@ -2641,8 +2641,9 @@ textarea:focus:-ms-input-placeholder {
   .search-tab button {
     width: 40px;
   }
- .banner img {
-  height: auto;
+  .tdbx:first-child img{height: auto;}
+  div#banner img {
+  height: auto!important;
  }
  .left-top-info {
     text-align: center;

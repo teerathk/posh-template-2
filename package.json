@@ -12,6 +12,7 @@
     "cors": "^2.8.5",
     "hooper": "^0.3.4",
     "jquery": "^3.6.1",
+    "owl.carousel": "^2.3.4",
     "vue": "^3.2.25",
     "vue-carousel": "^0.18.0",
     "vue-google-autocomplete": "^1.1.3",

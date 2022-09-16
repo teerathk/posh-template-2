@@ -24,7 +24,6 @@
               </ul>
             </div>
 
-
             <div class="head-right-info" v-if="isHidden">
               <div class="userLogined">
                 <div class="usr-img">
@@ -36,22 +35,21 @@
                 <div class="usr-title">{{ userTitle }}</div>
                 <i class="fa fa-chevron-down"></i>
                 <ul class="userProfileMenu">
-              <li>
-                <router-link to="dashboard"> Dashboard</router-link>
-              </li>
-              <li>
-                <router-link to="dashboard"> Orders</router-link>
-              </li>
-              <li><a href="#">Track My Order</a></li>
-              <li>
-                <router-link to="profile">My Profile</router-link>
-              </li>
-              <li>
-                <a href="#" @click="logout">Logout</a>
-                <!-- <router-link to="logout">Logout</router-link> -->
-              </li>
-            </ul>
-
+                  <li>
+                    <router-link to="dashboard"> Dashboard</router-link>
+                  </li>
+                  <li>
+                    <router-link to="dashboard"> Orders</router-link>
+                  </li>
+                  <li><a href="#">Track My Order</a></li>
+                  <li>
+                    <router-link to="profile">My Profile</router-link>
+                  </li>
+                  <li>
+                    <a href="#" @click="logout">Logout</a>
+                    <!-- <router-link to="logout">Logout</router-link> -->
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -231,6 +229,9 @@ export default {
       this.isHidden = false;
       this.$router.push({ name: "Home" });
     },
+    initSmartMenu() {
+      // $('#main-menu').smartmenus();
+    },
     getFilterData() {
       //alert(this.query);
       //this.$router.go({name:"Allproducts"});
@@ -239,13 +240,13 @@ export default {
       // this.$router.push({name:"Allproducts"});
     },
     async getHeadFoot() {
-      let result = axios.get(axios.defaults.baseURL + "headerfooter/977");
+      let result = axios.get(axios.defaults.baseURL + "headerfooter/1061");
       console.log("header footer");
       this.list = (await result).data;
       if (this.list.logo) this.showTitle = false;
     },
     getImgUrll(pet) {
-      return this.img_url + "/977/" + pet;
+      return this.img_url + "/1061/" + pet;
     },
     showcatlist() {
       $("#navbarTogglerSidebar").addClass("active");

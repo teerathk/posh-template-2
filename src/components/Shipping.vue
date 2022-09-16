@@ -548,6 +548,14 @@ export default {
     this.loadSession();
     this.getCartData();
     this.getLocationFinder();
+    
+    const script = document.createElement("script");
+    script.src =
+    "https://maps.googleapis.com/maps/api/js?key=AIzaSyDvGSbL-Mp61JTVDrNWy4ZGbloYVV3fFVs&callback=initAutocomplete&libraries=places&v=weekly"
+      ;
+    script.addEventListener("load", this.initPayPalButton);
+    document.body.appendChild(script);
+
   },
   methods: {
     async getShippingRate() {
