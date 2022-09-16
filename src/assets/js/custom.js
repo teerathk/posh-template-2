@@ -45,10 +45,6 @@ var distance = countDownDate - dtx;
 
 
 
-jQuery('#menu-top-menu').smartmenus({
-          subMenusSubOffsetX: 1,
-          subMenusSubOffsetY: 0
-});
 
 $(document).ready(function() {
       $('#today-deals').owlCarousel({

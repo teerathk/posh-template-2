@@ -27,11 +27,13 @@
                   <input
                     type="search"
                     name=""
+                    v-on:keypress="searchObjects"
+                    v-model="search"
                     placeholder="Search entire store here..."
                   />
                 </div>
                 <div class="search-tab">
-                  <button type="submit">
+                  <button type="button" v-on:click="getFilterData">
                     <i class="fa fa-search" aria-hidden="true"></i>
                   </button>
                 </div>
@@ -52,11 +54,14 @@
                   </a>
                 </div>
                 <div class="wish-i">
-                  <router-link to="cart" class="cartitems"
-              >
-              <span class="cart" v-if="itemsincart>0" v-html="itemsincart"></span>
-              <img src="/src/assets/images/cart-i.jpg" alt="" />
-            </router-link>
+                  <router-link to="cart" class="cartitems">
+                    <span
+                      class="cart"
+                      v-if="itemsincart > 0"
+                      v-html="itemsincart"
+                    ></span>
+                    <img src="/src/assets/images/cart-i.jpg" alt="" />
+                  </router-link>
                 </div>
               </div>
               <div class="clearfix"></div>
@@ -152,7 +157,6 @@
               Apply Filter
             </button>
           </form>
-        
         </div>
         <div class="col-md-10">
           <div class="row">
@@ -199,7 +203,11 @@
             </div>
           </div>
           <div class="row my-4">
-            <div class="col-sm-4 item" v-for="item in list" :key="item.id">
+            <div
+              class="col-sm-4 item"
+              v-for="(item, index) in list"
+              :key="index"
+            >
               <div class="product-item">
                 <div class="pro-img-bx">
                   <router-link
@@ -240,22 +248,24 @@
               </div>
             </div>
           </div>
-
           <div class="row my-5">
             <div class="col-sm-12 d-flex justify-content-center">
               <!-- START PAGINATION HERE -->
               <nav aria-label="Page navigation" class="pagiBox-bx">
                 <ul class="pagination">
                   <li class="page-item">
-                    <a class="page-link" href="#">Previous</a>
+                    <a class="page-link" v-if="from > 1" @click="getFilterData(current_page - 1)"
+                      >Previous</a
+                    >
                   </li>
-                  <li class="page-item active">
-                    <a class="page-link" href="#">1</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
                   <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
+                    {{ from }}-{{ to }} of {{ total }} Items
+                  </li>
+
+                  <li class="page-item">
+                    <a class="page-link" v-if="to < total" @click="getFilterData(current_page + 1)"
+                      >Next</a
+                    >
                   </li>
                 </ul>
               </nav>
@@ -358,7 +368,7 @@ export default {
   props: {
     product_id: 0,
   },
-  components: { HeaderComp,FooterComp },
+  components: { HeaderComp, FooterComp },
   data() {
     return {
       total_price: 0,
@@ -396,8 +406,16 @@ export default {
       min_price: 0,
       max_price: 0,
 
+      order_by: 0,
+      to: null,
+      from: null,
+      total: null,
+      current_page: null,
+      search: "",
+
       img_url: axios.defaults.url + "/img/product-images",
       //img_url: "https://posh-marketplace.plego.pro/img/product-images",
+      seller_id : 1061
     };
   },
 
@@ -447,6 +465,12 @@ export default {
     //alert(this.$route.query.search)
   },
   methods: {
+    searchObjects: function (e) {
+      if (e.keyCode === 13) {
+        this.getFilterData();
+      }
+    },
+
     async getCategoryFilters() {
       this.startLoader();
       let cat_result = axios.get(
@@ -463,7 +487,12 @@ export default {
       console.log(this.filterlist);
       this.EndLoader();
     },
-    async getFilterData(page = 1) {
+    async getFilterData(page = 0) {
+      var url = "";
+      if (page > 0) {
+        url += "?page=" + page;
+      }
+
       this.startLoader();
       let cat_result = axios.get(
         axios.defaults.baseURL +
@@ -472,29 +501,40 @@ export default {
       );
       this.MainCategory = (await cat_result).data;
 
-      let result = axios.get(
-        axios.defaults.baseURL + "allproducts",
-        {
-          params: {
-            filter: JSON.stringify(this.filtersdata),
-            search: this.query,
-            min_price: this.min_price,
-            max_price: this.max_price,
-            brand: this.brand.toString(),
-            colors: this.colors.toString(),
-            warranty: this.warranty.toString(),
-            ram: this.ram.toString(),
-            processor: this.processor.toString(),
-            sub_category: this.sub_category,
-            parent_category: this.parent_category,
-            page: page,
+      var obj = this;
+      let result = axios
+        .get(
+          axios.defaults.baseURL + "allproducts" + url,
+          {
+            params: {
+              filter: JSON.stringify(this.filtersdata),
+              search: this.search,
+              min_price: this.min_price,
+              max_price: this.max_price,
+              brand: this.brand.toString(),
+              colors: this.colors.toString(),
+              warranty: this.warranty.toString(),
+              ram: this.ram.toString(),
+              processor: this.processor.toString(),
+              sub_category: this.sub_category,
+              parent_category: this.parent_category,
+              user: this.seller_id,
+            },
           },
-        },
-        { useCredentails: true }
-      );
-      console.warn("Check Data2");
-      console.warn((await result).data.data);
-      this.list = (await result).data.data;
+          { useCredentails: true }
+        )
+        .then((response) => {
+          let res = response.data;
+          this.list = res.data;
+
+          this.to = res.to;
+          this.from = res.from;
+          this.total = res.total;
+          if (res.total < res.per_page) {
+            this.from = 0;
+          }
+          this.current_page = res.current_page;
+        });
       this.EndLoader();
     },
     startLoader() {
@@ -635,7 +675,7 @@ export default {
       }
     },
     async getHeadFoot() {
-      let result = axios.get(axios.defaults.baseURL + "headerfooter/977");
+      let result = axios.get(axios.defaults.baseURL + "headerfooter/"+this.seller_id);
       console.log("header footer");
       this.list_head = (await result).data;
       if (this.list_head.logo) this.showTitle = false;
@@ -645,7 +685,7 @@ export default {
       alert("Added to Wishlist");
     },
     getImgUrll(pet) {
-      return this.img_url + "/977/" + pet;
+      return this.img_url + "/"+this.seller_id+"/" + pet;
     },
     showmenu() {
       $("#navbarTogglerSidebar2").toggle();

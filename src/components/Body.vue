@@ -251,12 +251,12 @@
                   <div class="tdbx">
                     <a
                   :href="
-                    this.catimages.link_new ? this.catimages.link_new : '#'
+                    this.catimages?.link_new ? this.catimages.link_new : '#'
                   "
                   target="_blank"
                 >
                   <img
-                    :src="getImgUrll(this.catimages.images_new)"
+                    :src="getImgUrll(this.catimages?.images_new)"
                     alt=""
                     class="img-fluid"
                     height="323"
@@ -269,12 +269,12 @@
                   <div class="tdbx">
                     <a
                   :href="
-                    this.catimages.link_hot ? this.catimages.link_hot : '#'
+                    this.catimages?.link_hot ? this.catimages?.link_hot : '#'
                   "
                   target="_blank"
                 >
                   <img
-                    :src="getImgUrll(this.catimages.images_hot)"
+                    :src="getImgUrll(this.catimages?.images_hot)"
                     alt=""
                     class="img-fluid"
                     height="210"
@@ -285,12 +285,12 @@
                   <div class="tdbx">
                     <a
                   :href="
-                    this.catimages.link_cat ? this.catimages.link_cat : '#'
+                    this.catimages?.link_cat ? this.catimages?.link_cat : '#'
                   "
                   target="_blank"
                 >
                   <img
-                    :src="getImgUrll(this.catimages.images_cat)"
+                    :src="getImgUrll(this.catimages?.images_cat)"
                     width="100%"
                     alt=""
                     height="152"
@@ -301,12 +301,12 @@
                   <div class="tdbx">
                     <a
                   :href="
-                    this.catimages.link_elec ? this.catimages.link_elec : '#'
+                    this.catimages?.link_elec ? this.catimages?.link_elec : '#'
                   "
                   target="_blank"
                 >
                   <img
-                    :src="getImgUrll(this.catimages.images_elec)"
+                    :src="getImgUrll(this.catimages?.images_elec)"
                     alt=""
                 /></a>
                   </div>
@@ -384,11 +384,11 @@
           <div class="col-xl-6">
             <div class="left-middle-deals">
               <a
-                :href="this.promotion.link3 ? this.promotion.link3 : '#'"
+                :href="this.promotion?.link3 ? this.promotion?.link3 : '#'"
                 target="_blank"
               >
                 <img
-                  :src="getImgUrll(this.promotion.image3)"
+                  :src="getImgUrll(this.promotion?.image3)"
                   height="240"
                   alt=""
                 />
@@ -399,11 +399,11 @@
           <div class="col-xl-6">
             <div class="right-middle-deals">
               <a
-                :href="this.promotion.link4 ? this.promotion.link4 : '#'"
+                :href="this.promotion?.link4 ? this.promotion?.link4 : '#'"
                 target="_blank"
               >
                 <img
-                  :src="getImgUrll(this.promotion.image4)"
+                  :src="getImgUrll(this.promotion?.image4)"
                   height="240"
                   alt=""
                 />
@@ -521,7 +521,7 @@
                     />
                         </div>
                         
-                        <h5 v-if="product.name.length<8"> {{ product.name }}</h5>
+                        <h5 v-if="product.name?.length<8"> {{ product.name }}</h5>
   <h5 v-else>{{ product.name.substring(0,15)+"..." }}</h5>
                         <span class="price">${{ product.seller_price }}</span>
                       </router-link>
@@ -659,7 +659,8 @@ import HeaderComp from "./includes/Header.vue";
 import FooterComp from "./includes/Footer.vue";
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Pagination, Slide, Navigation } from "vue3-carousel";
-
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';
 import axios from "axios";
 export default {
   name: "Body",
@@ -674,6 +675,7 @@ export default {
   data() {
     return {
       //
+      seller_id:1061,
       settings: {
         itemsToShow: 2,
         snapAlign: "center",
@@ -879,7 +881,7 @@ export default {
     },
 
     async getSlidersPromotionsCategoryImages() {
-      let result = axios.get(axios.defaults.baseURL + "seller/homepage/977");
+      let result = axios.get(axios.defaults.baseURL + "seller/homepage/"+this.seller_id);
       console.log((await result).data);
       this.list_homepage = (await result).data;
       this.catimages = (await result).data.CatImages;
@@ -922,7 +924,7 @@ export default {
     },
     async getBestSellerCategories() {
       let result = axios.get(
-        axios.defaults.baseURL + "seller/bestcategories/977"
+        axios.defaults.baseURL + "seller/bestcategories/"+this.seller_id
       );
       console.log((await result).data);
       this.BestSellerProducts = (await result).data;
@@ -953,7 +955,7 @@ export default {
     },
 
     getImgUrll(pet) {
-      return this.img_url + "/" + this.catimages.seller_id + "/" + pet;
+      return this.img_url + "/" + this.seller_id + "/" + pet;
     },
     getImgUrlCat(pet) {
       return this.img_url_cat + "/" + pet;

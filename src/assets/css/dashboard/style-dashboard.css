@@ -620,7 +620,7 @@ i.sb-menu-icon:before {
     width: 30px;
 }
 .main.dashboardArea .main button:hover {transition:.4s;background:#0862a3;color:white;border:1px solid #0862a3}
-.main..main.dashboardArea .body .row {
+.main .main.dashboardArea .body .row {
     position: relative;
 }
 

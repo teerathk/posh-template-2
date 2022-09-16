@@ -160,8 +160,6 @@
                             product_info.featured_image
                           )
                         "
-                        width="70"
-                        height="70"
                         style="width: 100%"
                         @click="currentSlide(1)"
                         alt="The Woods"
@@ -171,8 +169,6 @@
                       <img
                         class="demo cursor"
                         :src="getImgUrl(product_info.vendor_id, item)"
-                        width="70"
-                        height="70"
                         style="width: 100%"
                         @click="currentSlide(index + 2)"
                       /></li></ul>
