@@ -2,7 +2,10 @@
 <template>
   <div>
     <header-comp></header-comp>
-<div id="loader-container" style="/* display: none; */"><div class="back-load"></div><div class="loader"></div></div>
+    <div id="loader-container" style="/* display: none; */">
+      <div class="back-load"></div>
+      <div class="loader"></div>
+    </div>
     <section class="banner-container">
       <div class="container">
         <div class="row g-0">
@@ -12,9 +15,9 @@
                 <h3>All Categories</h3>
               </header>
               <div class="left-menu">
-                <div class="close-resp" >
-                        <i class="fa fa-close"></i>
-                     </div>
+                <div class="close-resp">
+                  <i class="fa fa-close" @click="hidesidemenu()"></i>
+                </div>
                 <ul>
                   <li class="has-drop-down" v-for="item in list" :key="item.id">
                     <span class="category-icon">
@@ -22,30 +25,21 @@
                       <!-- <i class="menu-icon">
                     <img :src="getImgUrlCat(item.img)" /> -->
                     </span>
-                    <router-link
-                      :to="{
-                        path: 'allproducts',
-                        query: { id: 10 },
-                        props: true,
-                      }"
-                      >{{ item.title }}</router-link
-                    >
+                    <router-link :to="{
+                      path: 'allproducts',
+                      query: { id: 10 },
+                      props: true,
+                    }">{{ item.title }}</router-link>
 
                     <!-- <i class="fas fa-angle-right"></i> -->
                     <ul class="side-submenu">
-                      <li
-                        v-for="subitem in item.active_children"
-                        :key="subitem.id"
-                      >
-                        <router-link
-                          :to="{
-                            path: 'allproducts',
-                            query: { p_id: item.id, id: subitem.id },
-                            props: true,
-                          }"
-                        >
-                          {{ subitem.title }}</router-link
-                        >
+                      <li v-for="subitem in item.active_children" :key="subitem.id">
+                        <router-link :to="{
+                          path: 'allproducts',
+                          query: { p_id: item.id, id: subitem.id },
+                          props: true,
+                        }">
+                          {{ subitem.title }}</router-link>
                       </li>
                     </ul>
                   </li>
@@ -55,8 +49,8 @@
           </div>
           <div class="col-xl-9">
             <div class="resp-menuIcon" @click="showcatlist">
-                  <i></i>
-               </div>
+              <i></i>
+            </div>
             <div class="row g-0">
               <div class="col-xl-9">
                 <div class="category-search">
@@ -78,11 +72,7 @@
                     </div>
                     <div class="col-sm-9-bc">
                       <div class="search-box">
-                        <input
-                          type="search"
-                          name=""
-                          placeholder="Search entire store here..."
-                        />
+                        <input type="search" name="" placeholder="Search entire store here..." />
                       </div>
                       <div class="search-tab">
                         <button type="submit">
@@ -92,9 +82,19 @@
                     </div>
                   </form>
                 </div>
-                <div class="banner">
+                <div class="banner" id="homeBanners">
                   <!-- Carousel -->
-                  <div
+                  <carousel :items-to-show="1">
+                    <slide v-bind:class="cravings(index)" v-for="(images, index) in this.sliders" :key="index">
+                      <img :src="getImgUrll(images.image)" alt="" class="d-block sliderH" />
+                    </slide>
+                    <template #addons>
+                      <navigation />
+                      <pagination />
+                    </template>
+                  </carousel>
+                  <!-- Carousel -->
+                  <!-- <div
                     id="banner"
                     class="carousel carousel-fade"
                     data-bs-ride="carousel"
@@ -111,7 +111,7 @@
                         aria-label="Slide 1"
                       ></button>
                     </div>
-                    <!-- The slideshow/carousel -->
+                    
                     <div class="carousel-inner">
                       <div
                         class="carousel-item"
@@ -131,7 +131,7 @@
                         </a>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
               <div class="col-xl-3">
@@ -148,32 +148,25 @@
                       </a>
                     </div>
                     <div class="wish-i">
-                      <router-link to="cart" class="cartitems"
-              >
-              <span class="cart" v-html="itemsincart"></span>
-              <img src="/src/assets/images/cart-i.jpg" alt="" />
-            </router-link>
+                      <router-link to="cart" class="cartitems">
+                        <span class="cart" v-html="itemsincart"></span>
+                        <img src="/src/assets/images/cart-i.jpg" alt="" />
+                      </router-link>
                     </div>
                   </div>
                   <div class="clearfix"></div>
                   <div class="rightBannerBx">
                     <div class="banner-cont">
-                      <a
-                        :href="
-                          this.promotion.link1 ? this.promotion.link1 : '#'
-                        "
-                        target="_blank"
-                      >
+                      <a :href="
+                        this.promotion.link1 ? this.promotion.link1 : '#'
+                      " target="_blank">
                         <img :src="getImgUrll(this.promotion.image1)" alt="" />
                       </a>
                     </div>
                     <div class="banner-cont">
-                      <a
-                        :href="
-                          this.promotion.link2 ? this.promotion.link2 : '#'
-                        "
-                        target="_blank"
-                      >
+                      <a :href="
+                        this.promotion.link2 ? this.promotion.link2 : '#'
+                      " target="_blank">
                         <img :src="getImgUrll(this.promotion.image2)" alt="" />
                       </a>
                     </div>
@@ -191,47 +184,31 @@
       <div class="container">
         <h2>FEATURED PRODUCTS</h2>
         <div class="row">
-          <div v-if="featuredProducts.length==0">Sorry, No Product Found</div>
-          <div
-            class="col-sm-3"
-            v-for="(product, index) in featuredProducts"
-            :key="index"
-          >
+          <div class="col-sm-3" v-for="(product, index) in featuredProducts" :key="index">
             <div class="product-item">
               <div class="pro-img-bx">
-                <router-link
-                  :to="{
-                    path: '/product',
-                    query: { id: product.id },
-                    props: true,
-                  }"
-                >
-                  <img
-                    :src="getImgUrl(product.vendor_id, product.featured_image)"
-                    alt=""
-                  />
+                <router-link :to="{
+                  path: '/product',
+                  query: { id: product.id },
+                  props: true,
+                }">
+                  <img :src="getImgUrl(product.vendor_id, product.featured_image)" alt="" />
                 </router-link>
               </div>
               <div class="pro-title-bx">
                 <h3 class="prod-title">
-                  <router-link
-                    :to="{
-                      path: '/product',
-                      query: { id: product.id },
-                      props: true,
-                    }"
-                  >
+                  <router-link :to="{
+                    path: '/product',
+                    query: { id: product.id },
+                    props: true,
+                  }">
                     {{ product.name }}
                   </router-link>
                 </h3>
                 <div class="prod-p-icon">
-                  <span class="pro-price">${{ product.seller_price }}</span
-                  ><span class="pro-icons"
-                    ><img
-                      @click="addtocart2(product)"
-                      src="../assets/img/buy.png"
-                      class="img-fluid" /><img src="../assets/img/heart.png"
-                  /></span>
+                  <span class="pro-price">${{ product.seller_price }}</span><span class="pro-icons"><img
+                      @click="addtocart2(product)" src="../assets/img/buy.png" class="img-fluid" /><img
+                      src="../assets/img/heart.png" /></span>
                 </div>
               </div>
             </div>
@@ -250,66 +227,37 @@
               <div class="todayDeals-Bx">
                 <div class="leftTodayBx">
                   <div class="tdbx">
-                    <a
-                  :href="
-                    this.catimages?.link_new ? this.catimages.link_new : '#'
-                  "
-                  target="_blank"
-                >
-                  <img
-                    :src="getImgUrll(this.catimages?.images_new)"
-                    alt=""
-                    class="img-fluid"
-                    height="323"
-                /></a>
+                    <a :href="
+                      this.catimages?.link_new ? this.catimages.link_new : '#'
+                    " target="_blank">
+                      <img :src="getImgUrll(this.catimages?.images_new)" alt="" class="img-fluid" height="323" /></a>
                     <!-- <img
                       class="img-fluid"
                       src="/src/assets/images/deals-bx-1.jpg"
                     /> -->
                   </div>
                   <div class="tdbx">
-                    <a
-                  :href="
-                    this.catimages?.link_hot ? this.catimages?.link_hot : '#'
-                  "
-                  target="_blank"
-                >
-                  <img
-                    :src="getImgUrll(this.catimages?.images_hot)"
-                    alt=""
-                    class="img-fluid"
-                    height="210"
-                  />
-                </a>                  </div>
+                    <a :href="
+                      this.catimages?.link_hot ? this.catimages?.link_hot : '#'
+                    " target="_blank">
+                      <img :src="getImgUrll(this.catimages?.images_hot)" alt="" class="img-fluid" height="210" />
+                    </a>
+                  </div>
                 </div>
                 <div class="rightTodayBx">
                   <div class="tdbx">
-                    <a
-                  :href="
-                    this.catimages?.link_cat ? this.catimages?.link_cat : '#'
-                  "
-                  target="_blank"
-                >
-                  <img
-                    :src="getImgUrll(this.catimages?.images_cat)"
-                    width="100%"
-                    alt=""
-                    height="152"
-                /></a>
+                    <a :href="
+                      this.catimages?.link_cat ? this.catimages?.link_cat : '#'
+                    " target="_blank">
+                      <img :src="getImgUrll(this.catimages?.images_cat)" width="100%" alt="" height="152" /></a>
 
 
                   </div>
                   <div class="tdbx">
-                    <a
-                  :href="
-                    this.catimages?.link_elec ? this.catimages?.link_elec : '#'
-                  "
-                  target="_blank"
-                >
-                  <img
-                    :src="getImgUrll(this.catimages?.images_elec)"
-                    alt=""
-                /></a>
+                    <a :href="
+                      this.catimages?.link_elec ? this.catimages?.link_elec : '#'
+                    " target="_blank">
+                      <img :src="getImgUrll(this.catimages?.images_elec)" alt="" /></a>
                   </div>
                 </div>
               </div>
@@ -384,33 +332,19 @@
         <div class="row">
           <div class="col-xl-6">
             <div class="left-middle-deals">
-              <a
-                :href="this.promotion?.link3 ? this.promotion?.link3 : '#'"
-                target="_blank"
-              >
-                <img
-                  :src="getImgUrll(this.promotion?.image3)"
-                  height="240"
-                  alt=""
-                />
+              <a :href="this.promotion?.link3 ? this.promotion?.link3 : '#'" target="_blank">
+                <img :src="getImgUrll(this.promotion?.image3)" height="240" alt="" />
               </a>
-              
+
             </div>
           </div>
           <div class="col-xl-6">
             <div class="right-middle-deals">
-              <a
-                :href="this.promotion?.link4 ? this.promotion?.link4 : '#'"
-                target="_blank"
-              >
-                <img
-                  :src="getImgUrll(this.promotion?.image4)"
-                  height="240"
-                  alt=""
-                />
+              <a :href="this.promotion?.link4 ? this.promotion?.link4 : '#'" target="_blank">
+                <img :src="getImgUrll(this.promotion?.image4)" height="240" alt="" />
               </a>
 
-              
+
             </div>
           </div>
         </div>
@@ -433,37 +367,26 @@
               <!-- START:: INSIDE PRODUCTS -->
               <div class="ProductBox-temp2">
                 <div class="row g-0">
-                  <div v-if="getHomepageProducts?.cat_one?.length==0">Sorry, No Product Found</div>
-                  <div
-                    class="cus-col"
-                    v-for="(product, index) in this.getHomepageProducts?.cat_one"
-                    :key="index"
-                  >
+                  <div class="cus-col" v-for="(product, index) in this.getHomepageProducts?.cat_one" :key="index">
                     <div class="category-product-block">
-                      <router-link
-                        @click="forceclick(product.id)"
-                        :to="{
-                          path: '/product',
-                          query: { id: product.id },
-                          props: true,
-                        }"
-                      >
+                      <router-link @click="forceclick(product.id)" :to="{
+                        path: '/product',
+                        query: { id: product.id },
+                        props: true,
+                      }">
                         <span class="new">New</span>
                         <div>
-                          <img
-                      :src="getImgUrl(
-                                product.vendor_id,
-                                product.featured_image
-                              )"
-                      @error="
-                        $event.target.src =
-                          'https://posh-marketplace.plego.pro/img/product-images/997/no_image.png'
-                      "
-                    />
+                          <img :src="getImgUrl(
+                            product.vendor_id,
+                            product.featured_image
+                          )" @error="
+                                $event.target.src =
+                                  'https://posh-marketplace.plego.pro/img/product-images/997/no_image.png'
+                              " />
                         </div>
-                        
+
                         <h5 v-if="product.name.length<8"> {{ product.name }}</h5>
-  <h5 v-else>{{ product.name.substring(0,15)+"..." }}</h5>
+                        <h5 v-else>{{ product.name.substring(0,15)+"..." }}</h5>
                         <span class="price">${{ product.seller_price }}</span>
                       </router-link>
                     </div>
@@ -493,43 +416,33 @@
               <!-- START:: INSIDE PRODUCTS -->
               <div class="ProductBox-temp2">
                 <div class="row g-0">
-                  
-                  <div v-if="getHomepageProducts?.cat_two?.length==0">Sorry, No Product Found</div>
-                  <div
-                    class="cus-col"
-                    v-for="(product, index) in this.getHomepageProducts?.cat_two"
-                    :key="index"
-                  >
+
+
+                  <div class="cus-col" v-for="(product, index) in this.getHomepageProducts?.cat_two" :key="index">
                     <div class="category-product-block">
-                      <router-link
-                        @click="forceclick(product.id)"
-                        :to="{
-                          path: '/product',
-                          query: { id: product.id },
-                          props: true,
-                        }"
-                      >
+                      <router-link @click="forceclick(product.id)" :to="{
+                        path: '/product',
+                        query: { id: product.id },
+                        props: true,
+                      }">
                         <span class="new">New</span>
                         <div>
-                          <img
-                      :src="getImgUrl(
-                                product.vendor_id,
-                                product.featured_image
-                              )"
-                      @error="
-                        $event.target.src =
-                          'https://posh-marketplace.plego.pro/img/product-images/997/no_image.png'
-                      "
-                    />
+                          <img :src="getImgUrl(
+                            product.vendor_id,
+                            product.featured_image
+                          )" @error="
+                                $event.target.src =
+                                  'https://posh-marketplace.plego.pro/img/product-images/997/no_image.png'
+                              " />
                         </div>
-                        
+
                         <h5 v-if="product.name?.length<8"> {{ product.name }}</h5>
-  <h5 v-else>{{ product.name.substring(0,15)+"..." }}</h5>
+                        <h5 v-else>{{ product.name.substring(0,15)+"..." }}</h5>
                         <span class="price">${{ product.seller_price }}</span>
                       </router-link>
                     </div>
                   </div>
-                  
+
                 </div>
               </div>
               <!-- END:: INSIDE PRODUCTS   -->
@@ -555,37 +468,26 @@
               <!-- START:: INSIDE PRODUCTS -->
               <div class="ProductBox-temp2">
                 <div class="row g-0">
-                  <div v-if="getHomepageProducts?.cat_thr?.length==0">Sorry, No Product Found</div>
-                  <div
-                    class="cus-col"
-                    v-for="(product, index) in this.getHomepageProducts?.cat_thr"
-                    :key="index"
-                  >
+                  <div class="cus-col" v-for="(product, index) in this.getHomepageProducts?.cat_thr" :key="index">
                     <div class="category-product-block">
-                      <router-link
-                        @click="forceclick(product.id)"
-                        :to="{
-                          path: '/product',
-                          query: { id: product.id },
-                          props: true,
-                        }"
-                      >
+                      <router-link @click="forceclick(product.id)" :to="{
+                        path: '/product',
+                        query: { id: product.id },
+                        props: true,
+                      }">
                         <span class="new">New</span>
                         <div>
-                          <img
-                      :src="getImgUrl(
-                                product.vendor_id,
-                                product.featured_image
-                              )"
-                      @error="
-                        $event.target.src =
-                          'https://posh-marketplace.plego.pro/img/product-images/997/no_image.png'
-                      "
-                    />
+                          <img :src="getImgUrl(
+                            product.vendor_id,
+                            product.featured_image
+                          )" @error="
+                                $event.target.src =
+                                  'https://posh-marketplace.plego.pro/img/product-images/997/no_image.png'
+                              " />
                         </div>
-                        
+
                         <h5 v-if="product.name.length<8"> {{ product.name }}</h5>
-  <h5 v-else>{{ product.name.substring(0,15)+"..." }}</h5>
+                        <h5 v-else>{{ product.name.substring(0,15)+"..." }}</h5>
                         <span class="price">${{ product.seller_price }}</span>
                       </router-link>
                     </div>
@@ -678,7 +580,7 @@ export default {
   data() {
     return {
       //
-      
+
       settings: {
         itemsToShow: 2,
         snapAlign: "center",
@@ -742,7 +644,7 @@ export default {
       img_url_cat: axios.defaults.url + "/img/menu-template",
 
       user_id: 0,
-      seller_id:import.meta.env.VITE_SELLER_ID,
+      seller_id: import.meta.env.VITE_SELLER_ID,
       getHomepageProducts: [],
     };
   },
@@ -885,7 +787,7 @@ export default {
     },
 
     async getSlidersPromotionsCategoryImages() {
-      let result = axios.get(axios.defaults.baseURL + "seller/homepage/"+this.seller_id);
+      let result = axios.get(axios.defaults.baseURL + "seller/homepage/" + this.seller_id);
       console.log((await result).data);
       this.list_homepage = (await result).data;
       this.catimages = (await result).data.CatImages;
@@ -928,7 +830,7 @@ export default {
     },
     async getBestSellerCategories() {
       let result = axios.get(
-        axios.defaults.baseURL + "seller/bestcategories/"+this.seller_id
+        axios.defaults.baseURL + "seller/bestcategories/" + this.seller_id
       );
       console.log((await result).data);
       this.BestSellerProducts = (await result).data;
