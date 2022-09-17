@@ -964,6 +964,12 @@ export default {
     cravings(index) {
       return index == 0 ? "active" : "";
     },
+    showcatlist() {
+      $("#navbarTogglerSidebar").addClass("active");
+    },
+    hidesidemenu() {
+      $("#navbarTogglerSidebar").removeClass("active");
+    },
   },
 };
 </script>
