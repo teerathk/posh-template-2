@@ -490,7 +490,6 @@ ul.side-submenu {
 
 .left-bar .left-menu li a:hover {
   font-family: 'Myriad Pro';
-  font-size: 13px;
   color: #000;
   display: block;
   text-decoration: none;
@@ -2373,6 +2372,9 @@ textarea:focus:-moz-placeholder {
 
 textarea:focus:-ms-input-placeholder {
   color: transparent !important;
+}
+ul#menu-top-menu a.navbar-brand {
+  width: auto;
 }
 .collapse.navbar-collapse.active {
   display: block!important;
