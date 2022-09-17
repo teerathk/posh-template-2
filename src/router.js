@@ -12,7 +12,7 @@ import Signup from './components/Signup.vue'
 import Login from './components/Login.vue'
 import Checkout from './components/Checkout.vue'
 import Shipping from './components/Shipping.vue'
-
+import Contactus from './components/Contactus.vue'
 import UserDashboard from './components/user/UserDashboard.vue'
 import Allorders from './components/user/Allorders.vue'
 import Pendingorders from './components/user/Pendingorders.vue'
@@ -33,6 +33,12 @@ const routes = [
         path: '/home',
         component: Body
     },
+    {
+        name: 'Contact',
+        path: '/contact',
+        component: Contactus
+    },
+
     {
         name: 'Allproducts',
         path: '/allproducts/:id?',

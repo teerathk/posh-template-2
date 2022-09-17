@@ -1011,6 +1011,9 @@ button.btnplus-item:hover, button.btnminus-item:hover {
     padding-right: 89px;
     padding-left: 40px;
 }
+.cartIBilling-shipping {
+    padding-right: 200px;
+}
 ul.checkout-method {
     list-style: none;
     display: flex;
