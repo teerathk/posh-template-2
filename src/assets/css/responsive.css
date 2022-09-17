@@ -1,5 +1,5 @@
 .resp-menuIcon {display:none}
-.close-resp {display:none;position: fixed;top: 0;right: 0;}
+.close-resp {position: fixed;top: 0;right: 0;}
 .close-resp i {color:'white';}
 .cartSum-list a.primary {
     margin-top: 20px;

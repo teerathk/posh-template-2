@@ -223,7 +223,34 @@ div#loader-container {
 .top-section .menu-tabs a:after {
   display: none !important;
 }
-
+div#homeBanners ol.carousel__pagination {
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translate(-50%);
+}
+div#homeBanners ol.carousel__pagination button.carousel__pagination-button {
+background: #ff5c00;
+height: 9px;
+}
+div#homeBanners button {
+background: #ff5c00;
+}
+button.carousel__pagination-button.carousel__pagination-button--active {
+background: #000!important;
+color: #000;
+width: 30px;
+height: 10px;
+}
+div#homeBanners button.carousel__next {
+  right: 24px;
+}
+div#homeBanners  img.sliderH {
+  height: auto;
+}
+div#homeBanners button.carousel__prev {
+  left: 24px;
+}
 .top-section .right-top-info li:after {
   content: "";
   height: 17px;
@@ -2347,9 +2374,19 @@ textarea:focus:-moz-placeholder {
 textarea:focus:-ms-input-placeholder {
   color: transparent !important;
 }
+.collapse.navbar-collapse.active {
+  display: block!important;
+}
+@media (min-width:1200px) {
+div#homeBanners img.sliderH {
+  height: 493px;
+}
+}
 
 @media (max-width:1200px) {
-
+  .banner-container .left-bar {
+    transition: 0.5s;
+}
   .footer .col {
     max-width: 100%;
     width: 100%;
@@ -2637,6 +2674,7 @@ textarea:focus:-ms-input-placeholder {
     padding-left: 106px;
     font-size: 12px;
   }
+ 
   .category-search 
   .search-tab button {
     width: 40px;
