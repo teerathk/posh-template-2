@@ -434,6 +434,12 @@ ul.breadcrumbs-list li a:after {
     transform: rotate(22deg);
     font-size: 20px;
 }
+.form-group input, .form-group select {
+    width: 100%;
+}
+.cartIBilling-shipping {
+    max-width: 670px;
+}
 select.select-custom-point {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -1168,12 +1174,13 @@ span.ratingValue {
 .csi-title {
     flex: 0 0 67%;
 }
-button.primary {
-   
+.form-group input {
+    border: 1px solid #5F5F5F!important;
+}
+button.primary {   
     background: #ff5c00;
     border: 1px solid #ff5c00;
     border-radius: 4px;
-    width: 100%;
     padding: 6px 8px;
     cursor: pointer;
     color: white;
