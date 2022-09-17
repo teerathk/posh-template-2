@@ -93,7 +93,7 @@
                         id="menu-top-menu"
                         class="sm sm-clean ml-auto primeryManu"
                       >
-                        <li><a href="#">home</a></li>
+                        <li><router-link to="home" class="navbar-brand">home</router-link></li>
                         <li>
                           <a href="#">New Arrivals</a>
                           <ul class="sub-menu">
@@ -101,7 +101,7 @@
                             <li><a href="#">New Arrivals 2</a></li>
                           </ul>
                         </li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><router-link to="contactus" class="navbar-brand">Contact Us</router-link></li>
                         <li><a href="#">about us</a></li>
                       </ul>
                     </div>

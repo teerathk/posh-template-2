@@ -5,37 +5,94 @@
                <div class="col">
                   <div class="footer-col">
                      <h3>Main Menu</h3>
-                     <ul>
-                        <li><a href="#">Product Support</a></li>
-                        <li><a href="#">PC Setup & Support</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Extended Service Plans</a></li>
-                        <li><a href="#">Community</a></li>
-                     </ul>
+                     <ul class="footer-list">
+              <li>
+                <a
+                  :href="
+                    list.f_main_menu_links ? list.f_main_menu_links[0] : ''
+                  "
+                  >{{
+                    list.f_main_menu_title ? list.f_main_menu_title[0] : ""
+                  }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="
+                    list.f_main_menu_links ? list.f_main_menu_links[2] : ''
+                  "
+                  >{{
+                    list.f_main_menu_title ? list.f_main_menu_title[2] : ""
+                  }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="
+                    list.f_main_menu_links ? list.f_main_menu_links[3] : ''
+                  "
+                  >{{
+                    list.f_main_menu_title ? list.f_main_menu_title[3] : ""
+                  }}</a
+                >
+              </li>
+            </ul>
                   </div>
                </div>
                <div class="col">
                   <div class="footer-col">
                      <h3>Company</h3>
-                     <ul>
-                        <li><a href="#">Shipping guide</a></li>
-                        <li><a href="#">Store location</a></li>
-                        <li><a href="#">Afiliates</a></li>
-                        <li><a href="#">Customer point policy</a></li>
-                        <li><a href="#">Customer point policy</a></li>
-                     </ul>
+                     <ul class="footer-list">
+              <li>
+                <a
+                  :href="list.f_company_links ? list.f_company_links[0] : ''"
+                  >{{ list.f_company_title ? list.f_company_title[0] : "" }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="list.f_company_links ? list.f_company_links[1] : ''"
+                  >{{ list.f_company_title ? list.f_company_title[1] : "" }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="list.f_company_links ? list.f_company_links[2] : ''"
+                  >{{ list.f_company_title ? list.f_company_title[2] : "" }}</a
+                >
+              </li>
+            </ul>
                   </div>
                </div>
                <div class="col">
                   <div class="footer-col">
                      <h3>Discover</h3>
-                     <ul>
-                        <li><a href="#">Product Support</a></li>
-                        <li><a href="#">PC Setup & Support</a></li>
-                        <li><a href="#"> Services</a></li>
-                        <li><a href="#">Extended Service Plans</a></li>
-                        <li><a href="#">Community</a></li>
-                     </ul>
+                     <ul class="footer-list">
+              <li>
+                <a
+                  :href="list.f_discover_links ? list.f_discover_links[0] : ''"
+                  >{{
+                    list.f_discover_title ? list.f_discover_title[0] : ""
+                  }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="list.f_discover_links ? list.f_discover_links[1] : ''"
+                  >{{
+                    list.f_discover_title ? list.f_discover_title[1] : ""
+                  }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="list.f_discover_links ? list.f_discover_links[2] : ''"
+                  >{{
+                    list.f_discover_title ? list.f_discover_title[2] : ""
+                  }}</a
+                >
+              </li>
+            </ul>
                   </div>
                </div>
                <div class="col">
@@ -76,11 +133,22 @@
                         <li>
                            <h5>follow us</h5>
                         </li>
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li>
+                           <a
+                  :href="list.f_findus_links ? list.f_findus_links[0] : '#'"
+                  target="_blank"
+                  ><i class="fa fa-facebook" aria-hidden="true"></i></a
+                ></li>
+                        <li><a
+                  :href="list.f_findus_links ? list.f_findus_links[1] : '#'"
+                  target="_blank"
+                  ><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-futbol-o" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a
+                  :href="list.f_findus_links ? list.f_findus_links[2] : '#'"
+                  target="_blank"
+                  ><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                         </ul>
                      </div>
                   </div>
@@ -105,7 +173,34 @@
 
 
 <script>
+import axios from "axios";
 export default {
-  name: "Footer"
+  name: "Footer",
+  data() {
+    return {
+      list: [],
+      showTitle: true,
+      // img_url: "https://posh-marketplace.plego.pro/img/product-images",
+      img_url: axios.defaults.url + "/img/product-images",
+    };
+  },
+  mounted() {
+    this.getHeadFoot();
+  },
+  methods: {
+    async getHeadFoot() {
+      let result = axios.get(axios.defaults.baseURL + "headerfooter/977");
+      console.log("header footer");
+      // console.log(result);
+      // this.list = result;
+      this.list = (await result).data;
+      $(".navbar-brand span").html(this.list.h_shop_name);
+      if (this.list.logo) this.showTitle = false;
+      $(".about-foot p").html(this.list.about_us);
+    },
+    getImgUrll(pet) {
+      return this.img_url + "/977/" + pet;
+    },
+  },
 };
 </script>
