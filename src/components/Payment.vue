@@ -97,7 +97,8 @@
       <div class="checkout-itesm-bx">
         <div class="row mt-4">
           <div class="col-12">
-            <h4><strong>Checkout</strong> <span>(2 Items)</span></h4>
+            <h4><strong>Checkout</strong> <span>({{ cartitemslist.length }} Items)</span></h4>
+            
           </div>
         </div>
         <div class="row">
@@ -265,13 +266,13 @@
                 <div class="cartSummary-items">
                   <div class="csi-title">Item(s)</div>
                   <div class="csi-title-amount">
-                    $<strong>{{ this.total_price }}</strong>
+                    $<strong>--{{ this.total_price }}</strong>
                   </div>
                 </div>
                 <div class="cartSummary-items">
                   <div class="csi-title">Est. Delivery</div>
                   <div class="csi-title-amount">
-                    $<strong>{{ shippingamount }}</strong>
+                    $<strong>=={{ shippingamount }}</strong>
                   </div>
                 </div>
                 <div class="cartSummary-items bt-0">
@@ -281,7 +282,7 @@
                 <div class="cartSummary-items justify-sbetw pt-4">
                   <div class="csi-title-t">Total</div>
                   <div class="csi-total-amount">
-                    $<strong>{{ total_price + shippingamount - 10 }}</strong>
+                    $--<strong>{{ (this.total_price + this.shippingamount) - 10 }}</strong>
                   </div>
                 </div>
               </div>
@@ -355,6 +356,9 @@ export default {
   methods: {
 
     initPayPalButton() {
+      var totalamount = this.total_price+this.shippingamount;
+
+      // alert(totalamount)
       paypal.Buttons({
         style: {
           shape: 'pill',
@@ -366,7 +370,13 @@ export default {
 
         createOrder: function(data, actions) {
           return actions.order.create({
-            purchase_units: [{"amount":{"currency_code":"USD","value":26.05,"breakdown":{"item_total":{"currency_code":"USD","value":1},"shipping":{"currency_code":"USD","value":25},"tax_total":{"currency_code":"USD","value":0.05}}}}]
+            purchase_units: [
+                {
+                  amount: {
+                    value: totalamount,
+                  },
+                },
+              ],
           });
         },
 
@@ -390,6 +400,7 @@ export default {
 
         onError: function(err) {
           console.log(err);
+          document.getElementById("pyaro").click();
         }
       }).render('#paypal-button-container');
     },
@@ -543,10 +554,12 @@ export default {
       this.count_cartitems = this.cartitemslist.length;
       this.cartitemslist.forEach(function (items) {
         console.log("Qty: " + items.quantity);
+        console.log("Price: " + items.item_price);
         totalQty += items.quantity;
         tempTotalPrice += items.quantity * items.item_price;
       });
       this.total_price = tempTotalPrice;
+      console.log("Total: " + this.total_price);
       //this.itemsincart=totalQty;
       $(".cart").html(this.count_cartitems);
       if (this.count_cartitems == 0) {
