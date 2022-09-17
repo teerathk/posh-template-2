@@ -154,7 +154,7 @@
                           <span>{{ item.id }}</span>
                         </td>
                         <td>
-                          <span>{{ item.delivery_date }}</span>
+                          <span>{{ moment(item.delivery_date).format("DD/MM/YYYY") }}</span>
                         </td>
                         <td>
                           <span>{{ item.shipping_address }}</span>
@@ -204,6 +204,7 @@
 import axios from "axios";
 import sidebar from "./Sidebar.vue"
 import navbar from "./Navbar.vue"
+import moment from "moment"
 export default {
   name: "UserDashboard",
   components : {
@@ -219,8 +220,10 @@ sidebar, navbar
     this.readyJS();
     this.getOrders();
   },
+  
   data() {
     return {
+      moment:moment,
       summary: [],
       data: [],
       user_id:0,
@@ -240,10 +243,12 @@ sidebar, navbar
   methods: {
     async getOrders(page = 0, per_page = 0, order_by = 0, search = 0) {
       this.startLoader();
+
       let resultsummary = await axios.get(
         axios.defaults.baseURL + "user-order-summary/"+this.user_id
       );
       this.summary = (await resultsummary).data;
+
       var url = axios.defaults.baseURL + "orders/user/" + this.user_id;
 
       if (per_page > 0 || this.per_page > 0) {
