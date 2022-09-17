@@ -183,8 +183,9 @@
                         />
                         <button
                           class="primary h-34"
-                          type="submit"
+                          type="button"
                           name="filter"
+                          @click="getFilterData"
                         >
                           Go
                         </button>

@@ -508,7 +508,7 @@ export default {
       this.getProductInfo();
     },
     async getJustForYouProducts() {
-      let result = axios.get(axios.defaults.baseURL + "product/justforyou/0");
+      let result = axios.get(axios.defaults.baseURL + "product/justforyou/"+this.cartform.product_id+"/"+this.seller_id);
       console.log((await result).data);
       this.justForYouProducts = (await result).data;
     },
@@ -561,7 +561,7 @@ export default {
     },
     async getRecommendedProducts() {
       let result = axios.get(
-        axios.defaults.baseURL + "product/recommended/" + this.$route.query.id
+        axios.defaults.baseURL + "product/recommended/" + this.$route.query.id+"/"+this.seller_id
       );
       console.log((await result).data);
       this.recommended = (await result).data;

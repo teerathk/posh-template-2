@@ -187,10 +187,11 @@
     </section>
     <!-- banner Section End -->
     <!-- featured-categores top -->
-    <section class="featured-categores">
+    <section  class="featured-categores">
       <div class="container">
         <h2>FEATURED PRODUCTS</h2>
         <div class="row">
+          <div v-if="featuredProducts.length==0">Sorry, No Product Found</div>
           <div
             class="col-sm-3"
             v-for="(product, index) in featuredProducts"
@@ -432,6 +433,7 @@
               <!-- START:: INSIDE PRODUCTS -->
               <div class="ProductBox-temp2">
                 <div class="row g-0">
+                  <div v-if="getHomepageProducts?.cat_one?.length==0">Sorry, No Product Found</div>
                   <div
                     class="cus-col"
                     v-for="(product, index) in this.getHomepageProducts?.cat_one"
@@ -492,7 +494,7 @@
               <div class="ProductBox-temp2">
                 <div class="row g-0">
                   
-                  
+                  <div v-if="getHomepageProducts?.cat_two?.length==0">Sorry, No Product Found</div>
                   <div
                     class="cus-col"
                     v-for="(product, index) in this.getHomepageProducts?.cat_two"
@@ -553,6 +555,7 @@
               <!-- START:: INSIDE PRODUCTS -->
               <div class="ProductBox-temp2">
                 <div class="row g-0">
+                  <div v-if="getHomepageProducts?.cat_thr?.length==0">Sorry, No Product Found</div>
                   <div
                     class="cus-col"
                     v-for="(product, index) in this.getHomepageProducts?.cat_thr"
@@ -893,7 +896,7 @@ export default {
     },
     async getTopCategoryProducts() {
       let result = axios.get(
-        axios.defaults.baseURL + "seller/getHomepageProducts"
+        axios.defaults.baseURL + "seller/getHomepageProducts/"+this.seller_id
       );
       console.warn("Check Data");
       this.getHomepageProducts = (await result).data;
@@ -919,7 +922,7 @@ export default {
       }
     },
     async getFeaturedProducts() {
-      let result = axios.get(axios.defaults.baseURL + "product/featured");
+      let result = axios.get(axios.defaults.baseURL + "product/featured/"+this.seller_id);
       console.log((await result).data);
       this.featuredProducts = (await result).data;
     },
@@ -934,7 +937,7 @@ export default {
     },
     async getJustForYouProducts() {
       let result = axios.get(
-        axios.defaults.baseURL + "product/justforyou/" + this.user_id
+        axios.defaults.baseURL + "product/justforyou/" + this.user_id+"/"+this.seller_id
       );
       console.log((await result).data);
       this.justForYouProducts = (await result).data;

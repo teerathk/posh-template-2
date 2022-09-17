@@ -140,7 +140,7 @@
                     <thead>
                       <tr>
                         <th>Order ID</th>
-                        <th>Recipient</th>
+                        <th>Product</th>
                         <th>Delivery Date</th>
                         <th>Shipping Details</th>
                         <th>Status</th>
@@ -152,13 +152,13 @@
                           <span>{{ item.id }}</span>
                         </td>
                         <td>
-                          <span>{{ item.id }}</span>
+                          <span>{{ item.name.substring(0,15)+"..." }}</span>
                         </td>
                         <td>
-                          <span>{{ item.delivery_date }}</span>
+                          <span>{{ moment(item.delivery_date).format("MM/DD/YYYY") }}</span>
                         </td>
                         <td>
-                          <span>{{ item.shipping_address }}</span>
+                          <span>{{ item.shipping_address.substring(0,30)+"..." }}</span>
                         </td>
                         <td>
                           <span>{{ item.status }}</span>
