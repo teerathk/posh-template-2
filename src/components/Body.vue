@@ -25,11 +25,7 @@
                       <!-- <i class="menu-icon">
                     <img :src="getImgUrlCat(item.img)" /> -->
                     </span>
-                    <router-link :to="{
-                      path: 'allproducts',
-                      query: { id: 10 },
-                      props: true,
-                    }">{{ item.title }}</router-link>
+                    <a href="#">{{ item.title }}</a>
 
                     <!-- <i class="fas fa-angle-right"></i> -->
                     <ul class="side-submenu">
@@ -54,7 +50,10 @@
             <div class="row g-0">
               <div class="col-xl-9">
                 <div class="category-search">
-                  <form action="">
+                  <form
+          @submit.prevent="getFilterData"
+          method="post"
+        >
                     <div class="select-category-box">
                       <select>
                         <option>All categories</option>
@@ -70,6 +69,7 @@
                         <option>More Category</option>
                       </select>
                     </div>
+                    
                     <div class="col-sm-9-bc">
                       <div class="search-box">
                         <input type="search" name="" placeholder="Search entire store here..." />
@@ -269,16 +269,31 @@
               <h3>BEST SELLERS</h3>
               <ul>
                 <li v-for="item in bestseller" :key="item.id">
-                  <a href="#">
+                    <router-link
+                    :to="{
+                      path: '/product',
+                      query: { id: item.item_id },
+                      props: true,
+                    }"
+                  >
+
                     <span class="product-container">
-                      <img :src="getImgUrl(item.vendor_id, item.featured_image)" alt="" />
+                      <img
+                      :src="getImgUrl(item.vendor_id, item.featured_image)"
+                      @error="
+                        $event.target.src =
+                          'https://posh-marketplace.plego.pro/img/product-images/997/no_image.png'
+                      "
+                    />
+
                     </span>
                     <span class="product-detail">
                       <h4>{{ item.name }}</h4>
-                      <p>Perfume</p>
+                      <p>{{ item.description }}</p>
                       <p class="price">${{ item.seller_price }}</p>
                     </span>
-                  </a>
+
+                  </router-link>
                 </li>
               </ul>
             </div>
@@ -422,7 +437,8 @@
           <div class="col-xl-12">
             <div class="category-products-blocks">
               <div class="cp-bloxks">
-                <h3 class="titleWbg"><span>SOFTWARE SERVICES</span></h3>
+                <h3 class="titleWbg"><span>HOME & TOOLS</span></h3>
+                
                 <p class="subtitle-content">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Curabitur diam arcu, bibendum nec
@@ -655,6 +671,14 @@ export default {
     this.EndLoader();
   },
   methods: {
+    getFilterData() {
+      //alert(this.query);
+      //this.$router.go({name:"Allproducts"});
+      this.$router.push({ name: "Allproducts", query: { search: this.query } });
+      //this.$router.go({name:'Allproducts', query: { search: this.query } })
+      // this.$router.push({name:"Allproducts"});
+    },
+
     async getBestSeller(){
       let result = axios.get(axios.defaults.baseURL + "product/bestseller/" + this.seller_id);
       console.log((await result).data);

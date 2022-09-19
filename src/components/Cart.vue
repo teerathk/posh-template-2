@@ -78,7 +78,7 @@
                 <div class="col-6">
                     <div class="order-track">
                         <ul>
-                            <li><a href="#">Track Your Order</a></li>
+                            <li v-if="user_id!=null"><router-link to="tracking"> Track Your Order</router-link></li>
                             <li><a href="#">Help Center</a></li>
                         </ul>
                     </div>

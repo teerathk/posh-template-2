@@ -90,7 +90,7 @@
           <div class="col-6">
             <div class="order-track">
               <ul>
-                <li><a href="#">Track Your Order</a></li>
+                <li v-if="cartform.user_id"><router-link to="tracking"> Track Your Order</router-link></li>
                 <li><a href="#">Help Center</a></li>
               </ul>
             </div>
@@ -104,9 +104,8 @@
           <div class="col-sm-12">
             <ul class="breadcrumbs-list">
               <li><a href="">All Categories</a></li>
-              <li><a href="">Laptop Computers</a></li>
-              <li><a href="">Traditional Laptop Computers</a></li>
-              <li>Gaming Laptops</li>
+              <li><a href="">{{ this.MainCategory?.parent?.title }}</a></li>
+              <li><a href="">{{ this.MainCategory.title }}</a></li>
             </ul>
           </div>
         </div>
@@ -162,7 +161,7 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="cat-title-pg">
-                <h4>{{ this.MainCategory.title }}</h4>
+                <h4>{{ this.MainCategory?.parent?.title }} / {{ this.MainCategory.title }}</h4>
                 <div class="cat-option-pg">
                   <form @submit.prevent="getFilterData" method="post">
                     <div class="price-limit-opt">
@@ -480,7 +479,7 @@ export default {
       let cat_result = axios.get(
         axios.defaults.baseURL +
           "seller/getcategorytitle/" +
-          this.parent_category
+          this.parent_category+"/"+this.sub_category
       );
       this.MainCategory = (await cat_result).data;
 

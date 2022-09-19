@@ -97,7 +97,7 @@
                             <li><a href="#">New Arrivals 2</a></li>
                           </ul>
                         </li>
-                        <li><router-link to="contactus" class="navbar-brand">Contact Us</router-link></li>
+                        <li><router-link to="contact" class="navbar-brand">Contact Us</router-link></li>
                         <li><a href="#">about us</a></li>
                       </ul>
                     </div>
