@@ -518,12 +518,6 @@ export default {
       console.log((await result).data);
       this.justForYouProducts = (await result).data;
 
-      let cat_result = axios.get(
-        axios.defaults.baseURL +
-          "seller/getcategorytitle/" +
-          this.product_info?.parent_category+"/"+this.product_info?.sub_category
-      );
-      this.MainCategory = (await cat_result).data;      
     },
     increment() {
       //alert("Yeah")
@@ -566,10 +560,20 @@ export default {
         axios.defaults.baseURL +
           "product/getForTemplate/" +
           this.$route.query.id+"/"+this.seller_id
-      );
-      console.log((await result).data);
-      this.product_info = (await result).data;
-      this.gallery = await this.product_info.images;
+      ).then(response=>{
+        console.log((result).data);
+      this.product_info = (result).data;
+      this.gallery = this.product_info.images;
+      let cat_result = axios.get(
+        axios.defaults.baseURL +
+          "seller/getcategorytitle/" +
+          this.this.product_info.parent_category+"/"+this.this.product_info.sub_category
+      ).then(resp=>{
+        
+      });
+      this.MainCategory = (await cat_result).data;
+
+    });
 
       this.EndLoader();
     },
