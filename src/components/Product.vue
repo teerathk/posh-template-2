@@ -228,17 +228,21 @@
                   <div class="qty-push-bx">
                     <input type="hidden" v-model="product_id" />
                     <input type="hidden" v-model="user_id" />
-								<button class="incrementNum btnplus-item">+</button>
-								<input
-                      type="number"
-                      min="1"
-                      max="100"
-                      v-model="cartform.quantity"
-                      placeholder="1"
-                      id="txtAcrescimo"
-                      class="qty-number"
-                    />
-								<button class="incrementNum btnminus-item">-</button>
+
+                    <span class="incrementNum btnplus-item" @click="increment">+</span>
+                          <input
+                            type="text"
+                            min="1"
+                            max="100"
+                            v-model="cartform.quantity"
+                            placeholder="1"
+                            id="txtAcrescimo"
+                            class="qty-number"
+                          />
+                          <span class="incrementNum btnminus-item" @click="decrement"
+                            >-</span
+                          >
+
 							  </div>
               </div>
                 <div class="col-sm-5">
@@ -315,7 +319,7 @@
       </div>
     </div>
 
-    <div class="container bgcolor-gl">
+    <div class="container bgcolor-gl" v-if="justForYouProducts">
       <div class="produ-listing-bx cart-c">
         <div class="row">
           <div class="col-12">

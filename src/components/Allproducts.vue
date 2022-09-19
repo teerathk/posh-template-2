@@ -104,8 +104,8 @@
           <div class="col-sm-12">
             <ul class="breadcrumbs-list">
               <li><a href="">All Categories</a></li>
-              <li><a href="">{{ this.MainCategory?.parent?.title }}</a></li>
-              <li><a href="">{{ this.MainCategory.title }}</a></li>
+              <li v-if="this.MainCategory?.parent"><a href="">{{ this.MainCategory?.parent?.title }}</a></li>
+              <li v-if="this.MainCategory?.parent"><a href="">{{ this.MainCategory.title }}</a></li>
             </ul>
           </div>
         </div>
@@ -161,7 +161,7 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="cat-title-pg">
-                <h4>{{ this.MainCategory?.parent?.title }} / {{ this.MainCategory.title }}</h4>
+                <h4 > <span v-if="this.MainCategory?.parent">{{ this.MainCategory?.parent?.title }} / {{ this.MainCategory.title }}</span></h4>
                 <div class="cat-option-pg">
                   <form @submit.prevent="getFilterData" method="post">
                     <div class="price-limit-opt">
