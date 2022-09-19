@@ -7,6 +7,9 @@
     max-width: 251px;
     margin: 0 auto;
 }
+button.primary.btn-block {
+    width: 100%;
+}
 .cartSummary-items.discountCode-bx {
     display: none;
 }
