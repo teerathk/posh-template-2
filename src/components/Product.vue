@@ -227,7 +227,7 @@
                   <div class="qty-push-bx">
                     <input type="hidden" v-model="product_id" />
                     <input type="hidden" v-model="user_id" />
-
+                      <div class="cartAdd-item">
                     <span class="incrementNum btnplus-item" @click="increment">+</span>
                           <input
                             type="text"
@@ -241,6 +241,7 @@
                           <span class="incrementNum btnminus-item" @click="decrement"
                             >-</span
                           >
+                      </div>
 
 							  </div>
               </div>

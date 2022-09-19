@@ -538,12 +538,35 @@ div#banner img {
   padding: 0;
   margin: 0;
 }
-
+span.incrementNum.btnminus-item, span.incrementNum.btnplus-item {
+  height: 45px;
+  width: 33px;
+  background: #efefef;
+  text-align: center;
+  line-height: 45px;
+  cursor: pointer;
+  font-size: 24px;
+  border: 1px solid #C6C6C6;
+  padding: 1px 6px;
+}
+span.incrementNum.btnplus-item {
+  border-radius: 4px 0 0 4px;
+}
+span.incrementNum.btnminus-item {
+  border-radius: 0 4px 4px 0;
+}
+input#txtAcrescimo {
+  border: 1px solid #ccc;
+  border-radius: 0;
+}
 .right-banner-section .banner-cont img {
   width: 100%;
   height: 250px;
 }
-
+.cartAdd-item {
+  display: flex;
+  align-items: center;
+}
 .right-banner-section .banner-cont a {
   position: relative;
   display: block;
