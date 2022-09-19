@@ -1337,6 +1337,9 @@ span.eye-icon-pass {
     position: relative;
     font-family: 'Inter';
 }
+button.primary.btn-block {
+    width: 100%;
+}
 .login-area .top-log .login-box form a {
     float: right;
     display: inline-block;
