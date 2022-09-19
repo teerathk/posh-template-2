@@ -100,9 +100,8 @@
           <div class="col-sm-12">
             <ul class="breadcrumbs-list">
               <li><a href="">All Categories</a></li>
-              <li><a href="">Laptop Computers</a></li>
-              <li><a href="">Traditional Laptop Computers</a></li>
-              <li>Gaming Laptops</li>
+              <li v-if="this.MainCategory?.parent"><a href="">{{ this.MainCategory?.parent?.title }}</a></li>
+              <li v-if="this.MainCategory?.parent"><a href="">{{ this.MainCategory.title }}</a></li>
             </ul>
           </div>
         </div>
@@ -464,6 +463,7 @@ export default {
     return {
       HeaderKey: 0,
       recommended: [],
+      MainCategory:[],
       justForYouProducts: [],
       cartform: {
         product_id: 0,
@@ -516,6 +516,13 @@ export default {
       let result = axios.get(axios.defaults.baseURL + "product/justforyou/"+this.cartform.product_id+"/"+this.seller_id);
       console.log((await result).data);
       this.justForYouProducts = (await result).data;
+
+      let cat_result = axios.get(
+        axios.defaults.baseURL +
+          "seller/getcategorytitle/" +
+          this.product_info?.parent_category+"/"+this.product_info?.sub_category
+      );
+      this.MainCategory = (await cat_result).data;      
     },
     increment() {
       //alert("Yeah")
