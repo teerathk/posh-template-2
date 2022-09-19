@@ -305,8 +305,8 @@
                         @click="addtocart2(product)"
                         src="/src/assets/img/buy.png"
                         class="img-fluid" />
-                      <img src="/src/assets/img/heart.png"
-                    /></span>
+                      <!-- <img src="/src/assets/img/heart.png" /> -->
+                    </span>
                   </div>
                 </div>
               </div>

@@ -207,8 +207,9 @@
                 </h3>
                 <div class="prod-p-icon">
                   <span class="pro-price">${{ product.seller_price }}</span><span class="pro-icons"><img
-                      @click="addtocart2(product)" src="../assets/img/buy.png" class="img-fluid" /><img
-                      src="../assets/img/heart.png" /></span>
+                      @click="addtocart2(product)" src="../assets/img/buy.png" class="img-fluid" />
+                      <!-- <img src="../assets/img/heart.png" /> -->
+                    </span>
                 </div>
               </div>
             </div>

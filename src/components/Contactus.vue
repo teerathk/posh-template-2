@@ -1,7 +1,7 @@
 <template>
   <div>
     <header-comp></header-comp>
-    <div class="container">
+    <div class="container contactPg">
       <h1 class="my-5">Contact Us</h1>
       <form @submit.prevent="postContactData" method="post">
         <div class="row">

@@ -355,10 +355,10 @@
                     $<strong>{{ shippingamount }}</strong>
                   </div>
                 </div>
-                <div class="cartSummary-items bt-0">
+                <!-- <div class="cartSummary-items bt-0">
                   <div class="csi-title">Discount</div>
                   <div class="csi-title-amount">-$<strong> 0.00</strong></div>
-                </div>
+                </div> -->
                 <div class="cartSummary-items justify-sbetw pt-4">
                   <div class="csi-title-t">Total</div>
                   <div class="csi-total-amount">
