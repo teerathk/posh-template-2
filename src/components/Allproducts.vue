@@ -162,7 +162,7 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="cat-title-pg">
-                <h4>Gaming Laptops</h4>
+                <h4>{{ this.MainCategory.title }}</h4>
                 <div class="cat-option-pg">
                   <form @submit.prevent="getFilterData" method="post">
                     <div class="price-limit-opt">

@@ -32,7 +32,7 @@
 
 								</form>
 							</div>
-							<div class="info-login"><h2>Don't have account yet?</h2> <ul><li><a href="#" class="">User Signup</a></li></ul></div>
+							<div class="info-login"><h2>Don't have account yet?</h2> <ul><li><router-link to="signup">User Signup</router-link></li></ul></div>
 						</div>
 					</div>
 				</div>

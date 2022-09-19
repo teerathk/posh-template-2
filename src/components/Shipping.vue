@@ -298,13 +298,13 @@
                   </div>
 
                   <div class="col-12 mt-4 mb-5">
-                    <a class="primary nxtbtn" @click="getShippingRate" style="float:left !important;">Update</a>
-                    <router-link
+                    <a class="primary nxtbtn" @click="getShippingRate" >NEXT</a>
+                    <!-- <router-link
                       class="primary nxtbtn"
                       to="payment"
                       v-if="count_cartitems"
                       >NEXT</router-link
-                    >
+                    > -->
                   </div>
                 </div>
               </form>
@@ -357,12 +357,12 @@
                 </div>
                 <div class="cartSummary-items bt-0">
                   <div class="csi-title">Discount</div>
-                  <div class="csi-title-amount">-$<strong> 10.00</strong></div>
+                  <div class="csi-title-amount">-$<strong> 0.00</strong></div>
                 </div>
                 <div class="cartSummary-items justify-sbetw pt-4">
                   <div class="csi-title-t">Total</div>
                   <div class="csi-total-amount">
-                    $<strong>{{ total_price + shippingamount - 10 }}</strong>
+                    $<strong>{{ total_price + shippingamount }}</strong>
                   </div>
                 </div>
               </div>

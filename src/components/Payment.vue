@@ -266,23 +266,23 @@
                 <div class="cartSummary-items">
                   <div class="csi-title">Item(s)</div>
                   <div class="csi-title-amount">
-                    $<strong>--{{ this.total_price }}</strong>
+                    $<strong>{{ this.total_price }}</strong>
                   </div>
                 </div>
                 <div class="cartSummary-items">
                   <div class="csi-title">Est. Delivery</div>
                   <div class="csi-title-amount">
-                    $<strong>=={{ shippingamount }}</strong>
+                    $<strong>{{ shippingamount }}</strong>
                   </div>
                 </div>
                 <div class="cartSummary-items bt-0">
                   <div class="csi-title">Discount</div>
-                  <div class="csi-title-amount">-$<strong> 10.00</strong></div>
+                  <div class="csi-title-amount">$<strong> 0.00</strong></div>
                 </div>
                 <div class="cartSummary-items justify-sbetw pt-4">
                   <div class="csi-title-t">Total</div>
                   <div class="csi-total-amount">
-                    $--<strong>{{ (this.total_price + this.shippingamount) - 10 }}</strong>
+                    $<strong>{{ (this.total_price + this.shippingamount) }}</strong>
                   </div>
                 </div>
               </div>

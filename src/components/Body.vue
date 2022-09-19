@@ -267,55 +267,15 @@
             <div class="best-sellets">
               <h3>BEST SELLERS</h3>
               <ul>
-                <li>
+                <li v-for="item in bestseller" :key="item.id">
                   <a href="#">
                     <span class="product-container">
-                      <img src="/src/assets/images/b-01.jpg" alt="" />
+                      <img :src="getImgUrl(item.vendor_id, item.featured_image)" alt="" />
                     </span>
                     <span class="product-detail">
-                      <h4>Cologne</h4>
+                      <h4>{{ item.name }}</h4>
                       <p>Perfume</p>
-                      <p class="price">$40.00</p>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="product-container">
-                      <img src="/src/assets/images/b-02.jpg" alt="" />
-                    </span>
-                    <span class="product-detail">
-                      <h4>Kids Clothes</h4>
-                      <p>Tshirts</p>
-                      <p class="price">
-                        $20.00 <span class="price-d">$120.00</span>
-                      </p>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="product-container">
-                      <img src="/src/assets/images/b-03.jpg" alt="" />
-                    </span>
-                    <span class="product-detail">
-                      <h4>SoundTrueOnEar8</h4>
-                      <p>ipod</p>
-                      <p class="price">
-                        $70.00 <span class="price-d">$120.00</span>
-                      </p>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="product-container">
-                      <img src="/src/assets/images/b-04.jpg" alt="" />
-                    </span>
-                    <span class="product-detail">
-                      <h4>Nike Shoes</h4>
-                      <p>Shoes</p>
-                      <p class="price">$60.00</p>
+                      <p class="price">${{ item.seller_price }}</p>
                     </span>
                   </a>
                 </li>
@@ -365,6 +325,7 @@
                 </p>
               </div>
               <!-- START:: INSIDE PRODUCTS -->
+              <div class="ProductBox-temp2" v-if="this.getHomepageProducts?.cat_one?.length==0">No Product Found</div>
               <div class="ProductBox-temp2">
                 <div class="row g-0">
                   <div class="cus-col" v-for="(product, index) in this.getHomepageProducts?.cat_one" :key="index">
@@ -418,6 +379,7 @@
                 <div class="row g-0">
 
 
+                  <div class="ProductBox-temp2" v-if="this.getHomepageProducts?.cat_two?.length==0">No Product Found</div>
                   <div class="cus-col" v-for="(product, index) in this.getHomepageProducts?.cat_two" :key="index">
                     <div class="category-product-block">
                       <router-link @click="forceclick(product.id)" :to="{
@@ -466,6 +428,7 @@
                 </p>
               </div>
               <!-- START:: INSIDE PRODUCTS -->
+              <div class="ProductBox-temp2" v-if="this.getHomepageProducts?.cat_thr?.length==0">No Product Found</div>
               <div class="ProductBox-temp2">
                 <div class="row g-0">
                   <div class="cus-col" v-for="(product, index) in this.getHomepageProducts?.cat_thr" :key="index">
@@ -581,6 +544,7 @@ export default {
     return {
       //
 
+      bestseller:[],
       settings: {
         itemsToShow: 2,
         snapAlign: "center",
@@ -657,6 +621,7 @@ export default {
     this.getFeaturedProducts();
     this.getJustForYouProducts();
     this.getTopCategoryProducts();
+    this.getBestSeller();
     if (localStorage.getItem("login")) {
       console.log("Login Data");
       const logindata = JSON.parse(localStorage.getItem("login"));
@@ -689,6 +654,11 @@ export default {
     this.EndLoader();
   },
   methods: {
+    async getBestSeller(){
+      let result = axios.get(axios.defaults.baseURL + "product/bestseller/" + this.seller_id);
+      console.log((await result).data);
+      this.bestseller = (await result).data;
+    },
     addtocart2(item) {
       this.cartform.item_price = item.seller_price;
       this.cartform.product_id = item.id;
