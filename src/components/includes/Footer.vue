@@ -156,7 +156,7 @@
             </div>
          </div>
          <div class="bottom-footer">
-            <p>   © Copyright 2022 All Rights Reserved.</p>
+            <p>   © Copyright {{ new Date().getFullYear() }} All Rights Reserved.</p>
             <img src="/src/assets/images/visa.jpg" alt="">
             <img src="/src/assets/images/master-card.jpg" alt="">
             <img src="/src/assets/images/paypal.jpg" alt="">

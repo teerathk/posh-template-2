@@ -351,6 +351,7 @@ export default {
       count: 0,
       userdetails: [],
       img_url: "https://posh-marketplace.plego.pro/img/product-images/",
+      seller_id: import.meta.env.VITE_SELLER_ID,
     };
   },
   methods: {
@@ -459,6 +460,7 @@ export default {
           cvv: this.paymentdetails.cvv,
           expirymonth: this.paymentdetails.expirymonth,
           expiryyear: this.paymentdetails.expiryyear,
+          seller_id:this.seller_id
         })
         .then(
           (response) => {
