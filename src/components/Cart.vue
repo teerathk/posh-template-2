@@ -232,6 +232,7 @@
 		  HeaderKey: 0,
 		  user_id: null,
 		  cartitemslist: [],
+		  productinfo:[],
 		  count_cartitems: 0,
 		  total_price: 0,
 		  count: 0,
@@ -262,6 +263,10 @@
 			  var tempTotalPrice = 0;
 			  this.count_cartitems = this.cartitemslist.length;
 			  this.cartitemslist.forEach(function (items) {
+
+
+				
+
 				console.log("Qty: " + items.quantity);
 				tempTotalPrice += items.quantity * items.item_price;
 			  });

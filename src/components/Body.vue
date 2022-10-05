@@ -55,24 +55,15 @@
           method="post"
         >
                     <div class="select-category-box">
-                      <select>
+                      <select v-model="category_select">
                         <option>All categories</option>
-                        <option>Fashion</option>
-                        <option>Computer</option>
-                        <option>Furniture</option>
-                        <option>Smartphone</option>
-                        <option>Healthy & Beauty</option>
-                        <option>Sport Clothing</option>
-                        <option>Watch & Jewelry</option>
-                        <option>Kitchen</option>
-                        <option>Accessories</option>
-                        <option>More Category</option>
+                        <option v-for="(item,index) in list" :key="index" :value="item.id">{{ item.title }}</option>
                       </select>
                     </div>
                     
                     <div class="col-sm-9-bc">
                       <div class="search-box">
-                        <input type="search" name="" placeholder="Search entire store here..." />
+                        <input type="search" v-model="search" name="" placeholder="Search entire store here..." />
                       </div>
                       <div class="search-tab">
                         <button type="submit">
@@ -624,6 +615,8 @@ export default {
       img_url: axios.defaults.url + "/img/product-images",
       img_url_cat: axios.defaults.url + "/img/menu-template",
 
+      category_select:0,
+      search:0,
       user_id: 0,
       seller_id: import.meta.env.VITE_SELLER_ID,
       getHomepageProducts: [],
@@ -674,7 +667,7 @@ export default {
     getFilterData() {
       //alert(this.query);
       //this.$router.go({name:"Allproducts"});
-      this.$router.push({ name: "Allproducts", query: { search: this.query } });
+      this.$router.push({ name: "Allproducts", query: { search: this.search, p_id: this.category_select } });
       //this.$router.go({name:'Allproducts', query: { search: this.query } })
       // this.$router.push({name:"Allproducts"});
     },

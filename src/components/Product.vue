@@ -53,11 +53,10 @@
                   </a>
                 </div>
                 <div class="wish-i">
-                  <router-link to="cart" class="cartitems"
-              >
-              <span class="cart" ></span>
-              <img src="/src/assets/images/cart-i.jpg" alt="" />
-            </router-link>
+                  <router-link to="cart" class="cartitems">
+                    <span class="cart"></span>
+                    <img src="/src/assets/images/cart-i.jpg" alt="" />
+                  </router-link>
                 </div>
               </div>
               <div class="clearfix"></div>
@@ -86,7 +85,9 @@
           <div class="col-6">
             <div class="order-track">
               <ul>
-                <li v-if="cartform.user_id!=null"><router-link to="tracking"> Track Your Order</router-link></li>
+                <li v-if="cartform.user_id != null">
+                  <router-link to="tracking"> Track Your Order</router-link>
+                </li>
                 <li><a href="#">Help Center</a></li>
               </ul>
             </div>
@@ -100,8 +101,12 @@
           <div class="col-sm-12">
             <ul class="breadcrumbs-list">
               <li><a href="">All Categories</a></li>
-              <li v-if="this.MainCategory?.parent"><a href="">{{ this.MainCategory?.parent?.title }}</a></li>
-              <li v-if="this.MainCategory?.parent"><a href="">{{ this.MainCategory.title }}</a></li>
+              <li v-if="this.MainCategory?.parent">
+                <a href="">{{ this.MainCategory?.parent?.title }}</a>
+              </li>
+              <li v-if="this.MainCategory?.parent">
+                <a href="">{{ this.MainCategory.title }}</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -114,68 +119,62 @@
           <div class="col-sm-5">
             <div class="singal-product">
               <div class="gallery-pm-main">
-                  <!-- START GALLERY HERE -->
+                <!-- START GALLERY HERE -->
 
-
-                  
-                  <div class="mySlides right-main">
-                    <img
-                      :src="
-                        getImgUrl(
-                          product_info.vendor_id,
-                          product_info.featured_image
-                        )
-                      "
-                      style="width: 100%"
-                    />
-                  </div>
-
-                  <div
-                    class="mySlides right-main"
-                    v-for="(item, index) in gallery"
-                    :key="index"
-                  >
-                    <img
-                      :src="getImgUrl(product_info.vendor_id, item)"
-                      style="width: 100%"
-                    />
-                  </div>
-
-
-
-
-
-                  <div class="row gallery-pm-thumb">
-                    <div
-                    class="left-thumbs"
-                      
-                    >
-                    <ul>
-                      <li><img
-                        class="demo cursor active"
-                        :src="
-                          getImgUrl(
-                            product_info.vendor_id,
-                            product_info.featured_image
-                          )
-                        "
-                        style="width: 100%"
-                        @click="currentSlide(1)"
-                        alt="The Woods"
-                      /></li>
-                  <li v-for="(item, index) in gallery"
-                      :key="index">
-                      <img
-                        class="demo cursor"
-                        :src="getImgUrl(product_info.vendor_id, item)"
-                        style="width: 100%"
-                        @click="currentSlide(index + 2)"
-                      /></li></ul>
-                    </div>
-                  </div>
-                  <!-- END:: GALLERY HERE -->
+                <div class="mySlides right-main">
+                  <img
+                    :src="
+                      getImgUrl(
+                        product_info.vendor_id,
+                        product_info.featured_image
+                      )
+                    "
+                    style="width: 100%"
+                  />
                 </div>
-<!-- 
+
+                <div
+                  class="mySlides right-main"
+                  v-for="(item, index) in gallery"
+                  :key="index"
+                >
+                  <img
+                    :src="getImgUrl(product_info.vendor_id, item)"
+                    style="width: 100%"
+                  />
+                </div>
+
+                <div class="row gallery-pm-thumb">
+                  <div class="left-thumbs">
+                    <ul>
+                      <li>
+                        <img
+                          class="demo cursor active"
+                          :src="
+                            getImgUrl(
+                              product_info.vendor_id,
+                              product_info.featured_image
+                            )
+                          "
+                          style="width: 100%"
+                          @click="currentSlide(1)"
+                          alt="The Woods"
+                        />
+                      </li>
+                      <li v-for="(item, index) in gallery" :key="index">
+                        <img
+                          class="demo cursor"
+                          :src="getImgUrl(product_info.vendor_id, item)"
+                          style="width: 100%"
+                          @click="currentSlide(index + 2)"
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- END:: GALLERY HERE -->
+              </div>
+              <!-- 
 
 
               <div class="left-thumbs">
@@ -215,20 +214,26 @@
               <h1 class="title-pm-detail">
                 {{ product_info.name }}
               </h1>
-              <div class="price-pm-detail">$<strong>{{ product_info.seller_price }}</strong></div>
+              <div class="price-pm-detail">
+                $<strong>{{ product_info.seller_price }}</strong>
+              </div>
               <div class="short-pm-detail">
                 {{ product_info.description }}
               </div>
 
               <div class="addtocart-select-pm">
                 <form method="post" @submit.prevent="addtocart">
-                <div class="row">
-                  <div class="col-sm-7">               
-                  <div class="qty-push-bx">
-                    <input type="hidden" v-model="product_id" />
-                    <input type="hidden" v-model="user_id" />
-                      <div class="cartAdd-item">
-                    <span class="incrementNum btnplus-item" @click="increment">+</span>
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div class="qty-push-bx">
+                        <input type="hidden" v-model="product_id" />
+                        <input type="hidden" v-model="user_id" />
+                        <div class="cartAdd-item">
+                          <span
+                            class="incrementNum btnplus-item"
+                            @click="increment"
+                            >+</span
+                          >
                           <input
                             type="text"
                             min="1"
@@ -238,23 +243,27 @@
                             id="txtAcrescimo"
                             class="qty-number"
                           />
-                          <span class="incrementNum btnminus-item" @click="decrement"
+                          <span
+                            class="incrementNum btnminus-item"
+                            @click="decrement"
                             >-</span
                           >
+                        </div>
                       </div>
-
-							  </div>
-              </div>
-                <div class="col-sm-5">
-                  <button type="submit" class="primary" on>Add to Cart</button>
+                    </div>
+                    <div class="col-sm-5">
+                      <button type="submit" class="primary" on>
+                        Add to Cart
+                      </button>
+                    </div>
                   </div>
-              </div>
                 </form>
+              </div>
             </div>
           </div>
-          </div>
-          </div>
-          </div></div>
+        </div>
+      </div>
+    </div>
     <div class="container bgcolor-gl mb-5">
       <div class="produ-listing-bx cart-c">
         <div class="row">
@@ -267,12 +276,28 @@
         </div>
         <div class="row">
           <div
-              class="col-xl-3 col-sm-6 col-12"
-              v-for="(product, index) in recommended"
-              :key="index"
-            >
-              <div class="product-item">
-                <div class="pro-img-bx">
+            class="col-xl-3 col-sm-6 col-12"
+            v-for="(product, index) in recommended"
+            :key="index"
+          >
+            <div class="product-item">
+              <div class="pro-img-bx">
+                <router-link
+                  @click="forceclick(product.id)"
+                  :to="{
+                    path: '/product',
+                    query: { id: product.id },
+                    props: true,
+                  }"
+                >
+                  <img
+                    :src="getImgUrl(product.vendor_id, product.featured_image)"
+                    alt=""
+                  />
+                </router-link>
+              </div>
+              <div class="pro-title-bx">
+                <h3 class="prod-title">
                   <router-link
                     @click="forceclick(product.id)"
                     :to="{
@@ -281,40 +306,23 @@
                       props: true,
                     }"
                   >
-                    <img
-                      :src="
-                        getImgUrl(product.vendor_id, product.featured_image)
-                      "
-                      alt=""
-                    />
+                    {{ product.name }}
                   </router-link>
-                </div>
-                <div class="pro-title-bx">
-                  <h3 class="prod-title">
-                    <router-link
-                      @click="forceclick(product.id)"
-                      :to="{
-                        path: '/product',
-                        query: { id: product.id },
-                        props: true,
-                      }"
-                    >
-                      {{ product.name }}
-                    </router-link>
-                  </h3>
-                  <div class="prod-p-icon">
-                    <span class="pro-price">${{ product.seller_price }}</span
-                    ><span class="pro-icons">
-                      <img
-                        @click="addtocart2(product)"
-                        src="/src/assets/img/buy.png"
-                        class="img-fluid" />
-                      <!-- <img src="/src/assets/img/heart.png" /> -->
-                    </span>
-                  </div>
+                </h3>
+                <div class="prod-p-icon">
+                  <span class="pro-price">${{ product.seller_price }}</span
+                  ><span class="pro-icons">
+                    <img
+                      @click="addtocart2(product)"
+                      src="/src/assets/img/buy.png"
+                      class="img-fluid"
+                    />
+                    <!-- <img src="/src/assets/img/heart.png" /> -->
+                  </span>
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>
@@ -331,56 +339,52 @@
         </div>
         <div class="row">
           <div
-              class="col-xl-3 col-sm-6 col-12"
-              v-for="(product, index) in justForYouProducts"
-              :key="index"
-            >
-              <div class="product-item">
-                <div class="pro-img-bx">
+            class="col-xl-3 col-sm-6 col-12"
+            v-for="(product, index) in justForYouProducts"
+            :key="index"
+          >
+            <div class="product-item">
+              <div class="pro-img-bx">
+                <router-link
+                  @click="forceclick(product.id)"
+                  :to="{
+                    path: '/product',
+                    query: { id: product.id },
+                    props: true,
+                  }"
+                >
+                  <img
+                    :src="getImgUrl(product.vendor_id, product.featured_image)"
+                    alt=""
+                  />
+                </router-link>
+              </div>
+              <div class="pro-title-bx">
+                <h3 class="prod-title">
                   <router-link
                     @click="forceclick(product.id)"
+                    :key="product.id"
                     :to="{
                       path: '/product',
                       query: { id: product.id },
                       props: true,
                     }"
                   >
-                    <img
-                      :src="
-                        getImgUrl(product.vendor_id, product.featured_image)
-                      "
-                      alt=""
-                    />
+                    {{ product.name }}
                   </router-link>
-                </div>
-                <div class="pro-title-bx">
-                  <h3 class="prod-title">
-                    <router-link
-                      @click="forceclick(product.id)"
-                      :key="product.id"
-                      :to="{
-                        path: '/product',
-                        query: { id: product.id },
-                        props: true,
-                      }"
-                    >
-                      {{ product.name }}
-                    </router-link>
-                  </h3>
-                  <div class="prod-p-icon">
-                    <span class="pro-price">${{ product.seller_price }}</span
-                    ><span class="pro-icons"
-                      ><img
-                        @click="addtocart2(product)"
-                        src="/src/assets/img/buy.png"
-                        class="img-fluid" /><img
-                        src="/src/assets/img/heart.png"
-                    /></span>
-                  </div>
+                </h3>
+                <div class="prod-p-icon">
+                  <span class="pro-price">${{ product.seller_price }}</span
+                  ><span class="pro-icons"
+                    ><img
+                      @click="addtocart2(product)"
+                      src="/src/assets/img/buy.png"
+                      class="img-fluid" /><img src="/src/assets/img/heart.png"
+                  /></span>
                 </div>
               </div>
             </div>
-
+          </div>
         </div>
       </div>
     </div>
@@ -464,20 +468,22 @@ export default {
     return {
       HeaderKey: 0,
       recommended: [],
-      MainCategory:[],
+      MainCategory: [],
       justForYouProducts: [],
       cartform: {
         product_id: 0,
         user_id: 0,
         quantity: 1,
         item_price: 0,
+        vendor_id:0,
+        featured_image:0
       },
       product_info: [],
       slideIndex: 1,
       //img_url: "https://posh-marketplace.plego.pro/img/product-images",
       img_url: axios.defaults.url + "/img/product-images",
       gallery: [],
-      seller_id:import.meta.env.VITE_SELLER_ID
+      seller_id: import.meta.env.VITE_SELLER_ID,
     };
   },
   async mounted() {
@@ -514,10 +520,15 @@ export default {
       this.getProductInfo();
     },
     async getJustForYouProducts() {
-      let result = axios.get(axios.defaults.baseURL + "product/justforyou/"+this.cartform.product_id+"/"+this.seller_id);
+      let result = axios.get(
+        axios.defaults.baseURL +
+          "product/justforyou/" +
+          this.cartform.product_id +
+          "/" +
+          this.seller_id
+      );
       console.log((await result).data);
       this.justForYouProducts = (await result).data;
-
     },
     increment() {
       //alert("Yeah")
@@ -556,30 +567,40 @@ export default {
       this.cartform.product_id = this.$route.query.id;
       this.productHistory();
 
-      let result = axios.get(
-        axios.defaults.baseURL +
-          "product/getForTemplate/" +
-          this.$route.query.id+"/"+this.seller_id
-      ).then(response=>{
-        console.log((result).data);
-      this.product_info = (result).data;
-      this.gallery = this.product_info.images;
-      let cat_result = axios.get(
-        axios.defaults.baseURL +
-          "seller/getcategorytitle/" +
-          this.this.product_info.parent_category+"/"+this.this.product_info.sub_category
-      ).then(resp=>{
-        
-      });
-      this.MainCategory = (await cat_result).data;
-
-    });
+      let result = axios
+        .get(
+          axios.defaults.baseURL +
+            "product/getForTemplate/" +
+            this.$route.query.id +
+            "/" +
+            this.seller_id
+        )
+        .then((response) => {
+          console.log(response.data);
+          this.product_info = response.data;
+          this.gallery = this.product_info.images;
+          axios
+            .get(
+              axios.defaults.baseURL +
+                "seller/getcategorytitle/" +
+                this.this.product_info.parent_category +
+                "/" +
+                this.this.product_info.sub_category
+            )
+            .then((resp) => {
+              this.MainCategory = resp.data;
+            });
+        });
 
       this.EndLoader();
     },
     async getRecommendedProducts() {
       let result = axios.get(
-        axios.defaults.baseURL + "product/recommended/" + this.$route.query.id+"/"+this.seller_id
+        axios.defaults.baseURL +
+          "product/recommended/" +
+          this.$route.query.id +
+          "/" +
+          this.seller_id
       );
       console.log((await result).data);
       this.recommended = (await result).data;
@@ -597,6 +618,8 @@ export default {
         this.cartform.name = this.product_info.name;
         this.cartform.description = this.product_info.description;
         this.cartform.net_price = this.product_info.seller_price;
+        this.cartform.vendor_id = this.product_info.vendor_id;
+        this.cartform.featured_image = this.product_info.featured_image;
 
         if (localStorage.getItem("guest")) {
           const guestdata = JSON.parse(localStorage.getItem("guest"));
@@ -702,6 +725,8 @@ export default {
         this.cartform.name = item.name;
         this.cartform.description = item.description;
         this.cartform.net_price = item.seller_price;
+        this.cartform.vendor_id = item.vendor_id;
+        this.cartform.featured_image = item.featured_image;
 
         if (localStorage.getItem("guest")) {
           const guestdata = JSON.parse(localStorage.getItem("guest"));
