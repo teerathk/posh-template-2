@@ -44,7 +44,18 @@ var distance = countDownDate - dtx;
 */
 
 
-
+$(document.body).on('click', '.eye-icon-pass i', function(){
+      if($(this).hasClass('active')){
+          $(this).removeClass('active');
+          $(this).siblings('input').attr('type', 'password');
+          $(this).removeClass('fa-eye').addClass('fa-eye-slash');
+      }
+      else {
+          $(this).addClass('active');
+          $(this).siblings('input').attr('type', 'text');
+          $(this).removeClass('fa-eye-slash').addClass('fa-eye');
+      }
+  })
 
 $(document).ready(function() {
       $('#today-deals').owlCarousel({

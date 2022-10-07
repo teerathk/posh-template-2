@@ -20,7 +20,7 @@
             <div class="right-top-info pull-right" v-if="!isHidden">
               <ul>
                 <li><router-link to="login">Sign In</router-link></li>
-                <li><a href="#">My Account</a></li>
+                <li class="bearrow"><a href="#">My Account</a></li>
               </ul>
             </div>
 

@@ -206,18 +206,18 @@ div#loader-container {
   content: "\f023";
   font-family: fontAweSome;
   position: absolute;
-  left: 14px;
+  left: 12px;
   color: #000;
-  top: 2px;
+  top: 0px;
 }
 
 .top-section .right-top-info li:last-child:before {
   content: "\f007";
   font-family: fontAweSome;
   position: absolute;
-  left: 14px;
+  left: 12px;
   color: #000;
-  top: 2px;
+  top: 0px;
 }
 
 .top-section .menu-tabs a:after {
@@ -267,7 +267,7 @@ div#homeBanners button.carousel__prev {
   font-weight: 600;
 }
 
-.top-section .right-top-info a:after {
+.top-section .right-top-info li.bearrow a:after {
   content: "\f107";
   right: 13px;
   font-family: 'fontAweSome';
@@ -1384,7 +1384,7 @@ input#txtAcrescimo {
 
 .today-deals .best-sellets li .product-container img {
   width: 83px;
-  height: 87px;
+  max-height: 87px;
 }
 
 .today-deals .best-sellets li .product-detail {
@@ -1625,7 +1625,7 @@ input#txtAcrescimo {
 .cat-option-pg form {
   margin-bottom: 0;
 }
-nav.pagiBox-bx a.page-link{color: #ff5c00;}
+nav.pagiBox-bx a.page-link{color: #ff5c00;cursor: pointer;}
 nav.pagiBox-bx .page-item.active .page-link {
   z-index: 3;
   color: #fff;
@@ -2410,6 +2410,12 @@ ul#menu-top-menu a.navbar-brand {
   height: 56px;
 }
 @media (min-width:1200px) {
+  .singal-product .right-main {
+    width: 63%;
+    float: right;
+    padding: 25px;
+    min-width: 436px;
+}
 div#homeBanners img.sliderH {
   height: 493px;
 }

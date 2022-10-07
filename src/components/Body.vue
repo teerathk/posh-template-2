@@ -55,7 +55,7 @@
           method="post"
         >
                     <div class="select-category-box">
-                      <select v-model="category_select">
+                      <select >
                         <option>All categories</option>
                         <option v-for="(item,index) in list" :key="index" :value="item.id">{{ item.title }}</option>
                       </select>

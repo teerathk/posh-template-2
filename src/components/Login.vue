@@ -20,7 +20,7 @@
 
 								<form @submit.prevent="loginData" method="POST">
 									<input type="email" placeholder="Email Address*" v-model="login.email" />
-									<span class="eye-icon-pass"><input type="password" placeholder="Password*" v-model="login.password" /><i class="fas fa-eye"></i></span>
+									<span class="eye-icon-pass"><input type="password" placeholder="Password*" v-model="login.password" /><i class="fa fa-eye"></i></span>
 									<span class="invalidLogin alert alert-danger"></span>
 									<label class="group">
 										<input type="checkbox">

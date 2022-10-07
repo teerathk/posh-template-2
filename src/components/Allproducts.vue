@@ -165,19 +165,19 @@
                 <div class="cat-option-pg">
                   <form @submit.prevent="getFilterData" method="post">
                     <div class="price-limit-opt">
-                      <span>Price: </span>
+                      <span>Price: Habib</span>
                       <div class="form-group min-max-bx">
                         <input
                           type="text"
                           v-model="min_price"
-                          placeholder="Min"
+                          placeholder="MIN*"                         
                           class="h-34 form-control min-priceprice"
                         />
                         <span class="seperator"> - </span>
                         <input
+                        placeholder="MAX*"   
                           type="text"
                           v-model="max_price"
-                          placeholder="Max"
                           class="h-34 form-control max-price"
                         />
                         <button

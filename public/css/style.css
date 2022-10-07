@@ -1320,7 +1320,7 @@ span.eye-icon-pass {
     padding: 8px 8px;
     font-size: 12px;
 }
-.eye-icon-pass i.fas.fa-eye, .eye-icon-pass i.fas.fa-eye-slash {
+.eye-icon-pass i.fa.fa-eye, .eye-icon-pass i.fa.fa-eye-slash {
     position: absolute;
     right: 10px;
     top: 50%;
