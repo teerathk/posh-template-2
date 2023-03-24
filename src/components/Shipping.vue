@@ -5,7 +5,7 @@
     <section class="banner-container top-inner-container">
       <div class="container">
         <div class="row g-0">
-          <div class="col-9">
+          <div class="col-xl-9">
             <div class="category-search">
               <form action="">
                 <div class="select-category-box">
@@ -72,7 +72,7 @@
     <div class="sec-nav">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-6">
             <div class="show-all-cat">
               <span
                 ><img src="/src/assets/img/menu-template/category.png" />Show
@@ -85,10 +85,10 @@
               </ul>
             </div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-6">
             <div class="order-track">
               <ul>
-                <li><a href="#">Track Your Order</a></li>
+                <li v-if="user_id!=null"><router-link to="tracking"> Track Your Order</router-link></li>
                 <li><a href="#">Help Center</a></li>
               </ul>
             </div>
@@ -98,10 +98,14 @@
     </div>
 
     <div class="container">
+      <div class="container-fluid">
       <div class="checkout-itesm-bx">
         <div class="row mt-4">
           <div class="col-12">
-            <h4><strong>Checkout</strong> <span>(2 Items)</span></h4>
+            <h4>
+              <strong>Checkout</strong>
+              <span>({{ count_cartitems }} Items)</span>
+            </h4>
           </div>
         </div>
         <div class="row">
@@ -126,14 +130,14 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-sm-6">
-                    <div class="form-group mb-4">
+                  <div class="col-sm-6 mb-4">
+                    <div class="form-group">
                       <label class="top-position">First Name*</label>
                       <input type="text" v-model="shippingdetails.first_name" />
                     </div>
                   </div>
                   <div class="col-sm-6 mb-4">
-                    <div class="form-group mb-4">
+                    <div class="form-group">
                       <label class="top-position">Last Name*</label>
                       <input type="text" v-model="shippingdetails.last_name" />
                     </div>
@@ -141,13 +145,9 @@
                   <div class="col-sm-12 mb-4">
                     <div class="form-group">
                       <label class="top-position">Address*</label>
-                      <vue-google-autocomplete
-                        id="map"
-                        classname="form-control"
-                        v-model="shippingdetails.address"
-                        placeholder="Enter Address"
-                        v-on:placechanged="getAddressData"
-                      ></vue-google-autocomplete>
+                      <vue-google-autocomplete id="map" ref="address" classname="form-control" 
+                      v-model="shippingdetails.address" placeholder="Enter Address" 
+                      v-on:placechanged="getAddressData"></vue-google-autocomplete>
                       <!-- <input
                         type="text"
                         id="ship-address"
@@ -239,12 +239,7 @@
                   <div class="col-sm-6 mb-4">
                     <div class="form-group">
                       <label class="top-position">Postal Zip Code*</label>
-                      <input
-                        type="text"
-                        id="postcode"
-                        name="postcode"
-                        v-model="shippingdetails.zip"
-                      />
+                      <input type="text" id="postcode" name="postcode" v-model="shippingdetails.zip" />
                     </div>
                   </div>
                   <div class="col-sm-6 mb-4">
@@ -303,14 +298,7 @@
                   </div>
 
                   <div class="col-12 mt-4 mb-5">
-                    <button class="primary" type="submit">Update</button>
-                    <button
-                      class="primary nxtbtn"
-                      type="button"
-                      @click="getShippingRate"
-                    >
-                      NEXT
-                    </button>
+                    <a class="primary nxtbtn" @click="getShippingRate" >NEXT</a>
                     <!-- <router-link
                       class="primary nxtbtn"
                       to="payment"
@@ -320,17 +308,12 @@
                   </div>
                 </div>
               </form>
-
-              
-              
             </div>
           </div>
+
           <div class="col-sm-4">
             <div class="cartSummary-bx shipping-right">
               <div class="cartsum-title">Your Order</div>
-
-
-
               <div
                 class="youorder-opt-bx"
                 v-for="items in cartitemslist"
@@ -359,9 +342,6 @@
                   </div>
                 </div>
               </div>
-
-
-              
               <div class="cartSum-list">
                 <div class="cartSummary-items">
                   <div class="csi-title">Item(s)</div>
@@ -375,28 +355,22 @@
                     $<strong>{{ shippingamount }}</strong>
                   </div>
                 </div>
-                <div class="cartSummary-items bt-0">
+                <!-- <div class="cartSummary-items bt-0">
                   <div class="csi-title">Discount</div>
-                  <div class="csi-title-amount">-$<strong> 10.00</strong></div>
-                </div>
+                  <div class="csi-title-amount">-$<strong> 0.00</strong></div>
+                </div> -->
                 <div class="cartSummary-items justify-sbetw pt-4">
                   <div class="csi-title-t">Total</div>
                   <div class="csi-total-amount">
-                    $<strong>{{ total_price + shippingamount - 10 }}</strong>
+                    $<strong>{{ total_price + shippingamount }}</strong>
                   </div>
                 </div>
               </div>
-
-              <!-- <div class="cartSum-list">
-                <router-link class="primary" to="payment"
-                  >PROCEED TO CHECKOUT
-                  <i class="fa fa-cart-plus" aria-hidden="true"></i
-                ></router-link>
-              </div> -->
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
 
     <div class="container bgcolor-gl mb-5">
@@ -507,335 +481,334 @@
 </template>
 
 <script>
-import HeaderComp from "./includes/Header.vue";
-import FooterComp from "./includes/Footer.vue";
-import axios from "axios";
-import VueGoogleAutocomplete from "vue-google-autocomplete";
-export default {
-  name: "Shipping",
-  components: {
-    HeaderComp,
-    FooterComp,
-    VueGoogleAutocomplete,
-  },
-
-  data() {
-    return {
-      user_id: null,
-      cartitemslist: [],
-      count_cartitems: 0,
-      total_price: 0,
-      shippingamount: 0,
-      count: 0,
-      shippingdetails: {
+  import HeaderComp from "./includes/Header.vue";
+  import FooterComp from "./includes/Footer.vue";
+  import axios from "axios";
+  import VueGoogleAutocomplete from "vue-google-autocomplete";
+  export default {
+    name: "Shipping",
+    components: {
+      HeaderComp,
+      FooterComp,
+      VueGoogleAutocomplete
+    },
+  
+    data() {
+      return {
         user_id: null,
-        first_name: null,
-        last_name: null,
-        email: null,
-        phone: null,
-        address: null,
-        zip: null,
-        city: null,
-        state: null,
-        country: null,
-      },
-      userdetails: [],
-      img_url: "https://posh-marketplace.plego.pro/img/product-images/",
-    };
-  },
-
-  async mounted() {
-    this.loadSession();
-    this.getCartData();
-    this.getLocationFinder();
-    
-    const script = document.createElement("script");
-    script.src =
-    "https://maps.googleapis.com/maps/api/js?key=AIzaSyDvGSbL-Mp61JTVDrNWy4ZGbloYVV3fFVs&callback=initAutocomplete&libraries=places&v=weekly"
-      ;
-    script.addEventListener("load", this.initPayPalButton);
-    document.body.appendChild(script);
-
-  },
-  methods: {
-    async getShippingRate() {
-      //       $shipperContact
-      //         ->setCompanyName('Company Name')
-      //         ->setEMailAddress('test@example.com')
-      //         ->setPersonName('Person Name')
-      //         ->setPhoneNumber(('123-123-1234'));
-
-      // $shipper = new ComplexType\Party();
-      // $shipper
-      //         ->setAccountNumber(FEDEX_ACCOUNT_NUMBER)
-      //         ->setAddress($shipperAddress)
-      //         ->setContact($shipperContact);
-
-      // $recipientAddress = new ComplexType\Address();
-      // $recipientAddress
-      //         ->setStreetLines(['Address Line 1'])
-      //         ->setCity('Herndon')
-      //         ->setStateOrProvinceCode('VA')
-      //         ->setPostalCode('20171')
-      //         ->setCountryCode('US');
-
-      this.shippingdetails.address = $("#map").val();
-      this.startLoader();
-      axios
-        .get(axios.defaults.baseURL + "shipping", {
-          params: {
-            user_id: this.shippingdetails.user_id,
-            first_name: this.shippingdetails.first_name,
-            last_name: this.shippingdetails.last_name,
-            email: this.shippingdetails.email,
-            phone: this.shippingdetails.phone,
-            address: this.shippingdetails.address,
-            zip: this.shippingdetails.zip,
-            city: this.shippingdetails.city,
-            state: this.shippingdetails.state,
-            country: this.shippingdetails.country,
-          },
-        })
-        .then((result) => {
-          console.log(result.data);
-          const obj = result.data;
-          console.log(obj);
-          if (obj.success == true) {
-            alert("Shipping Form submitted successfully");
-            //this.shippingdetails = null
-            var tracking = obj.data.tracking;
-            var Currency = obj.data.Currency;
-            var Amount = obj.data.Amount;
-            this.shippingamount = parseInt(Amount);
-            var shipping = {
-              tracking: tracking,
-              Currency: Currency,
-              Amount: Amount,
-            };
-
-            localStorage.setItem("shipping", JSON.stringify(shipping));
-            this.EndLoader();
-            this.$router.push("payment");
-
-            //: "794638767837", Currency: "USD", Amount: "26.1"
-          } else {
-            this.EndLoader();
-            alert("Some error occured in saving data");
-          }
-          console.log(result);
-        });
-      // this.EndLoader()
-    },
-    async getLocationFinder() {
-      const options = {
-        method: "GET",
-        url: "https://api-sandbox.dhl.com/location-finder/v1/find-by-address",
-        params: { countryCode: "US", streetAddress: "chicago" },
-        headers: { "DHL-API-Key": "2LxOXjvUAXsBQi4FzYYc2pYGHnGcne3b" },
+        cartitemslist: [],
+        count_cartitems: 0,
+        total_price: 0,
+        shippingamount: 0,
+        count: 0,
+        shippingdetails: {
+          user_id: null,
+          first_name: null,
+          last_name: null,
+          email: null,
+          phone: null,
+          address: null,
+          zip: null,
+          city: null,
+          state: null,
+          country: null,
+        },
+        userdetails: [],
+        img_url: "https://posh-marketplace.plego.pro/img/product-images/",
       };
-
-      axios
-        .request(options)
-        .then(function (response) {
-          console.log(response.data);
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
     },
-    async postShippingData(e) {
-      document.getElementById("ajaxLoader").style.display = "block";
-      this.shippingdetails.address = $("#map").val();
-      axios
-        .post(axios.defaults.baseURL + "update-shipping", this.shippingdetails)
-        .then((result) => {
-          console.log(result.data);
-          const obj = result.data;
-          console.log(obj);
-          if (obj.success == true) {
-            alert("Shipping Form submitted successfully");
-            //this.shippingdetails = null
-          } else {
-            alert("Some error occured in saving data");
+  
+    async mounted() {
+      this.loadSession();
+      this.getCartData();
+      this.getLocationFinder();
+      this.$refs.address.focus();
+      // const script = document.createElement("script");
+      // script.src =
+      //   "https://www.paypal.com/sdk/js?client-id=AeGIexliJjrLgo1pvuD34jNON2clgKR1bcx4bAx1DSi-ryq-9gRE5Lr5Yh2v0XWUFFap9yTsYk6G9Zo-&currency=USD";
+      // script.addEventListener("load", this.initPayPalButton);
+      // document.body.appendChild(script);
+      
+    },
+    methods: {
+      async getShippingRate() {
+        //       $shipperContact
+        //         ->setCompanyName('Company Name')
+        //         ->setEMailAddress('test@example.com')
+        //         ->setPersonName('Person Name')
+        //         ->setPhoneNumber(('123-123-1234'));
+  
+        // $shipper = new ComplexType\Party();
+        // $shipper
+        //         ->setAccountNumber(FEDEX_ACCOUNT_NUMBER)
+        //         ->setAddress($shipperAddress)
+        //         ->setContact($shipperContact);
+  
+        // $recipientAddress = new ComplexType\Address();
+        // $recipientAddress
+        //         ->setStreetLines(['Address Line 1'])
+        //         ->setCity('Herndon')
+        //         ->setStateOrProvinceCode('VA')
+        //         ->setPostalCode('20171')
+        //         ->setCountryCode('US');
+  
+        this.shippingdetails.address = $("#map").val()
+        this.startLoader()
+        axios
+          .get(axios.defaults.baseURL + "shipping", {
+            params: {
+              user_id: this.shippingdetails.user_id,
+              first_name: this.shippingdetails.first_name,
+              last_name: this.shippingdetails.last_name,
+              email: this.shippingdetails.email,
+              phone: this.shippingdetails.phone,
+              address: this.shippingdetails.address,
+              zip: this.shippingdetails.zip,
+              city: this.shippingdetails.city,
+              state: this.shippingdetails.state,
+              country: this.shippingdetails.country,
+            },
+          })
+          .then((result) => {
+            console.log(result.data);
+            const obj = result.data;
+            console.log(obj);
+            if (obj.success == true) {
+              alert("Shipping Form submitted successfully");
+              //this.shippingdetails = null
+              var tracking = obj.data.tracking;
+              var Currency = obj.data.Currency;
+              var Amount = obj.data.Amount;
+              this.shippingamount = parseInt(Amount);
+              var shipping = {
+                tracking: tracking,
+                Currency: Currency,
+                Amount: Amount,
+              };
+  
+              localStorage.setItem("shipping", JSON.stringify(shipping));
+              this.EndLoader()
+              this.$router.push("payment");
+  
+              //: "794638767837", Currency: "USD", Amount: "26.1"
+            } else {
+              this.EndLoader()
+              alert("Some error occured in saving data");
+            }
+            console.log(result);
+          });
+        // this.EndLoader()
+      },
+      async getLocationFinder() {
+        const options = {
+          method: "GET",
+          url: "https://api-sandbox.dhl.com/location-finder/v1/find-by-address",
+          params: { countryCode: "US", streetAddress: "chicago" },
+          headers: { "DHL-API-Key": "2LxOXjvUAXsBQi4FzYYc2pYGHnGcne3b" },
+        };
+  
+        axios
+          .request(options)
+          .then(function (response) {
+            console.log(response.data);
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+      },
+      async postShippingData(e) {
+        document.getElementById('ajaxLoader').style.display = 'block';
+        this.shippingdetails.address = $("#map").val()
+        axios
+          .post(axios.defaults.baseURL + "update-shipping", this.shippingdetails)
+          .then((result) => {
+            console.log(result.data);
+            const obj = result.data;
+            console.log(obj);
+            if (obj.success == true) {
+              alert("Shipping Form submitted successfully");
+              //this.shippingdetails = null
+            } else {
+              alert("Some error occured in saving data");
+            }
+            console.log(result);
+          });
+          document.getElementById('ajaxLoader').style.display = 'none';
+        e.preventDefault();
+      },
+      loadSession() {
+        if (localStorage.getItem("login")) {
+          console.log("Login Data");
+          const logindata = JSON.parse(localStorage.getItem("login"));
+          this.userdetails = logindata;
+  
+          this.shippingdetails.first_name = logindata.first_name;
+          this.shippingdetails.last_name = logindata.last_name;
+          this.shippingdetails.email = logindata.email;
+          this.shippingdetails.phone = logindata.phone;
+          this.shippingdetails.address = logindata.u_address;
+          this.shippingdetails.city = logindata.u_city;
+          this.shippingdetails.city = logindata.u_city;
+          this.shippingdetails.state = logindata.u_state;
+          this.shippingdetails.zip = logindata.u_zip;
+  
+          console.log(logindata.id);
+          console.log(logindata);
+          this.user_id = logindata.id;
+          this.shippingdetails.user_id = logindata.id;
+        } else {
+          this.$router.push({ name: "Login" });
+        }
+      },
+      async getCartData() {
+        this.startLoader();
+        this.total_price = 0;
+        this.count = 0;
+        let result = axios.post(
+          axios.defaults.baseURL + "usercartdata",
+          {
+            user_id: this.user_id,
+          },
+          {
+            useCredentails: true,
           }
-          console.log(result);
+        );
+        console.log("Cart Check Data2");
+        console.log((await result).data);
+  
+        this.cartitemslist = (await result).data;
+  
+        var tempTotalPrice = 0;
+        this.count_cartitems = this.cartitemslist.length;
+        this.cartitemslist.forEach(function (items) {
+          console.log("Qty: " + items.quantity);
+          tempTotalPrice += items.quantity * items.item_price;
         });
-      document.getElementById("ajaxLoader").style.display = "none";
-      e.preventDefault();
-    },
-    loadSession() {
-      if (localStorage.getItem("login")) {
-        console.log("Login Data");
-        const logindata = JSON.parse(localStorage.getItem("login"));
-        this.userdetails = logindata;
-
-        this.shippingdetails.first_name = logindata.first_name;
-        this.shippingdetails.last_name = logindata.last_name;
-        this.shippingdetails.email = logindata.email;
-        this.shippingdetails.phone = logindata.phone;
-        this.shippingdetails.address = logindata.u_address;
-        this.shippingdetails.city = logindata.u_city;
-        this.shippingdetails.city = logindata.u_city;
-        this.shippingdetails.state = logindata.u_state;
-        this.shippingdetails.zip = logindata.u_zip;
-
-        console.log(logindata.id);
-        console.log(logindata);
-        this.user_id = logindata.id;
-        this.shippingdetails.user_id = logindata.id;
-      } else {
-        this.$router.push({ name: "Login" });
-      }
-    },
-    async getCartData() {
-      this.startLoader();
-      this.total_price = 0;
-      this.count = 0;
-      let result = axios.post(
-        axios.defaults.baseURL + "usercartdata",
-        {
-          user_id: this.user_id,
-        },
-        {
-          useCredentails: true,
+        this.total_price = tempTotalPrice;
+        //this.itemsincart=totalQty;
+        $(".cartitems").children("span").html(this.count_cartitems);
+        if (this.count_cartitems == 0) {
+          $(".cartitems").children("span").hide();
+        } else {
+          $(".cartitems").children("span").show();
         }
-      );
-      console.log("Cart Check Data2");
-      console.log((await result).data);
-
-      this.cartitemslist = (await result).data;
-
-      var tempTotalPrice = 0;
-      this.count_cartitems = this.cartitemslist.length;
-      this.cartitemslist.forEach(function (items) {
-        console.log("Qty: " + items.quantity);
-        tempTotalPrice += items.quantity * items.item_price;
-      });
-      this.total_price = tempTotalPrice;
-      //this.itemsincart=totalQty;
-      $(".cartitems").children("span").html(this.count_cartitems);
-      if (this.count_cartitems == 0) {
+  
+        if (localStorage.getItem("login")) {
+          console.log("Login Data");
+          const logindata = JSON.parse(localStorage.getItem("login"));
+          this.user_id = logindata.id;
+          logindata.cartitems = this.cartitemslist;
+          localStorage.setItem("login", JSON.stringify(logindata));
+        }
+  
+        //this.count_cartitems = this.cartitemslist.length
+        this.HeaderKey += 1;
+        this.EndLoader();
+      },
+      async removeAll() {
+        this.startLoader();
+        this.cartitemslist = null;
+        $(".cartitems").children("span").html(0);
         $(".cartitems").children("span").hide();
-      } else {
-        $(".cartitems").children("span").show();
-      }
-
-      if (localStorage.getItem("login")) {
-        console.log("Login Data");
-        const logindata = JSON.parse(localStorage.getItem("login"));
-        this.user_id = logindata.id;
-        logindata.cartitems = this.cartitemslist;
-        localStorage.setItem("login", JSON.stringify(logindata));
-      }
-
-      //this.count_cartitems = this.cartitemslist.length
-      this.HeaderKey += 1;
-      this.EndLoader();
-    },
-    async removeAll() {
-      this.startLoader();
-      this.cartitemslist = null;
-      $(".cartitems").children("span").html(0);
-      $(".cartitems").children("span").hide();
-
-      let result = axios.post(
-        axios.defaults.baseURL + "removecartdata",
-        {
-          user_id: this.user_id,
-        },
-        {
-          useCredentails: true,
+  
+        let result = axios.post(
+          axios.defaults.baseURL + "removecartdata",
+          {
+            user_id: this.user_id,
+          },
+          {
+            useCredentails: true,
+          }
+        );
+  
+        console.log("Cart Check Data2");
+        console.log((await result).data);
+  
+        this.getCartData();
+        // if(localStorage.getItem("login")){
+        // console.log("Login Data")
+        // const logindata = JSON.parse(localStorage.getItem("login"));
+        // logindata.cartitems=[]
+        // localStorage.setItem("login", JSON.stringify(logindata));
+        // }
+        this.HeaderKey += 1;
+        this.EndLoader();
+      },
+      startLoader() {
+        console.log("karachi");
+        $("#ajaxLoader").attr( "class", "LoaderShow" )
+        // var target_ContId = document.getElementById("ajaxLoader");
+        // target_ContId.style.display = "block";
+      },
+      EndLoader() {
+        console.log("pak");
+        $("#ajaxLoader").attr( "class", "LoaderHide" )
+        // var target_ContId = document.getElementById("ajaxLoader");
+        // target_ContId.style.display = "none";
+      },
+      myMethod(val, qty) {
+        //alert(val)
+        this.count++;
+  
+        // if(this.count==1){
+        // 	this.total_price=0
+        // }
+        // if(this.count<=this.cartitemslist.length){
+        // 	this.total_price= this.total_price+(val*qty);
+        // }
+        return;
+      },
+      increment(cart_id) {
+        var val = $("#cart_" + cart_id).val();
+        //if(val>=1){
+        val++;
+        $("#cart_" + cart_id).val(val);
+        //}
+        //var val = $this.previousElementSibling.value;
+        //alert(cart_id+" - "+val);
+      },
+      decrement(cart_id) {
+        var val = $("#cart_" + cart_id).val();
+        if (val >= 1) {
+          val--;
         }
-      );
-
-      console.log("Cart Check Data2");
-      console.log((await result).data);
-
-      this.getCartData();
-      // if(localStorage.getItem("login")){
-      // console.log("Login Data")
-      // const logindata = JSON.parse(localStorage.getItem("login"));
-      // logindata.cartitems=[]
-      // localStorage.setItem("login", JSON.stringify(logindata));
-      // }
-      this.HeaderKey += 1;
-      this.EndLoader();
+        $("#cart_" + cart_id).val(val);
+      },
+      removecartitem(cart_id) {
+        var val = $("#cart_" + cart_id).val();
+        console.log(cart_id);
+        this.startLoader();
+        //this.cartitemslist = null
+        //$(".cartitems").children("span").html(0)
+  
+        let result = axios.post(
+          axios.defaults.baseURL + "removecartdata",
+          {
+            user_id: this.user_id,
+            cart_item_id: cart_id,
+          },
+          {
+            useCredentails: true,
+          }
+        );
+  
+        this.getCartData();
+        // console.log("Cart Check Data2");
+        // console.log((await result).data);
+  
+        // if(localStorage.getItem("login")){
+        // console.log("Login Data")
+        // const logindata = JSON.parse(localStorage.getItem("login"));
+        // logindata.cartitems=[]
+        // localStorage.setItem("login", JSON.stringify(logindata));
+        // }
+        this.HeaderKey += 1;
+        //this.EndLoader();
+      },
+      updatecart() {},
+      getImgUrl(vendor, pet) {
+        return this.img_url + "/" + vendor + "/" + pet;
+      },
     },
-    startLoader() {
-      console.log("karachi");
-      $("#ajaxLoader").attr("class", "LoaderShow");
-      // var target_ContId = document.getElementById("ajaxLoader");
-      // target_ContId.style.display = "block";
-    },
-    EndLoader() {
-      console.log("pak");
-      $("#ajaxLoader").attr("class", "LoaderHide");
-      // var target_ContId = document.getElementById("ajaxLoader");
-      // target_ContId.style.display = "none";
-    },
-    myMethod(val, qty) {
-      //alert(val)
-      this.count++;
-
-      // if(this.count==1){
-      // 	this.total_price=0
-      // }
-      // if(this.count<=this.cartitemslist.length){
-      // 	this.total_price= this.total_price+(val*qty);
-      // }
-      return;
-    },
-    increment(cart_id) {
-      var val = $("#cart_" + cart_id).val();
-      //if(val>=1){
-      val++;
-      $("#cart_" + cart_id).val(val);
-      //}
-      //var val = $this.previousElementSibling.value;
-      //alert(cart_id+" - "+val);
-    },
-    decrement(cart_id) {
-      var val = $("#cart_" + cart_id).val();
-      if (val >= 1) {
-        val--;
-      }
-      $("#cart_" + cart_id).val(val);
-    },
-    removecartitem(cart_id) {
-      var val = $("#cart_" + cart_id).val();
-      console.log(cart_id);
-      this.startLoader();
-      //this.cartitemslist = null
-      //$(".cartitems").children("span").html(0)
-
-      let result = axios.post(
-        axios.defaults.baseURL + "removecartdata",
-        {
-          user_id: this.user_id,
-          cart_item_id: cart_id,
-        },
-        {
-          useCredentails: true,
-        }
-      );
-
-      this.getCartData();
-      // console.log("Cart Check Data2");
-      // console.log((await result).data);
-
-      // if(localStorage.getItem("login")){
-      // console.log("Login Data")
-      // const logindata = JSON.parse(localStorage.getItem("login"));
-      // logindata.cartitems=[]
-      // localStorage.setItem("login", JSON.stringify(logindata));
-      // }
-      this.HeaderKey += 1;
-      //this.EndLoader();
-    },
-    updatecart() {},
-    getImgUrl(vendor, pet) {
-      return this.img_url + "/" + vendor + "/" + pet;
-    },
-  },
-};
-</script>
+  };
+  </script>

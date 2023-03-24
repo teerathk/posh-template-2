@@ -225,7 +225,14 @@ span.eye-icon-pass {
     line-height: 1;
     position: relative;
 }
-
+.eye-icon-pass i.fa.fa-eye, .eye-icon-pass i.fa.fa-eye-slash {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adabab;
+    cursor: pointer;
+}
 .login-area .top-log .login-box form a {
     float: right;
     display: inline-block;

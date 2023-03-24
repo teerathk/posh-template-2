@@ -10,6 +10,9 @@ textarea:focus,
 input:focus {
     outline: none;
 }
+.mySlides.right-main {
+    display: none;
+}
 input[type="text"] {
     width: 100%;
     padding: 6px 8px;
@@ -431,6 +434,12 @@ ul.breadcrumbs-list li a:after {
     transform: rotate(22deg);
     font-size: 20px;
 }
+.form-group input, .form-group select {
+    width: 100%;
+}
+.cartIBilling-shipping {
+    max-width: 670px;
+}
 select.select-custom-point {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -781,7 +790,6 @@ label.top-position {
     font-size: 18px;
     font-weight: 500;
     padding-left: 23px;
-    width: 100%;
 }
 .form-group {
     margin-bottom: 1rem;
@@ -858,7 +866,7 @@ ul.products-cat-opt.shipping-meth {
 }
 .gallery-pm-thumb {
     background: #F0F0F0;
-    max-width: 390px;
+    max-width: 120px;
     margin: 0 auto;
     margin-top: 30px;
     border-radius: 10px;
@@ -1014,6 +1022,7 @@ ul.toolBx-sub.forPriceRang li {
 .cart-item-updates {
     display: flex;
     margin-top: 20px;
+    margin-bottom: 120px;
 }
 .cartSummary-bx {
     background: #F0F0F0;
@@ -1123,9 +1132,8 @@ span.ratingValue {
      width: 100%; 
      display: flex; 
   }
-.singal-product 
-.left-thumbs {
-    width: 90px;
+.singal-product .left-thumbs {
+    width: 120px;
 }
 .singal-product 
 .right-main {
@@ -1166,8 +1174,10 @@ span.ratingValue {
 .csi-title {
     flex: 0 0 67%;
 }
-button.primary {
-   
+.form-group input {
+    border: 1px solid #5F5F5F!important;
+}
+button.primary {   
     background: #ff5c00;
     border: 1px solid #ff5c00;
     border-radius: 4px;
@@ -1182,7 +1192,7 @@ button.primary {
     margin: 0;
 }
 .form-group input, .form-group select {
-    border: 1px solid #5F5F5F!important;
+    border: 1px solid #5F5F5F;
     height: 56px;
     font-size: 18px;
     font-weight: 500;
@@ -1228,6 +1238,7 @@ button.primary {
 .cartI-2 button.btnminus-item {
     left: 0px;
     top: 0px;
+    padding-top: 20px;
 }
 .cat-title-pg h4 {
     color: #000;
@@ -1305,7 +1316,16 @@ button.primary {
 }
 
 @media (max-width: 767px) {
-
+    .cartItems .cartItems-box:first-child {
+        display: none;
+    }
+    .cart-itesm-bx h4 {
+        font-size: 1.5rem!important;
+    }
+    .banner-container .left-bar.active {
+        display: block!important;
+        left: 0;
+    }
 .cat-title-pg h4 {
     position: absolute;
     font-size: 20px;
@@ -1478,11 +1498,6 @@ button.primary {
    h1.title-pm-detail {
     font-size: 22px;
     color: #1B1B1B;
-   }
-   button.btnminus-item {
-    position: relative;
-    left: 94px;
-    top: -31px;
    }
 }
 

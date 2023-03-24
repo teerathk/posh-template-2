@@ -1011,6 +1011,9 @@ button.btnplus-item:hover, button.btnminus-item:hover {
     padding-right: 89px;
     padding-left: 40px;
 }
+.cartIBilling-shipping {
+    padding-right: 200px;
+}
 ul.checkout-method {
     list-style: none;
     display: flex;
@@ -1317,7 +1320,7 @@ span.eye-icon-pass {
     padding: 8px 8px;
     font-size: 12px;
 }
-.eye-icon-pass i.fas.fa-eye, .eye-icon-pass i.fas.fa-eye-slash {
+.eye-icon-pass i.fa.fa-eye, .eye-icon-pass i.fa.fa-eye-slash {
     position: absolute;
     right: 10px;
     top: 50%;
@@ -1333,6 +1336,9 @@ span.eye-icon-pass {
     line-height: 1;
     position: relative;
     font-family: 'Inter';
+}
+button.primary.btn-block {
+    width: 100%;
 }
 .login-area .top-log .login-box form a {
     float: right;

@@ -74,7 +74,7 @@
                                     <button type="button" class="primary rsv-bx"><strong>REGISTER</strong></button>
                                     <p class="mt-3 mb-1">Already Have an account?</p>
                                     <span class="link-b-b">
-                                        <a href="#"><strong>Sign-In</strong></a>
+                                        <router-link to="login">Login</router-link>
                                     </span>
                                 </div>
                             </form>

@@ -5,7 +5,7 @@
     <section class="banner-container top-inner-container">
       <div class="container">
         <div class="row g-0">
-          <div class="col-9">
+          <div class="col-xl-9">
             <div class="category-search">
               <form action="">
                 <div class="select-category-box">
@@ -74,7 +74,7 @@
     <div class="sec-nav">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-6">
             <div class="show-all-cat">
               <span
                 ><img src="/src/assets/img/menu-template/category.png" />Show
@@ -87,10 +87,10 @@
               </ul>
             </div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-6">
             <div class="order-track">
               <ul>
-                <li><a href="#">Track Your Order</a></li>
+                <li v-if="cartform.user_id"><router-link to="tracking"> Track Your Order</router-link></li>
                 <li><a href="#">Help Center</a></li>
               </ul>
             </div>
@@ -104,9 +104,8 @@
           <div class="col-sm-12">
             <ul class="breadcrumbs-list">
               <li><a href="">All Categories</a></li>
-              <li><a href="">Laptop Computers</a></li>
-              <li><a href="">Traditional Laptop Computers</a></li>
-              <li>Gaming Laptops</li>
+              <li v-if="this.MainCategory?.parent"><a href="">{{ this.MainCategory?.parent?.title }}</a></li>
+              <li v-if="this.MainCategory?.parent"><a href="">{{ this.MainCategory.title }}</a></li>
             </ul>
           </div>
         </div>
@@ -162,29 +161,30 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="cat-title-pg">
-                <h4>Gaming Laptops</h4>
+                <h4 > <span v-if="this.MainCategory?.parent">{{ this.MainCategory?.parent?.title }} / {{ this.MainCategory.title }}</span></h4>
                 <div class="cat-option-pg">
                   <form @submit.prevent="getFilterData" method="post">
                     <div class="price-limit-opt">
-                      <span>Price: </span>
+                      <span>Price: Habib</span>
                       <div class="form-group min-max-bx">
                         <input
                           type="text"
                           v-model="min_price"
-                          placeholder="Min"
+                          placeholder="MIN*"                         
                           class="h-34 form-control min-priceprice"
                         />
                         <span class="seperator"> - </span>
                         <input
+                        placeholder="MAX*"   
                           type="text"
                           v-model="max_price"
-                          placeholder="Max"
                           class="h-34 form-control max-price"
                         />
                         <button
                           class="primary h-34"
-                          type="submit"
+                          type="button"
                           name="filter"
+                          @click="getFilterData"
                         >
                           Go
                         </button>
@@ -238,10 +238,10 @@
                     >
                   </h3>
                   <div class="prod-p-icon">
-                    <span class="pro-price">${{ item.net_price }}</span>
+                    <span class="pro-price">${{ item.seller_price }}</span>
                     <span class="pro-icons">
-                      <img src="../assets/img/buy.png" class="img-fluid" />
-                      <img src="../assets/img/heart.png" />
+                      <img @click="addtocart(item)" src="../assets/img/buy.png" class="img-fluid" />
+                      
                     </span>
                   </div>
                 </div>
@@ -251,15 +251,21 @@
           <div class="row my-5">
             <div class="col-sm-12 d-flex justify-content-center">
               <!-- START PAGINATION HERE -->
-              <nav aria-label="Page navigation" class="pagiBox-bx">
+              <span v-if="total==0">No Product Found</span>
+
+
+
+              <nav v-if="total>0" aria-label="Page navigation" class="pagiBox-bx">
                 <ul class="pagination">
                   <li class="page-item">
                     <a class="page-link" v-if="from > 1" @click="getFilterData(current_page - 1)"
                       >Previous</a
                     >
                   </li>
-                  <li class="page-item">
-                    {{ from }}-{{ to }} of {{ total }} Items
+                  <li class="page-item" v-for="(num, index) in total" :key="index">
+                    <a class="page-link" @click="getFilterData((index+1))"
+                      >{{ (index+1) }}</a
+                    >
                   </li>
 
                   <li class="page-item">
@@ -269,30 +275,6 @@
                   </li>
                 </ul>
               </nav>
-              <!-- END:: PAGINATION HERE -->
-              <!--  
-                <div aria-label="Page navigation paginate-bx">
-                      <ul class="pagination bottm-pagination">
-                          <li class="page-item inactive">
-                              <button id="back"
-                                class="page-link"
-                                aria-label="Previous"
-                                @click="pagination('b')"
-                              >
-                                  <span aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
-                              </button>
-                          </li>
-                          <li class="page-item">
-                              <button id="next"
-                                class="page-link"
-                                aria-label="Next"
-                                @click="pagination('n')"
-                              >
-                                  <span aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
-                              </button>
-                          </li>
-                      </ul>                      
-                  </div> -->
             </div>
           </div>
         </div>
@@ -415,7 +397,7 @@ export default {
 
       img_url: axios.defaults.url + "/img/product-images",
       //img_url: "https://posh-marketplace.plego.pro/img/product-images",
-      seller_id : 1061
+      seller_id:import.meta.env.VITE_SELLER_ID,
     };
   },
 
@@ -497,7 +479,7 @@ export default {
       let cat_result = axios.get(
         axios.defaults.baseURL +
           "seller/getcategorytitle/" +
-          this.parent_category
+          this.parent_category+"/"+this.sub_category
       );
       this.MainCategory = (await cat_result).data;
 

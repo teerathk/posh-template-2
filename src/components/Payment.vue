@@ -5,7 +5,7 @@
     <section class="banner-container top-inner-container">
       <div class="container">
         <div class="row g-0">
-          <div class="col-9">
+          <div class="col-xl-9">
             <div class="category-search">
               <form action="">
                 <div class="select-category-box">
@@ -68,7 +68,7 @@
     <div class="sec-nav">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-6">
             <div class="show-all-cat">
               <span
                 ><img src="/src/assets/img/menu-template/category.png" />Show
@@ -81,10 +81,10 @@
               </ul>
             </div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-6">
             <div class="order-track">
               <ul>
-                <li><a href="#">Track Your Order</a></li>
+                <li v-if="user_id!=null"><router-link to="tracking"> Track Your Order</router-link></li>
                 <li><a href="#">Help Center</a></li>
               </ul>
             </div>
@@ -97,7 +97,8 @@
       <div class="checkout-itesm-bx">
         <div class="row mt-4">
           <div class="col-12">
-            <h4><strong>Checkout</strong> <span>(2 Items)</span></h4>
+            <h4><strong>Checkout</strong> <span>({{ cartitemslist.length }} Items)</span></h4>
+            
           </div>
         </div>
         <div class="row">
@@ -274,14 +275,14 @@
                     $<strong>{{ shippingamount }}</strong>
                   </div>
                 </div>
-                <div class="cartSummary-items bt-0">
+                <!-- <div class="cartSummary-items bt-0">
                   <div class="csi-title">Discount</div>
-                  <div class="csi-title-amount">-$<strong> 10.00</strong></div>
-                </div>
+                  <div class="csi-title-amount">$<strong> 0.00</strong></div>
+                </div> -->
                 <div class="cartSummary-items justify-sbetw pt-4">
                   <div class="csi-title-t">Total</div>
                   <div class="csi-total-amount">
-                    $<strong>{{ total_price + shippingamount - 10 }}</strong>
+                    $<strong>{{ (this.total_price + this.shippingamount) }}</strong>
                   </div>
                 </div>
               </div>
@@ -350,11 +351,15 @@ export default {
       count: 0,
       userdetails: [],
       img_url: "https://posh-marketplace.plego.pro/img/product-images/",
+      seller_id: import.meta.env.VITE_SELLER_ID,
     };
   },
   methods: {
 
     initPayPalButton() {
+      var totalamount = this.total_price+this.shippingamount;
+
+      // alert(totalamount)
       paypal.Buttons({
         style: {
           shape: 'pill',
@@ -366,7 +371,13 @@ export default {
 
         createOrder: function(data, actions) {
           return actions.order.create({
-            purchase_units: [{"amount":{"currency_code":"USD","value":26.05,"breakdown":{"item_total":{"currency_code":"USD","value":1},"shipping":{"currency_code":"USD","value":25},"tax_total":{"currency_code":"USD","value":0.05}}}}]
+            purchase_units: [
+                {
+                  amount: {
+                    value: totalamount,
+                  },
+                },
+              ],
           });
         },
 
@@ -390,6 +401,7 @@ export default {
 
         onError: function(err) {
           console.log(err);
+          document.getElementById("pyaro").click();
         }
       }).render('#paypal-button-container');
     },
@@ -448,6 +460,7 @@ export default {
           cvv: this.paymentdetails.cvv,
           expirymonth: this.paymentdetails.expirymonth,
           expiryyear: this.paymentdetails.expiryyear,
+          seller_id:this.seller_id
         })
         .then(
           (response) => {
@@ -543,10 +556,12 @@ export default {
       this.count_cartitems = this.cartitemslist.length;
       this.cartitemslist.forEach(function (items) {
         console.log("Qty: " + items.quantity);
+        console.log("Price: " + items.item_price);
         totalQty += items.quantity;
         tempTotalPrice += items.quantity * items.item_price;
       });
       this.total_price = tempTotalPrice;
+      console.log("Total: " + this.total_price);
       //this.itemsincart=totalQty;
       $(".cart").html(this.count_cartitems);
       if (this.count_cartitems == 0) {

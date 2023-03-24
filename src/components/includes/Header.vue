@@ -20,7 +20,7 @@
             <div class="right-top-info pull-right" v-if="!isHidden">
               <ul>
                 <li><router-link to="login">Sign In</router-link></li>
-                <li><a href="#">My Account</a></li>
+                <li class="bearrow"><a href="#">My Account</a></li>
               </ul>
             </div>
 
@@ -63,9 +63,11 @@
         <div class="row">
           <div class="col-xl-3">
             <div class="logo-container">
-              <router-link to="home" class="navbar-brand"
-                ><img src="/src/assets/images/logo.jpg" alt=""
-              /></router-link>
+              <router-link to="home" class="navbar-brand">
+                <router-link to="home" class="navbar-brand">
+                  <img v-if="list.logo != ''" :src="getImgUrll(list.logo)" />
+                </router-link>
+              </router-link>
             </div>
           </div>
           <div class="col-xl-6">
@@ -76,13 +78,9 @@
                   <button
                     class="navbar-toggler"
                     type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
+                    @click="showmainmenu()"
                   >
-                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <i class="fa fa-bars"></i>
                   </button>
                   <div
                     class="collapse navbar-collapse"
@@ -93,15 +91,25 @@
                         id="menu-top-menu"
                         class="sm sm-clean ml-auto primeryManu"
                       >
-                        <li><a href="#">home</a></li>
                         <li>
-                          <a href="#">New Arrivals</a>
+                          <router-link to="home" class="navbar-brand"
+                            >home</router-link
+                          >
+                        </li>
+                        <li>
+                          <router-link to="allproducts"
+                            >New Arrivals</router-link
+                          >
                           <ul class="sub-menu">
                             <li><a href="#">New Arrivals 1</a></li>
                             <li><a href="#">New Arrivals 2</a></li>
                           </ul>
                         </li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li>
+                          <router-link to="contact" class="navbar-brand"
+                            >Contact Us</router-link
+                          >
+                        </li>
                         <li><a href="#">about us</a></li>
                       </ul>
                     </div>
@@ -148,6 +156,7 @@ export default {
       list: [],
       showTitle: true,
       img_url: axios.defaults.url + "/img/product-images",
+      seller_id: import.meta.env.VITE_SELLER_ID,
     };
   },
   async callOutMethod() {
@@ -240,7 +249,9 @@ export default {
       // this.$router.push({name:"Allproducts"});
     },
     async getHeadFoot() {
-      let result = axios.get(axios.defaults.baseURL + "headerfooter/1061");
+      let result = axios.get(
+        axios.defaults.baseURL + "headerfooter/" + this.seller_id
+      );
       console.log("header footer");
       this.list = (await result).data;
       if (this.list.logo) this.showTitle = false;
@@ -253,6 +264,9 @@ export default {
     },
     hidesidemenu() {
       $("#navbarTogglerSidebar").removeClass("active");
+    },
+    showmainmenu() {
+      $("div#navbarSupportedContent").toggleClass("active");
     },
   },
 };

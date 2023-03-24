@@ -20,7 +20,7 @@
 
 								<form @submit.prevent="loginData" method="POST">
 									<input type="email" placeholder="Email Address*" v-model="login.email" />
-									<span class="eye-icon-pass"><input type="password" placeholder="Password*" v-model="login.password" /><i class="fas fa-eye"></i></span>
+									<span class="eye-icon-pass"><input type="password" placeholder="Password*" v-model="login.password" /><i class="fa fa-eye"></i></span>
 									<span class="invalidLogin alert alert-danger"></span>
 									<label class="group">
 										<input type="checkbox">
@@ -32,7 +32,7 @@
 
 								</form>
 							</div>
-							<div class="info-login"><h2>Don't have account yet?</h2> <ul><li><a href="#" class="">User Signup</a></li></ul></div>
+							<div class="info-login"><h2>Don't have account yet?</h2> <ul><li><router-link to="signup">User Signup</router-link></li></ul></div>
 						</div>
 					</div>
 				</div>
